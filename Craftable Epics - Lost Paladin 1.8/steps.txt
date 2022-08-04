@@ -3,6 +3,8 @@ ravien_ff's custom scenario starter https://steamcommunity.com/sharedfiles/filed
 My guide https://steamcommunity.com/sharedfiles/filedetails/?id=2838468079
 My old guide https://steamcommunity.com/sharedfiles/filedetails/?id=1998063529
 
+After copying the playfields folder you ahve to dlete all the .png files
+    - delete all the .raw files
 
 Starter planets:
 
@@ -35,3 +37,5 @@ Starter planets:
 Edit the starter locations back to what they were and re-test.
 
 6. use https://empyrion-homeworld.net/tools/ewpda to generate blank pda files
+
+7. When you upload your scenario make sure you have no files open at all and no folders/broiwsers open in the scenario path at all.
