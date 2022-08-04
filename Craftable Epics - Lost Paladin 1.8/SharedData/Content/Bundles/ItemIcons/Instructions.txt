@@ -1,0 +1,5 @@
+This folder is where you place .jpg or .png images for item icons. 100x100 .png files with transparent background are best.
+If the icon image has the exact same name as the item or block name in your config files then it will automatically use it.
+Otherwise you can add CustomIcon: to your item, block, or token configs to reference the icon in this folder.
+
+For example, CustomIcon: TestIcon will reference the TestIcon.png file in this folder.

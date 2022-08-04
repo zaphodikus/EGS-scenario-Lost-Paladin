@@ -1,0 +1,191 @@
+# Playfield Characteristics
+Gravity: 0                         
+AtmosphereEnabled: False          
+PvPProb: 0
+UseFixed: True                       
+Radiation: [5,10]                    
+TemperatureDay: [-200,-100]    
+Music: [Cypher]          
+ 
+PlayfieldType: Space  
+PlanetType: LegacyInfested            
+
+### Resource Asteroid
+Resources:                     
+    - Name: [ AsteroidVoxel01Aluminium, AsteroidVoxel02Aluminium, AsteroidVoxel03Aluminium]
+      DisplayName: Aluminium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.6 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Platin, AsteroidVoxel02Platin, AsteroidVoxel03Platin]
+      DisplayName: Platin Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.5  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180             
+
+    - Name: [ AsteroidVoxel01Promethium, AsteroidVoxel02Promethium, AsteroidVoxel03Promethium]
+      DisplayName: Promethium Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.4  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Pentaxid, AsteroidVoxel02Pentaxid, AsteroidVoxel03Pentaxid]
+      DisplayName: Pentaxid Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.3     
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Gold, AsteroidVoxel02Gold, AsteroidVoxel03Gold]
+      DisplayName: Gold Asteroid
+      CountMinMax: [ 1, 3 ]
+      Probability: 0.5 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180          
+  
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0.5 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180               
+
+    - Name: [ AsteroidVoxel01Titan, AsteroidVoxel02Titan, AsteroidVoxel03Titan]
+      DisplayName: Titan Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.6 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180          
+           
+### POIs
+POIs:
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidFieldRing] 
+      FieldName: [AsteroidField, AsteroidFieldRectangle2]   # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      BaseField: True 
+      RandomRotation: True
+
+# Legacy
+
+    - Type: BA_Alien   
+      Name: [BAO_LegacyMatterConverter]  
+      DisplayName: Matter Converter
+      Faction: TheLegacy
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        - Key: Music
+          Value: Encryptor  
+     #   - Key: MapDistance
+     #     Value: 2500     
+
+    - Type: BA_Alien   
+      Name: [BAO_SecretArtefactSite]  
+      DisplayName: Artifact Site
+      Faction: TheLegacy
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 0.7
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        - Key: Music
+          Value: Encryptor  
+      #  - Key: MapDistance
+     #     Value: 2500     
+ 
+#None  - JUNKYARDS
+
+    - Type: BA_Alien
+      GroupName: JunkYardSpaceBAO
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0, 4 ]
+      Probability: 0.2
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# CV single
+    - Type: CV_Alien
+      GroupName: JunkYardSpaceCV
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0,6 ]
+      Probability: 0.1
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# SV single
+    - Type: SV_Player
+      GroupName: JunkYardSpaceSV
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0, 8 ]
+      Probability: 0.3
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+ 
+DroneBaseSetup:                                                # Note: not ALL possible settings are used in that config. Check +ExampleSpace folder > space_dynamic.yaml
+      - FreeDrones:
+          - Name: [SpaceDroneLegacyLaser]
+            Faction: TheLegacy                               
+            CanNotBeControlledByMasterAI: False          
+            Count: [2, 4]                          
+            Radius: [2500, 8000]
+            Properties:
+             # - Key: AIManPatrolFactions 
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500
+        SpaceVessels:
+          - Name: [OPVLegacy]                  # Legacy is available in other playfields, but should not appear outside TheLegacy Territory or playfields due to LORE/Story context > only use in specifically made playfields, like AlienLegacy or SpaceAsteroidFieldLegacy !!
+            Faction: TheLegacy
+            CountMinMax: [1, 2]   
+            Probability: 1        # Prob = 1 because SpaceOrbit is ALWAYS around a planet AND if the faction owns that territory, there should ALWAYS be at least 1 guarding patrol vessel!
+            CanNotBeControlledByMasterAI: False 
+            FixedMaxSpeed: [20, 50] 
+            Mission: SpacePatrol   
+            MissionDescription:
+              DelayBetweenRespawnMinMax: [300, 600]  
+              DelayBeforeSelfDestructionMinMax: [200, 250]  
+              IsRespawnAfterDestruction: True               
+              RadiusMinMax: [750, 10000]        			  
+           #   POINameAsPositionRef: [BAO_Waystation-01, BAO_Waystation-02, BAO_Waystation-03, BAO_Waystation-04, BAO_SecretArtefactSite, BAO_DESC_v1, BAO_CivilMinOutpost]
+            StockDescription:
+              Name: [SpaceDroneLegacyLaser] 
+              AmountMinMax: [2, 4]  
+              Type: FighterDrone  
+            Properties:                        # OPV = default behavior is to patrol POIs of the own faction. Drones shall patrol Resources.
+              - Key: SelfDestructionWithNoCore # Military ships = self destruct!
+                Value: True                        
+              - Key: AIManMaxPursuitRange 
+                Value: 4000

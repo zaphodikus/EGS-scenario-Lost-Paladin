@@ -1,0 +1,720 @@
+---
+GenerationParams:
+  MapScale: 1.0          # how much the sectors are spread out  
+  # float [0..1] solar systems are more like a cookie than a ball. the lower the value, the flatter the system
+  SolarSystemSqueezeMinMax: [0.005, 0.010] 
+  # float [0..1] probability a warp connection will be one-way
+  OneWayWarpProb: 0
+  UniqueStarterPlanet: true
+
+
+# ========= NOTE: This SolarSystemConfig contains all planet entries, but uses not all of them! ========
+
+# GENERAL DESCRIPTION (G-type system)
+#
+# (List the solar system's speciality here. E.g.:  Higher chances of living worlds, some alien...)
+# This Solar System has NO worlds of the Legacy faction defined! (AlienLegacy)
+
+
+
+  # =======================================================================================================================
+
+  PlanetCountProbs:  # Defines the min-max amount of planets. (Amount : Chance) - Each Amount can have an individual probability. Combinations of amounts with and without probabilies is possible. If no individual probability is set, the 'amount number' will get an average of the remaining probability. Example [0:0.1,3]  > 0 has probability 10%. 1,2 and 3 share the other 90% = 1 has 30%, 2 has 30%, 3 has 30%
+                     # ! Number of entries in 'PlanetCountProbs' and 'PlanetLists' have to be exactly the same !
+
+  # PLANET AMOUNTS                                        # List item
+
+
+         # Gas giants - Inner system
+         # Gas giants - Middle system
+     - '0 : 0.1,   1 : 0.5,  2 : 0.3,  3 : 0.1'           # 1   Gas giants
+         # Gas giants - Outer system
+
+            # Molten planets              
+     - '0 : 0.65,   1 : 0.3,  2 : 0.05'                   # 2   Lava & molten planets                      (e.g. primordial Earth)
+
+     # Standard system
+            # Inner system (close to star)
+     - '0 : 0.4,   1 : 0.5,  2 : 0.1'                     # 3   Scorched planets                           (e.g. Mercury)
+                                                          # 4   Hothouses                                  (e.g. Venus)
+            # Habitable zone; possibly life-bearing
+     - '0 : 0.5,   1 : 0.4,  2 : 0.1'                     # 5   Water hot                                  (e.g. Desert planets)
+     - '0 : 0.7,   1 : 0.2,  2 : 0.1'                     # 6   Water temperate                            (e.g. Ocean worlds, Earth stlye)
+     - '0 : 0.6,   1 : 0.4'                               # 7   Water cold                                 (e.g. Snow worlds)
+            # Outer system (cold & dark)
+     - '0 : 0.1,   1 : 0.6,  2 : 0.3'                     # 8   Ice & methane                              (e.g. Saturn moons)
+                                                          # 9   Frozen nitrogen                            (e.g. Uranus moons; Pluto)
+    # Specials 
+     - '0 : 0.8,   1 : 0.2'                               # 10  Alien & exotic planets                     (e.g. The Legacy or bombed planets)
+    # (Always spawning: Starters)                         # X   Starter planets                            (e.g. TemperateStarter)
+
+
+
+
+  PlanetLists:      # Rough categories for planets; defining spawn chances for the PlanetTypes.
+
+  # PLANET CHANCES                                        # List item
+
+         # Gas giants - Inner system
+         # Gas giants - Middle system
+    - 'Jupiter:0.45, Saturn: 0.35, Neptun:0.2'            # 1   Gas giants
+         # Gas giants - Outer system
+
+            # Very hot planets
+    - 'Lava:0.4, LavaNascent:0.6'                         # 2   Lava & molten planets                      (e.g. primordial Earth, collided planet)
+
+     # Standard system  
+            # Inner system (close to star)
+    - 'Scorched:0.5'                                      # 3   Scorched planets                           (e.g. Mercury)
+                                                          # 4   Hothouses                                  (e.g. Venus)
+            # Habitable zone (fluid water)
+    - 'Arid:0.4, Desert:0.6'                              # 5   Water hot                                  (e.g. Desert planets)
+    - 'Temperate:0.5, TemperateSwamp:0.3, Ocean:0.2'      # 6   Water temperate                            (e.g. Ocean worlds, Earth stlye)
+    - 'Snow:0.5'                                          # 7   Water cold                                 (e.g. Snow worlds)
+            # Outer system (cold & dark)
+    - 'Barren:0.5'                                        # 8   Ice & methane                              (e.g. Saturn moons)
+                                                          # 9   Frozen nitrogen                            (e.g. Uranus moons; Pluto)
+    # Specials
+    - 'Alien:0.2'                                         # 10  Alien & exotic planets                     (e.g. The Legacy or bombed planets)
+    # (Always spawning: Starters)                         # X   Starter planets                            # See GalaxyConfig to spawn a Starter.
+
+
+
+  # SPACE FIELD (Space 'POI') AMOUNTS
+  POICountProbs: '0 : 0.05,  1 : 0.1,  2 : 0.1,  3 : 0.2,  4 : 0.2,  5 : 0.2,  6 : 0.1,  7 : 0.05'
+  
+  # SPACE FIELD (Space 'POI') CHANCES:
+  POIs: 'SpaceEmpty: 0.45, AsteroidFieldFew: 0.2, AsteroidField: 0.1, AsteroidFieldRich: 0.075, AsteroidFieldJunkyard: 0.1, AsteroidFieldPirates: 0.05, AsteroidFieldLegacy: 0.025'
+  # (Please do not confuse with 'POI' placed on a planet. - Spawning of such _'Faction POI'_ (=buildings, ships...)on a playfield will be influenced by the faction territories defined in the GalaxyConfig.
+  # Even if e.g. a LegacyFaction 'Space field' appears in the system, it might not have much 'Faction POI' except in the faction's territory.)
+
+
+
+  # ========================================================================================================================
+  #   PLANET TYPES
+  #§ =======================================================================================================================
+
+  PlanetTypes:   # Defines the planets further: Their location in the solar system, their orbits, moons, and playfields...
+
+
+
+   # ==== GAS GIANTS =========================
+
+
+                               # TO DO: SORT GAS GIANT MOONS to outer system, middle, inner system. Reduce number of 'exotic coloured' gas giants (Purple, etc)
+
+      - Name: Jupiter 
+        Color: [0.22,0.54,0.69,  0.50,0.33,0.25,  0.68,0.56,0.26,  0.45,0.20,0.09,  0.38,0.27,0.40]  # Colour of the map symbol. Multiple entries, for each gas giant model of 'ForcePlanetType' below
+        Icon: GasGiant
+        Placement:                  # Defines where the playfield appears in the Solar system, related to the Galaxy.ecf Sun parameters: HabitableTemperate, HabitableHot, HabitableCold, InnerSystem, OuterSystem
+            # - InnerSystem         # (Careful if placing gas giants in the inner system! The model might be much bigger than the sun's model! - G-Type star has SizeClass 10, Gas giant 9-11)
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '3:0.45, 4:0.35, 5:0.2'    # Definition of Moon counts and probability. - - Mandatory; for no moons use '0:1'
+        MoonType: [DefaultMoon, MoonForest, MoonIce, MoonDesert, MoonLava, MoonNascent]   
+        # PlayfieldLevel: [1,10]     # REQUIRED? > sets default value if not set
+        ForceSizeClass: [9,11]       # Important for a gasgiant! If this is specified, the moons will not be put in the same sector as the gas giant (as the gas giant fills the whole sector)
+        ForcePlanetType: [JupiterBlue, JupiterBrown, JupiterYellow, JupiterBrown2, JupiterPurple]  # (Define for each of these a map colour, above.)
+        HasOrbit: false              # (A gasgiant may never have an orbit!)
+        Playfields:
+            - GasGiant
+
+      - Name: Saturn 
+        Color: [0.22,0.54,0.69,  0.33,0.20,0.14,  0.68,0.56,0.26,  0.25,0.53,0.05,  0.38,0.27,0.40]
+        Icon: GasGiantRing
+        # Distance: [100, 300]
+        Placement:
+            # - InnerSystem       # (See above, planet might be bigger than the star!)
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '1:0.5, 2:0.3, 3:0.2'
+        MoonType: [DefaultMoon, MoonForest, MoonIce, MoonDesert, MoonLava, MoonNascent]   
+        ForceSizeClass: [8,11]
+        ForcePlanetType: [SaturnBlue, SaturnBrown, SaturnYellow, SaturnGreen, SaturnPurple]
+        HasOrbit: false
+        Playfields:
+            - GasGiant
+
+      - Name: Neptun 
+        Color: [0.42,0.54,0.31,  0.36,0.30,0.56]
+        Icon: GasGiant
+        Placement:
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '1:0.5, 2'
+        MoonType: [DefaultMoon, MoonIce, MoonLava, MoonNascent]   
+        ForceSizeClass: [8,10]
+        ForcePlanetType: [NeptuneGreen, NeptunePurple]
+        HasOrbit: false
+        Playfields:
+            - GasGiant
+
+
+
+   # ==== Planets =======================================
+
+
+
+   # ==== LAVA & MOLTEN Planets ==============
+
+
+      - Name: Lava
+        Color: [0.57, 0.09, 0.05]  # Dark red
+        Placement:
+            - InnerSystem 
+        OrbitType: [Lava_Orbit]     # Connects this planet type to an specific orbit (or asteroid field) type, listed further below. No entry means 'DefaultOrbit' will be used.
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonLava]
+        Climate: Lava               # For 3D map purposes, limit climate (optional for non-terrain types) to one of Lava, Temperate, Snow, Desert, Alien, or Barren
+        PlayfieldLevel: [6,10]
+        Playfields:
+            - Lava, 1
+
+      - Name: LavaNascent
+        Color: [0.3, 0.06, 0.04]   # Deep brown
+        Placement:
+            - HabitableHot
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonNascent, MoonLava, DefaultMoon]   
+        Climate: Lava
+        PlayfieldLevel: [6,10]
+        Playfields:
+            - LavaNascent, 1
+
+
+
+   # ==== SCORCHED Planets ===================
+
+
+      - Name: Scorched
+        Color: [0.9, 0.6, 0.4]   # Orange
+        Placement:
+            - InnerSystem 
+        OrbitType: [Scorched_Orbit]
+        MoonProb: '0:1'                   # (No moons! Would get into problems with some orbit rings & orbit heat.)
+        MoonType: [DefaultMoon]   
+        Climate: Lava
+        PlayfieldLevel: [6,10]
+        Playfields:
+            - Scorched
+
+
+
+   # ==== HOTHOUSE Planets ===================
+
+
+      # - Name: Hothouse
+        # Color: [1.0, 0.8, 0.4]  # Yellow-orange
+
+
+
+
+   # ==== WATER HOT Planets  =================
+
+
+      - Name: Desert 
+        Color: [0.50, 0.32, 0.04]
+        Placement:
+            - HabitableHot
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonNascent, DefaultMoon]   
+        # OrbitType: [DefaultOrbit, AsteroidField2]  # Connects this planet type to an specific orbit type, listed further below. No entry means 'DefaultOrbit' will be used.
+        Climate: Desert
+        PlayfieldLevel: [4,10]
+        Playfields:
+            - Desert
+
+      - Name: Arid 
+        Color: [0.50, 0.47, 0.04]
+        Placement:
+            - HabitableHot
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'   
+        MoonType: [MoonNascent, DefaultMoon]   
+        Climate: Arid
+        PlayfieldLevel: [4,8]
+        Playfields:
+            - Arid
+
+
+   # ==== WATER TEMPERATE Planets  ===========
+
+
+      - Name: Temperate
+        Color: [0.04, 0.5, 0.1]    # Green
+        Placement:
+            - HabitableTemperate
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        # MoonCount: [2,4]   # (Still used? Is now done with MoonProb.)
+        MoonType: [MoonLava, MoonIce, DefaultMoon]   
+        Climate: Temperate
+        PlayfieldLevel: [4,6]
+        Playfields:
+            - Temperate
+
+      - Name: TemperateSwamp
+        Color: [0.04, 0.5, 0.1]    # Green
+        Placement:
+            - HabitableTemperate
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonLava, MoonNascent, MoonIce, DefaultMoon]   
+        Climate: Temperate
+        PlayfieldLevel: [5,7]
+        Playfields:
+            - TemperateSwamp
+
+      - Name: Ocean
+        Color: [0.04, 0.5, 0.1]    # Green
+        Placement:
+            - HabitableTemperate
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonLava, MoonIce, DefaultMoon]   
+        Climate: Temperate
+        PlayfieldLevel: [4,7]
+        Playfields:
+            - Ocean
+
+
+   # ==== WATER COLD Planets =================
+
+
+      - Name: Snow
+        Color: [0.16, 0.18, 0.51]  # Dark blue
+        Placement:
+            - HabitableCold 
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonIce, DefaultMoon]       
+        Climate: Snow
+        PlayfieldLevel: [4,10]
+        Playfields:
+            - Snow
+
+
+
+
+   # ==== ICE & METHANE Planets ==============
+
+      - Name: Barren      # ========== MOVE BARREN METAL TO HOTHOUSE / WATER HOT, once a replacement for this slot has been built. Also, rename 'Barren' playfield to 'Desert Fission'  ;)
+        Color: [0.49, 0.49, 0.49]   # Grey
+        Placement:
+            - HabitableCold
+            - OuterSystem
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'
+        MoonType: [MoonIce, DefaultMoon]   
+        Climate: Barren  
+        PlayfieldLevel: [5,10]
+        Playfields:
+            - BarrenMetal, 0.6
+            - Barren, 0.4
+
+
+
+
+   # ==== FROZEN NITROGEN Planets ============
+
+
+
+
+   # ==== ALIEN & EXOTIC Planets =============
+
+      - Name: Alien
+        Color: [0.04, 0.75, 0.74]     # GreenBlue  # ======== CHANGE COLOUR, use greenblue for methane ice worlds
+        Placement:
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'  
+        MoonType: [MoonLava, MoonIce, DefaultMoon]
+        Climate: Alien
+        PlayfieldLevel: [7,10]
+        Playfields:
+            - Alien
+
+      - Name: AlienLegacy
+        Color: [0.04, 0.75, 0.74]
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        OrbitType: [OrbitLegacy] 
+        MoonProb: '0:0.7, 1:0.15, 2:0.1, 3:0.05'  
+        MoonType: [MoonLava, MoonIce, DefaultMoon]
+        Climate: Alien
+        PlayfieldLevel: [7,10]
+        Playfields:
+            - HomeworldLegacy
+
+
+
+   # ==== STARTER Planets ====================
+
+
+      - Name: TemperateStarter
+        Color: [0.04, 0.8, 0.1]
+        Placement:
+            - HabitableTemperate
+        PlayerStart: true
+        # Neighbor 'Name, Probability [0..1]'    # (Still active? Use the 'SolarSystemConfig.yaml' to define the starting system)
+        # Neighbor: 
+        #  - Snow, 1
+        #  - SpaceTradingStation, 0.3
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Temperate
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - TemperateStarter
+
+
+      - Name: TemperateStarter2
+        Color: [0.04, 0.8, 0.1]
+        Placement:
+            - HabitableTemperate
+        PlayerStart: true
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Temperate
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - TemperateSwampStarter
+
+
+      - Name: AridStarter
+        Color: [0.50, 0.47, 0.04]
+        Placement:
+            - HabitableHot
+        PlayerStart: true
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Arid
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - AridStarter
+
+
+      - Name: SnowStarter
+        Color: [0.16, 0.18, 0.51]
+        Placement:
+            - HabitableCold
+        PlayerStart: true
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Snow
+        PlayfieldLevel: [2,3]
+        Playfields:
+            - SnowStarter
+
+
+
+  # ========================================================================================================================
+  #   MOON Types
+  #§ =======================================================================================================================
+
+
+  MoonTypes:
+
+
+
+   # ==== Moons: BARREN TEMPERATE ============
+
+      - Name: DefaultMoon          # (Definition of a 'DefaultMoon' name is mandatory!)
+        Color: [0,0,0]
+        Distance: [6000, 12000]    # Distance to the planet. There seems to be a minimum distance, resulting in the moon being placed more to the 'Zenith' of the planet.
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [1,10]
+        Playfields:
+            - Moon 
+
+      - Name: MoonDesert
+        Color: [0.50, 0.32, 0.04]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [4,10]
+        Playfields:
+            - MoonDesert 
+
+
+   # ==== Moons: WATER TEMPERATE =============
+
+      - Name: MoonForest
+        Color: [0.04, 0.5, 0.1]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - MoonForest 
+
+   # ==== Moons: ICE & METHANE ===============
+
+
+      - Name: MoonIce                # SPLIT INTO SUB GROUPS - These ice moons are not the same.
+        Color: [0.16, 0.18, 0.51]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [1,10]
+        Playfields:
+            - MoonIce
+            - MoonIce2
+
+
+
+   # ==== Moons: LAVA PLANET ===============
+
+      - Name: MoonLava
+        Color: [0.57, 0.09, 0.05]  # Red. Same as Lava.
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [4,10]
+        Playfields:
+            - MoonLava, 0.5  
+            - MoonLava2, 0.5
+
+      - Name: MoonNascent
+        Color: [0.3, 0.06, 0.04]   # Deep brown
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [6,10]
+        Playfields:
+            - MoonNascent 
+
+
+   # ==== Moons: RINGED GAS GIANT ==========
+
+
+
+
+   # ==== Moons: STARTER PLANET =============
+
+      - Name: MoonStarter
+        Color: [0,0,0]
+        Distance: [6000, 12000]
+        HasOrbit: false
+        HasTerrain: true
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - MoonStarter 
+
+
+
+  # ========================================================================================================================
+  #   ORBIT Types
+  #§ =======================================================================================================================
+
+
+  OrbitTypes:
+
+      - Name: DefaultOrbit     #(Definition of a 'DefaultOrbit' name is mandatory!)
+        Color: [0.3, 0.3, 0.3]    # (Needed, if this orbit would be used as an asteroid field)
+        Distance: [270, 870]      # (As above)
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceOrbit       # (This is a middle system orbit.)
+
+
+   # ==== SCORCHED ORBITS =============  # Inner system orbits
+
+      - Name: Scorched_Orbit
+        Color: [0.3, 0.3, 0.3]
+        Distance: [270, 870]
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - Scorched_Orbit
+
+      - Name: Lava_Orbit
+        Color: [0.3, 0.3, 0.3]
+        Distance: [270, 870]
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - Lava_Orbit
+
+   # ==== TEMPERATE ORBITS ============  # Middle system orbits
+
+
+   # ==== ICE ORBITS ==================  # Outer system orbits
+
+
+
+
+   # ==== STARTER ORBITS ==============
+
+      - Name: OrbitStarter
+        Color: [0.3, 0.3, 0.3]
+        Distance: [270, 870]
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - SpaceOrbitStarter   # (This is a middle system orbit.)
+
+
+   # ==== SPECIAL ORBITS ==============  # E.g. faction orbits, homeworld orbits...
+
+      - Name: OrbitLegacy
+        Color: [0.3, 0.3, 0.3]
+        Distance: [270, 870]
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [1,1]
+        Playfields:
+            -  HomeworldLegacySpaceOrbit   # (This is a middle system orbit.)
+
+
+  # ========================================================================================================================
+  #   System 'POI's
+  #§ =======================================================================================================================
+  # (System POIs; pease do not confuse with a placed POI (e.g. a Base) on a playfield!)
+
+  POITypes:
+
+
+      - Name: SpaceEmpty        # (Always keep an 'SpaceEmpty' orbit, needed in hardcoded game files)
+        Color: [0.49, 0.49, 0.49]
+        Icon: SpaceEmpty
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceEmpty
+
+
+   # ==== ASTEROID FIELDS =============
+
+   #                                  ======= To DO: SORT AFTER TEMPERATURES
+
+
+      - Name: AsteroidFieldFew
+        Color: [0.49, 0.49, 0.49]
+        Icon: AsteroidFieldFew
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldFew
+
+      - Name: AsteroidField
+        Color: [0.49, 0.49, 0.49]
+        Icon: AsteroidField
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidField
+
+      - Name: AsteroidFieldRich
+        Icon: AsteroidFieldRich
+        Color: [0.49, 0.49, 0.49]
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldRich
+
+      - Name: AsteroidFieldPirates
+        Icon: AsteroidFieldAttention
+        Color: [0.49, 0.49, 0.49]
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldPirates
+
+      - Name: AsteroidFieldJunkyard
+        Icon: AsteroidFieldJunkyard
+        Color: [0.49, 0.49, 0.49]
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldJunkyard
+
+      - Name: AsteroidFieldLegacy
+        Icon: AsteroidFieldAttention
+        Color: [0.49, 0.49, 0.49]
+        Placement:
+            - InnerSystem
+            - HabitableHot
+            - HabitableTemperate
+            - HabitableCold
+            - OuterSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceAsteroidFieldLegacy
+
+
+
+  # ========================================================================================================================
+  #   STATION Types
+  #§ =======================================================================================================================
+
+  StationTypes:
+      - Name: SpaceTradingStation
+        Color: [0.7, 0.5, 0.0]
+        Icon: Station
+        Distance: [200, 300]
+        Placement: 
+          - InnerSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceTradingStation
+

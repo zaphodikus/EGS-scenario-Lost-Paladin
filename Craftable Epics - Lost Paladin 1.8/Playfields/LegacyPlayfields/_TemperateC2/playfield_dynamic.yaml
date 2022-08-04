@@ -1,0 +1,304 @@
+---
+# # ==============================================================
+
+PlanetSize: 
+  SizeRange: [2]
+  SizeProbs: [1]   
+TemperatureMin: [-6, -1]  # -1                         
+TemperatureMax: [35,55]   # 40  
+PlanetAxis: [15,35]                       
+HumidityMin: [0.10, 0.17]   #15                      
+HumidityMax: [0.30, 0.34]   #32                   
+Radiation: [0, 2]
+SeaLevel: [88, 105]                             
+TerrainLevel: [65, 75]                    
+LandWaterRatio: [0.75, 0.85]    # 0.78        # 0.3 = 30% Land, 70% Water. 0.9 = 90% Land, 10% Water
+TemperatureHeightRange: [50, 80]
+TemperatureGradientRange: [0.65, 0.05]
+TemperatureNoiseFac: 0.5
+HumidityHeightFac: [29, 20]
+HumidityNoiseFac: 0.6
+# ==============================================================
+
+# Terrain:                    
+  # - Name: [NewTemperate32x16]
+
+TerrainHeightMapMax: 400
+
+## Splatmaps:
+# Channel: 0 1 2 3
+# Splat 1: R G B A
+# Channel: 4 5 6 7
+# Splat 2: R G B A
+# Channel: 8 9 10 11
+# Splat 3: R G B A
+
+Biomes: 
+  - Name: Water
+    Texture: [0, 0, 0.25]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria: 
+    - Height < SeaLevel
+    Color: [0, 0, 1]
+    Decorations: 
+               # - [ CoralBig01, 0.05]
+               # - [ CoralBig08, 0.05]
+               # - [ FingerSponge03-01, 0.05]
+               # - [ CoralStone03-05, 0.05]
+               # - [ Hydrilla2, 0.012]
+               # - [ SeaWeed02-04, 0.012]
+               # - [ RealRock8Water, 0.08]
+               # - [ RealRock9Water, 0.08]
+               # - [ CrystalStraight, 0.08]
+               # - [ PromethiumStone, 0.03]
+    Grass: 
+               - Name: GrassGreen01
+                 Density: 0.1
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Snow
+    Texture: [5, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:   
+    - Temperature < 0
+    # - Humidity > 0.1 
+    Color: [1, 1, 1]
+    Decorations:  
+               - [ BlueSpruceWinter, 0.3]
+               - [ AlaskaCedarBare, 0.1]
+               - [ BushWinter01, 0.15]
+               - [ BushWinter02, 0.15]
+               - [ BushWinter03, 0.25]
+               - [ RealRock8Snow, 0.04]
+               - [ RealRock6Snow, 0.04]
+               - [ RealRock10Snow, 0.04]
+    Grass:
+               - Name: GrassGreen06Snow
+                 Density: 0.6
+                 Preset: GrassDense
+# ==============================================================
+  - Name: HighMountains
+    Texture: [8, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope
+    SelectionCriteria:  
+    - Height > 280
+    Color: [0.6, 0.6, 0.6]
+    Decorations:  
+               - [ BushWinter01, 0.1] 
+               - [ BushWinter02, 0.1] 
+               - [ BushWinter03, 0.1] 
+               - [ RealRock3, 0.01]
+               - [ RealRock4, 0.01]
+               - [ RealRock5, 0.01]
+               - [ RealRock8, 0.01]    # large rock
+               # - [ RealRock9, 0.01]    # large rock
+    Grass:
+               # - Name: GrassGreen06Snow
+                 # Density: 0.6
+                 # Preset: GrassDense
+# ==============================================================
+  - Name: Mountains
+    Texture: [9, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria: 
+    - Height > 250
+    Color: [0.4, 0.4, 0.4]
+    Decorations:  
+               - [ BushWinter01, 0.1] 
+               - [ BushWinter02, 0.1] 
+               - [ BushWinter03, 0.1] 
+               - [ RealRock3, 0.01]
+               - [ RealRock4, 0.01]
+               - [ RealRock5, 0.01]
+               - [ RealRock8, 0.01]    # large rock
+               # - [ RealRock9, 0.01]    # large rock
+    Grass:
+               # - Name: GrassGreen06Snow
+                 # Density: 0.6
+                 # Preset: GrassDense
+# ==============================================================
+  - Name: WaterSwamp
+    Texture: [11, 11, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    - Height < SeaLevel + 1
+    - Humidity > 0.3
+    - Temperature > 10
+    Color: [0, 0.8, 0]    
+    Decorations:
+               - [ OmicronPlant, 0.9] 
+               - [ AkuaFern, 0.1]
+               - [ PixieStalks, 0.4]  
+    Grass:
+               - Name: Plant01
+                 Density: 0.4
+# ==============================================================
+  - Name: Swamp
+    Texture: [1, 1, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    - Height < SeaLevel + 20
+    - Humidity > 0.3
+    - Temperature > 10
+    Color: [0, 0.2, 0]    
+    Decorations:
+               - [ AkuaBush1, 0.2]
+               - [ AkuaBushGreen, 0.1] 
+               - [ AkuaPlant2, 0.07] 
+               - [ PixieStalks, 0.2]  
+               - [ OmicronPlant, 0.05] 
+               - [ ElderberryBush, 0.03]
+               - [ CobraLeavesPlant, 0.6] 
+               - [ AkuaFern, 0.3] 
+               - [ CattailWinter, 0.2]  
+               - [ SkeletonMammothTorso, 0.02]   
+               - [ DeadTree01, 0.02]
+               - [ DeadTree02b, 0.02]
+               - [ AridRock01, 0.002]
+               - [ AridRock02, 0.002]
+               - [ AridRock03, 0.002]
+               - [ RockGrey01Large, 0.1]
+               - [ RockGrey02Large, 0.1]
+               - [ RealRock1Dark, 0.02]  
+               - [ RealRock4Dark, 0.02]  
+               - [ RealRock3Dark, 0.02]    # medium rock
+               - [ RealRock8Dark, 0.02]    # large rock
+    Grass:
+               - Name: GrassGreen01a
+                 Density: 0.95
+                 Preset: GrassDense
+               - Name: Plant01
+                 Density: 0.07
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Beach
+    Texture: [10, 7, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    - Height < SeaLevel + 5
+    - Temperature > 0
+    Color: [0.9, 0.9, 0]  
+    Decorations:
+               - [ RockGrey01Large, 0.01]
+               - [ RockGrey02Large, 0.01]
+    Grass: 
+               - Name: Plant01
+                 Density: 0
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Savanna
+    Texture: [7, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 250
+    - Humidity < 0.24
+    - Temperature > 15
+    Color: [0.65, 0.58, 0.05]  
+    Decorations:  
+               - [ OmicronPalmGreen, 0.3] 
+               - [ BushGreen01, 0.1]
+               - [ BushGreen02, 0.1]   
+               - [ ElderberryBushOrange, 0.03]
+               - [ Cactus1, 0.02] 
+               - [ OpuntiaCactus, 0.2]     
+               - [ CoralStone04-03, 0.3]    
+               - [ DesertPlant20, 0.2]            
+               - [ EggPlant, 0.3]    
+               - [ Snakeweed, 0.2]
+               - [ DesertRock1, 0.02]    
+               - [ DesertRock2, 0.02]     
+               - [ Boulder1, 0.01]
+               - [ Boulder2, 0.01]
+               - [ Boulder3, 0.01]
+               - [ Boulder4, 0.015]
+               - [ Boulder5, 0.015]  
+    Grass:
+               - Name: GrassBrown06
+                 Density: 0.9
+                 Preset: GrassDense
+               - Name: Plant01Brown
+                 Density: 0.05
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Tundra
+    Texture: [4, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 250
+    - Humidity < 0.24 
+    - Temperature > 0
+    Color: [0.4, 0.4, 0.015]  
+    Decorations:  
+               - [ BushGreen01, 0.1]
+               - [ BushGreen02, 0.1]  
+               - [ Cactus1, 0.02] 
+               - [ OpuntiaCactus, 0.2]     
+               - [ CoralStone04-03, 0.1] 
+               - [ DesertPlant20, 0.2]
+               - [ DesertRock1, 0.02]    
+               - [ DesertRock2, 0.02]  
+               - [ RockGrey01Large, 0.3]
+               - [ RockGrey02Large, 0.3]   
+    Grass:
+               - Name: GrassBrown06
+                 Density: 0.9
+                 Preset: GrassDense
+               - Name: Plant01Brown
+                 Density: 0.05
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Forest
+    Texture: [2, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 250
+    - Humidity > 0.25
+    - Temperature > 15
+    Color: [0, 0.4, 0]
+    Decorations:
+               - [ WhiteOak, 1]
+               - [ RiverBirch, 0.6]
+               - [ ElderberryBush, 0.2]
+               - [ AlienPlantWorm1, 0.05]
+               - [ CobraLeavesPlant, 0.05]
+               - [ MushroomBellBrown01, 0.05]
+               - [ CattailWinter, 0.05]
+               - [ PixieStalks, 0.05]
+               - [ InsanityPepper, 0.05]
+               - [ AkuaBushGreen, 05]
+               - [ AlienPlant07, 0.05]
+               - [ AlienPlant14, 0.05]
+               - [ DeadTree01, 0.05]
+               - [ DeadTree02b, 0.05]
+               - [ RealRock2, 0.05]
+               - [ RealRock1, 0.05]
+               - [ DimpleDome, 0.05]
+               - [ AlienPlant11, 0.05]
+               - [ SkeletonWhaleFull, 0.05]
+               - [ BigFlower, 0.05]
+    Grass:
+               - Name: GrassGreen03 
+                 Density: 0.9
+                 Preset: GrassDense
+               - Name: Plant01
+                 Density: 0.05
+                 Preset: GrassDense
+# ==============================================================
+# CATCH ALL
+# ==============================================================
+  - Name: Grassland
+    Texture: [6, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    Color: [0, 0.6, 0]
+    Decorations:  
+               - [ BushGreen01, 0.3]
+               - [ BushGreen02, 0.3]
+               - [ ElderberryBush, 0.15]
+               - [ AmericanElm, 0.05]
+               - [ CornDogBush, 0.25]
+               - [ Snakeweed, 0.5]
+               - [ DesertPlant20, 0.25]
+               - [ CattailWinter, 0.5]
+               - [ RealRock10, 0.01]
+               - [ RealRock1, 0.01]    
+               - [ RealRock3, 0.01]    # medium rock
+               - [ RealRock4, 0.01]
+               - [ RealRock8, 0.005]    # large rock
+               - [ BulbShroom, 0.15]
+    Grass:
+               - Name: GrassGreen04
+                 Density: 3
+                 Preset: GrassDense
+               - Name: Flower04
+                 Density: 0.02
+                 Preset: GrassDense

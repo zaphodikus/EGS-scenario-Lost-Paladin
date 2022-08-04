@@ -1,0 +1,1026 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+
+
+Description: "[c][e0e020]Note:[-][/c]   [c]Deadly temperature differences![-][/c]
+\n[c]Lots of resources, but [i][u]very[/u][/i] difficult to mine[-][/c]
+\n[i][c][808080][i][b]Please use caution and prepare.[/b] 
+\nYou likely will need specialized equipment and vessels to thrive here![/i][-][/c]
+\n
+\nThis barren, rocky planet, keeps nearest to its star... - Which is a bit too close for comfort.
+\n
+\nIts day side is heated near to the melting point, while the night side radiates into the vacuum of space.
+\nThis constant temperature stress leaves deep scars in the surface, and fuels the growth of exotic crystals.
+\n
+\nDuring youth, this world even had part of its crust boiled away - Placing the heavy mantle deposits in scanner range - 
+\n... But you will need all your calm, skill and experience to collect them. - Lest it becomes a greedy miner's grave: Slowly being cooked in your own, stuck vessel!
+\n
+\n
+\nThis galaxy is huge. - - There are plenty of easier worlds to exploit, or home shores to settle.
+\n
+\nPeople still attracted to such murderous places could be of the unstable, dangerous kind:
+\n[i]The foolish, the violent, the crazy, the lawless...[/i]
+\n
+\nDucking away, underground or in the shadows- Escaping the glare of the day... while their bases crumble and groan by the stretching of metal."
+ 
+
+
+
+PlanetType: BarrenScorched
+PlayfieldType: Planet
+Difficulty: 2
+
+LandClaimZone: Device
+
+
+# Atmosphere and Sky
+AtmosphereEnabled: False
+
+# Light
+OrbitUsesLightColor: True         # Will make the orbit ultra-bright. This is a near-sun planet
+LightZenithColor: "2, 1.9, 1.8"   # Doesn't have any effect on this playfield (since no atmo), but will make the orbit playfield as bright as the playfield dayside.
+
+
+DayLightIntensity: 3.95
+NightLightIntensity: 0.7
+
+
+# LightHorizonColor: "1, 0.5, 0"
+NightLightColor: "0.5, 0.7, 0.9"  # ('No effect', but needed, since else the night colour of other playfield might get transferred here!)
+
+
+DayShadowStrength: 0.95
+DayShadowStrength: 0.2
+
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhiteMoon
+
+
+SpecialEffectsLocal:
+
+  - Name: EnvironmentalEffects/Sparks              # (The ground boils away...)
+    Biome: [ LavaField, LavaFieldUpper, Regolith, RegolithEdge, LowMountains, LowMountains_1, Mountains, Crater, LargeCrater, RayCrater, ColdPlains ]
+    Time: Day
+    MaxHeight: 10
+
+SpecialEffectsGlobal:
+
+
+# Global Effect
+  - Name: MeteorShower
+    Biome: [ Any ]
+    Time: Always
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 100
+    PlyDist: 200
+    SpawnY: 100
+    Struct: Avoid
+
+# ==============================================================
+
+### Resource Deposits ==========================================
+
+# Primary role of this planet is 'HV/SV mining challenge' and to refill your Pentaxid
+#     Will end up in some 'Lava' planet slots, so it has these resources, too
+#     Less for late-tier materials than Lava, but has medium sized gold amount. => CPU Extender
+# Very risky to mine without a vessel (or needs _lots and lots_ of water bottles!)
+
+RandomResources:
+
+# ! RESOURCE DEPTHS AND TYPES ARE FITTED TO THE UNDERGROUND LAYERS !  - See playfield_dynamic.yaml
+# Plz do not change without adjusting those!
+# Especially for the SSOR deposits- Ideally, those should not overlap with a 'barrier' underground layer.
+
+#T0:
+#Carbon: poor / low
+    - Name: CarbonResource
+      IsScalingCount: True 
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 2, 6 ]        
+      DepthMinMax: [ 16, 35 ]
+      DroneProb: 0.3
+      MaxDroneCount: 1 
+#T1
+      # === Resources in reach of player drone ===
+
+    - Name: IronResource
+      IsScalingCount: True
+      Biome: [ Mountains, LowMountains, LowMountains_1, RegolithEdge, Regolith, LavaFieldUpper, LavaField, Crater, LargeCrater, RayCrater ]
+      CountMinMax: [ 2, 4 ]
+      SizeMinMax: [ 3, 10 ]       # High variability. Players need to actually _read_ the deposit marker info ;)
+      DepthMinMax: [ 16, 35 ]
+      DroneProb: 0.3
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 15
+        YVariance: 6
+
+
+    - Name: IceResource                                  # ==================================== TURN BACK ON AFTER SSG
+      Biome: [ ColdPlains ]
+      IsScalingCount: True
+      CountMinMax: [ 3, 4 ]
+      SizeMinMax: [ 1, 2 ]  # 2,20 ore. Water canister needs 5 ore.
+      DepthMinMax: [ 6, 15 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DistTypeCylinder:    # SSOR deposit, will be placed as subsurface ore rock. Needs ore scanner to see.
+        MaxRadius: 5       # Distribution prepares for ore scanner. This is very close to the spot.
+        YVariance: 3       #
+
+
+    - Name: CopperResource              # (For this planet) rich copper cluster. Will spawn next to cluster 'POI'
+      Biome: [ Mountains, LowMountains, LowMountains_1, Crater, LargeCrater, RayCrater ]
+      IsScalingCount: True
+      CountMinMax: [ 2, 2 ]
+      SizeMinMax: [ 5, 7 ]
+      DepthMinMax: [ 25, 45 ]
+      DroneProb: 0.0
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 10
+        YVariance: 10
+
+
+    - Name: CopperResource             # Low yield deposits. 
+      Biome: [ Mountains, LowMountains, LowMountains_1, Crater, LargeCrater, RayCrater ]
+      IsScalingCount: True
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 25, 45 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 5
+        YVariance: 10
+
+    - Name: TitanResource
+      Biome: [ SmallCrater, Crater, RayCrater, LargeCrater ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 15, 60 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 8
+        YVariance: 4
+
+
+
+      # === Resources barely out of reach of player drone ===
+
+    - Name: PromethiumResource
+      IsScalingCount: True
+      Biome: [ LavaFieldUpper, LavaField, SmallCrater, Crater, RayCrater, LargeCrater ]
+      CountMinMax: [ 2, 4 ]  # 20 -160 Ore 
+      SizeMinMax: [ 3, 6 ]
+      DepthMinMax: [ 50, 60]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 4
+        YVariance: 10
+
+
+    - Name: GoldResource
+      Biome: [ Mountains, LowMountains, LowMountains_1, Regolith, RegolithEdge, LavaFieldUpper, RayCrater]
+      IsScalingCount: True
+      CountMinMax: [ 5, 10 ]   # (More individual deposits, but in total _much less_ yield than on a Lava planet)
+      SizeMinMax: [ 2, 3 ]     # (Ca 14, 45 ore.    Total planet yield: SizeClass 2: 70-450 ore, SizeClass 3: 140-900 ore. - - Compare to Lava planet, SizeClass 3: (EGS 1.3) : Ca 1130 – ca 13000 ore, Gold Asteroid ca 3000 ore.)
+      DepthMinMax: [ 53, 65]   # (Just barely in reach of drone)
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 3   # Single pebble, rather close to the marker. Hard to reach, since behind 'bedrock' 1m layers.
+        YVariance: 2
+
+
+    - Name: PentaxidResource
+      IsScalingCount: True
+      Biome: [ LavaFieldUpper, Regolith, RegolithEdge, Crater ]
+      CountMinMax: [ 5, 6 ]   #
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 40, 60 ]
+      DroneProb: 0.6
+      MaxDroneCount: 2
+      DistTypeCylinder:
+        MaxRadius: 3   # Single pebble, rather close to the marker. May be hard to reach. Mostly intended for automining.
+        YVariance: 2
+
+
+
+      # ===== Resources in need of HV miner or Autominer ======
+
+    - Name: SathiumResource    # 'Difficult' resource. Behind several 'bedrock' layers.
+      Biome: [ LowMountains, LowMountains_1, Mountains, RegolithEdge ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 2 ]    # Less than lava
+      SizeMinMax: [ 6, 7 ]     # Smaller than lava
+      DepthMinMax: [ 60, 100 ] # Extremely deep. Needs excavation gear, out of range of suit drone. 
+      DroneProb: 1  
+      MaxDroneCount: 4 
+
+
+    - Name: ErestrumResource   # 'Difficult' resource.  Behind several 'bedrock' layers.
+      Biome: [ LowMountains, LowMountains_1, Mountains, RegolithEdge ]
+      IsScalingCount: True
+      CountMinMax: [ 1, 2 ]    # Less than lava
+      SizeMinMax: [ 6, 7 ]     # Smaller than lava
+      DepthMinMax: [ 60, 100 ] # Extremely deep. Needs excavation vessels. 
+      DroneProb: 1  
+      MaxDroneCount: 4 
+
+
+    - Name: ZascosiumResource  # Very 'difficult' resource- _Extremely_ hard to mine due to 2m 'barrier' bedrock layer &  SubSurfaceOreRock / SSOR
+      Biome: [ LowMountains, LowMountains_1, Mountains ]
+      IsScalingCount: True 
+      CountMinMax: [ 0, 1 ]    # Less than lava. Might not always spawn.
+      SizeMinMax: [ 4, 5 ]     # 160 - 314 ore. Total planet yield SizeClass 3: 0-628 ore; vs. Lava planet (SizeClass 3, EGS 1.3) 1256-3252 ore)
+      DepthMinMax: [ 94, 107 ] # Extremely deep.  Needs heavy excavation vessels, ideally with drill turret, or an autominer.
+      DroneProb: 1.0
+      MaxDroneCount: 4
+      DistTypeCylinder:
+        MaxRadius: 15
+        YVariance: 3    # Keep low, it's the minimum distance to a barrier underground layer!
+
+
+
+
+
+
+
+
+### Resource Asteroids
+AsteroidResources:
+
+
+     # === 'Refill' asteroids ======
+     - Name: IronResource
+       Threshold: 0.1
+       Amount: 0.1
+     - Name: CopperResource
+       Threshold: 0.1
+       Amount: 0.1
+
+     - Name: SathiumResource
+       Threshold: 0.1
+       Amount: 0.1
+     - Name: ErestrumResource       # Once the Erestrum is all mined, you get these nice asteroids, easy to reach.
+       Threshold: 0.1
+       Amount: 0.1
+
+     - Name: PromethiumResource
+       Threshold: 0.1
+       Amount: 0.1
+     - Name: PentaxidResource
+       Threshold: 0.1
+       Amount: 0.1
+
+      # (Zascosium won't get 'refilled', to keep the difficulty.)
+
+
+     # === Always occuring asteroids ====
+
+     - Name: IceResource        # INDEPENDENT of the remaining amount and threshold of ore on a planet!
+       Amount: 300              # Minimum is 3000 ore. (Here's hoping that this will get some time a lower amount.)
+       InitialDelay: 0           # delay in game hours
+       Delay: 24                 # Subsequent delay in game hours
+       DespawnDelay: 24          # Game hours after which asteroid will be removed
+
+     - Name: IceResource
+       Amount: 300
+       InitialDelay: 12
+       Delay: 20
+       DespawnDelay: 20
+
+
+
+### POIs
+POIs:
+    Random:
+
+
+         # ============== PREPARING RESOURCES ===============
+
+         # Resource clusters = Large deposits nearby, so that players might be tempted to dig horizontally. 
+         # These clusters might not spawn on every planet, to keep diversity. (If so, the resources will be spread more evenly.)
+
+
+        - GroupName: ResourceMarker01
+          Biome: [ Mountains, LowMountains, LowMountains_1 ]
+          CountMinMax: [ 0, 1 ]
+          IsImportant: True
+          SpawnPOIAvoid: [ResourceMarker01]
+          SpawnPOIAvoidDistance: 6000    # May be larger than a class 2 planet
+          SpawnResource: ["CopperResource:1-3","GoldResource:0-2","PentaxidResource:0-1"]    # Will use up all of the bigger copper deposits, so that the other deposits also spawn
+          SpawnResourceRange: [100,350]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+        - GroupName: ResourceMarker01
+          Biome: [ Mountains, LowMountains, LowMountains_1 ]
+          CountMinMax: [ 0, 1 ]
+          IsImportant: True
+          SpawnPOIAvoid: [ResourceMarker01]
+          SpawnPOIAvoidDistance: 6000    # May be larger than a class 2 planet
+          SpawnResource: ["CopperResource:1-3","GoldResource:0-2","PentaxidResource:0-1"]    # Will use up all of the bigger copper deposits, so that the other deposits also spawn
+          SpawnResourceRange: [100,350]
+          DroneProb: 0.5
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+
+        - GroupName: ResourceMarker02
+          Biome: [ Mountains, LowMountains, LowMountains_1, RegolithEdge, Regolith, LavaFieldUpper, Crater, LargeCrater, RayCrater ]
+          CountMinMax: [ 0, 1 ]
+          IsScalingCount: True
+          IsImportant: True
+          SpawnResource: ["IronResource:1-3","GoldResource:0-2","TitanResource:0-1","PentaxidResource:0-1","PromethiumResource:1-1"]
+          SpawnResourceRange: [100,350]
+          Properties:
+            - Key: MapMarker 
+              Value: Neutral
+            - Key: MapDistance
+              Value: 0
+            - Key: HudDistance
+              Value: 0
+
+
+
+         # =============== FACTION Cluster POI Anchors & Command Centers ==================
+
+
+         # ======= RUINS =========
+
+        - GroupName: HiddenMonument-60m  # POI Anchor for Circle path monuments. Will not spawn all the time. Hard to locate, but possible with custom HUD MapMarkers.
+          Faction: Alien
+          IsImportant: True
+          Territory: False
+          Biome: [ LowMountains_1 ]   # Will keep this close to the equator.
+          CountMinMax: [ 0, 1 ]       # 50% chance that it won't show up
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 140
+            - Key: HudDistance
+              Value: 140
+            - Key: RegenAfter
+              Value: 720
+
+
+          # ======= ZIRAX =======
+          #  CommandCenter  
+        - GroupName: DroneBaseT1    # POI anchor for Crashed Talos cluster! Only when this spawns, the cluster (might) spawn, too!
+          Faction: Zirax
+          IsImportant: True
+          IsCommandCenter: True
+          Biome: [ Mountains, LowMountains, LowMountains_1]
+          CountMinMax: [ 0, 1 ] # 50% Chance that it will not show up = No drones on planet. Happy mining!
+          NoShieldReload: True
+          DroneBaseSetup: DroneBaseSetup
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ] 
+          ReserveCount: 5
+          SpawnPOIAvoid: [HiddenMonument-60m]
+          SpawnPOIAvoidDistance: 1200    # Distance, so that the Monument circle can spawn undisturbed
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+          # ======= POLARIS =======
+          #  CommandCenter  
+
+        # (This _could_ become a command center in the future...)
+
+          # (Cluster POI of PolarisTradingPlanet)
+        - GroupName: PolarisMiningMain            # Secondary POI anchor
+          IsImportant: True
+          Faction: Polaris
+          Biome: [ Crater ]
+          IsCommandCenter: True
+          NoShieldReload: True
+          CountMinMax: [ 0, 1 ] # 50% Chance that it will not show up. Even with hazard pay and pressure, this place is just not good for people.
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ] 
+          Properties:  
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+          # ======= COLONISTS =======    # primarily for outside the territories
+
+        - GroupName: TS_Metal_Waypoint     # POI anchor for civilan spawns, resource surveyor POI
+          IsImportant: True
+          Faction: Colonists
+          NoShieldReload: True
+          CountMinMax: [ 0, 1 ]          # May not always spawn. This is a very hostile and small planet.
+          Properties:
+            - Key: Music
+              Value: Desert  
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+
+
+          # == Cluster POI ======================================
+
+
+
+
+          # ======== ZIRAX cluster POI
+          # (POI anchor is DroneBaseT1)  - Will not spawn if there is no dronebase! Happy mining!
+
+        - GroupName: RadosAuxT2
+          Faction: Rados
+          CountMinMax: [ 0, 3 ]
+          Biome: [Mountains, LowMountains, LowMountains_1, RegolithUpper, Regolith]     # Might be closer to the good resources...
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: True
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [1000, 9000]   # Will _only_ spawn if DroneBaseT1 is there, too.
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RadosDefenseT1
+          Faction: Rados
+          CountMinMax: [ 0, 3 ]
+          Biome: [Mountains, LowMountains, LowMountains_1, RegolithUpper, Regolith]   
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: True
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [100, 200] 
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: OreMinerAutoT1
+          Faction: Rados
+          CountMinMax: [ 0, 2 ]
+          Biome: [Mountains, LowMountains, LowMountains_1, RegolithUpper, Regolith]     # Might be closer to the good resources...
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: True
+          SpawnPOINear: [RadosAuxT2]
+          SpawnPOINearRange: [300, 600]   # Will _only_ spawn if DroneBaseT1 is there, too.
+          SpawnResource: ["PromethiumResource:0-1","PentaxidResource:1-1"]
+          SpawnResourceRange: [50,150]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+
+
+          # ======== COLONIST cluster POI
+
+
+        - GroupName: OreMinerT1Float       # A survey drone. Will claim territory, but only spawn if the civil settlement got spawned.
+          Faction: Colonists
+          Biome: [ Mountains, LowMountains, LowMountains_1, Regolith, RegolithEdge, LavaFieldUpper, RayCrater]
+          CountMinMax: [ 1, 3 ]
+          SpawnPOINear: [TS_Metal_Waypoint]
+          SpawnPOINearRange: [800, 2000]
+          SpawnResource: ["IronResource:1-1","GoldResource:1-1"]
+          SpawnResourceRange: [80,400]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+  
+        - GroupName: CivilSettlement
+          Territory: False
+          Faction: Colonists
+          NoShieldReload: True
+          CountMinMax: [ 0, 1 ]                # May not always spawn.
+          SpawnPOINear: [TS_Metal_Waypoint]
+          SpawnPOINearRange: [100, 200]        # Will _only_ checked for spawn if TS_Metal_Waypoint is there, too!
+          SpawnResource: ["GoldResource:0-2"]
+          SpawnResourceRange: [0,50]
+          Properties:
+            - Key: RegenAfter
+              Value: 720 
+
+        - GroupName: JunkT1    # Next to settlement, lots of junk
+          Faction: None
+          CountMinMax: [ 4, 7 ]
+          UseEachGroupPoiOnlyOnce: True  
+          SpawnPOINear: [TS_Metal_Waypoint]
+          SpawnPOINearRange: [100, 300]  
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 400
+            - Key: HudDistance
+              Value: 200
+              
+            - Key: RegenAfter
+              Value: 720
+
+
+          # ======== POLARIS cluster POI
+
+        - GroupName: OreMinerT1
+          Faction: Polaris
+          CountMinMax: [ 1, 1 ]
+          # DroneProb: 1
+          # DronesMinMax: [ 2, 2 ]
+          # ReserveCount: 4
+          TroopTransport: False
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [150, 300]
+          SpawnResource: [ "PentaxidResource:0-1", "TitanResource:1-1"]
+          SpawnResourceRange: [50,100]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: OreMinerT2
+          Faction: Polaris
+          CountMinMax: [ 0, 1 ]
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [150, 300]
+          SpawnResource: ["GoldResource:0-1", "TitanResource:1-1"]
+          SpawnResourceRange: [50,100]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: DepositMarker            # Polaris Resource anchor. Is a POI.
+          Faction: Polaris
+          CountMinMax: [ 0, 1 ]               # Will not always spawn (=they won't always have claimed these resources)
+
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [150, 300]
+          SpawnResource: ["CopperResource:0-1", "IronResource:1-1"]
+          SpawnResourceRange: [50,100]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: PolarisDefence
+          Faction: Polaris
+          CountMinMax: [ 1, 2 ]
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [150, 300]
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+
+
+        - GroupName: Ruins
+          Faction: None
+          CountMinMax: [ 1, 2 ]
+          BiomesExcluded: [ ColdPlains ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOINear: [PolarisMiningMain]
+          SpawnPOINearRange: [300, 450]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+
+        # ======== PIRATES
+
+        - GroupName: PiratesAmbush            # (Rather dangerous here. If you are shot down, you likely will get a heat stroke.)
+          Faction: Pirates
+          Territory: False
+          NoShieldReload: True
+          CountMinMax: [ 0, 2 ]                # May not always spawn.
+          Properties:
+            - Key: MapMarker
+              Value: Neutral                   # Pirates trying to look 'harmless'
+            - Key: RegenAfter
+              Value: 720 
+
+
+
+
+         # == Ruined POI =======================================
+
+         # ==  Hidden Monument circle
+
+
+        - GroupName: PathMonument  # Will only spawn, if the Hidden Monument has spawned first.
+          Faction: None
+          IsImportant: True
+          CountMinMax: [ 11, 11 ]
+          SpawnPOIAvoid: [PathMonument, HiddenMonument-60m]
+          SpawnPOIAvoidDistance: 700
+          SpawnPOINear: [HiddenMonument-60m]
+          SpawnPOINearRange: [1600, 1600]   # Will make circle of about 3000m diameter. Check map to find the center, and use custom HUD waypoints.
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance     # Low detection range, to give players clue about the (even more hidden) central monument
+              Value: 500
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+
+         # == Junk POI =======================================
+
+         # Failed daredevil settling attempts
+        
+        - GroupName: Wreckage       # 50% chance to spawn.
+          Faction: None
+          BiomesExcluded: [ ColdPlains ]
+          CountMinMax: [ 0, 1 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Junksite
+          Faction: None
+          CountMinMax: [ 0, 2 ]
+          SpawnPOINear: [Wreckage]
+          SpawnPOINearRange: [150, 300]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 400
+            - Key: HudDistance
+              Value: 200
+            - Key: RegenAfter
+              Value: 720
+
+
+
+        - GroupName: Ruins
+          Faction: None
+          CountMinMax: [ 0, 1 ]
+          IsScalingCount: True
+          DroneProb: 0.5
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [DroneBaseT1, PolarisMiningMain, TS_Metal_Waypoint, Ruins]
+          SpawnPOIAvoidDistance: 1500
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+        - GroupName: JunkCoopStart    # - 50% chance to spawn.
+          Faction: None
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 0
+          TroopTransport: False
+          SpawnPOIAvoid: [Wreckage, ]
+          SpawnPOIAvoidDistance: 3000
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Junksite
+          Faction: None
+          CountMinMax: [ 2, 4 ]
+          SpawnPOINear: [JunkCoopStart]    # Will fail if JunkCoopStart doesn't spawn
+          SpawnPOINearRange: [150, 300]
+          UseEachGroupPoiOnlyOnce: True    # This will force placement of different blueprints instead of copies.
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 400
+            - Key: HudDistance
+              Value: 200
+            - Key: RegenAfter
+              Value: 720
+
+
+
+          # Random distributed
+        - GroupName: Junksite
+          IsScalingCount: True   # Is scaling
+          UseEachGroupPoiOnlyOnce: True
+          BiomesExcluded: [ ColdPlains ]
+          Faction: None
+          CountMinMax: [ 0, 1 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: Junksite    # Not scaling 
+          Faction: None
+          BiomesExcluded: [ ColdPlains ]
+          CountMinMax: [ 0, 1 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+         # == Ship Wreckages =======================================
+
+        - GroupName: CrashedShip
+          Faction: None
+          BiomesExcluded: [ ColdPlains ]
+          CountMinMax: [ 0, 2 ]
+          IsScalingCount: True
+          UseEachGroupPoiOnlyOnce: True   # This will force to place different blueprints instead of copies.
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+
+          # Rare human Crashed Talos (old story POI), a casualty of the war
+          # (Cluster POI of DroneBaseT1)
+          # If in Zirax are there, _and_ no smaller wreckage ships exist, then there is a chance for this triple POI instead.
+
+        - GroupName: CrashedTalosBack    # POI Anchor for other ship parts. 
+          IsImportant: True
+          Faction: None
+          Biome: [ Regolith, LavaFieldUpper]
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 1
+          TroopTransport: True
+          SpawnPOIAvoid: [CrashedShip]
+          SpawnPOIAvoidDistance: 40000    # Much larger than the planet! = Will _not_ spawn if other crashed ships are there!
+          SpawnPOINear: [DroneBaseT1]
+          SpawnPOINearRange: [1500, 2000]   # Will _only_ spawn if DroneBaseT1 is there, too.
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedTalosMid
+          IsImportant: True
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: True
+          SpawnPOINear: [CrashedTalosBack]
+          SpawnPOINearRange: [800, 2000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedTalosFront
+          IsImportant: True
+          Faction: None
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: True
+          SpawnPOINear: [CrashedTalosBack]
+          SpawnPOINearRange: [800, 2000]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+
+          # Rare lucky find, hard to detect; players have to watch out. - - 50% chance to spawn, and then might fail due to the small spawning biome.
+        - GroupName: JunkT3_Engine
+          Biome: [ Rifts]
+          IsImportant: True
+          Faction: None
+          CountMinMax: [ 0, 1 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: MapDistance
+              Value: 500
+            - Key: HudDistance
+              Value: 500
+            - Key: RegenAfter
+              Value: 720
+
+          # Hostile planet, here people might not have raided such POI yet (too hot!)
+        - GroupName: Artifacts
+          Faction: TheLegacy
+          Territory: False
+          AvoidFactionTerritory: True
+          BiomesExcluded: [ ColdPlains ]
+          CountMinMax: [ 0, 1 ]
+          Properties: 
+            - Key: Music
+              Value: EvilWhispering
+            - Key: RegenAfter
+              Value: 720
+
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun              # Most of them are machines, it's too hostile out there.
+                Amount: 100
+                Extra: 3
+
+              - Name: TurretRobotV2
+                Amount: 500
+                Extra: 3
+                
+              - Name: Mechanoid
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocketPatrol
+                Amount: 100
+                Extra: 3
+                
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 3, 5 ]
+          CenterX: -5000
+          Radius: 3000
+    
+        - DronesMinMax: [ 3, 5 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 3, 5 ]
+          CenterX: 0
+          Radius: 2000
+
+        - DronesMinMax: [ 3, 5 ]
+          CenterX: 2500
+          Radius: 1500
+          
+        - DronesMinMax: [ 3, 5 ]
+          CenterX: 5000
+          Radius: 3000
+
+
+SpawnRateZones:
+#(No creatures! This is a hellscape!)
+
+SpawnZones:  
+
+     # ====================
+     # Comment in for testing
+     # (To easily find story POI in the SSG  - - has no other function)
+     # ====================
+   - SpawnAt: [DroneBaseT1, HiddenMonument-60m] 
+     Radius: 500
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinReds]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [DroneBaseT1, TS_Metal_Waypoint, CrashedTalosBack, CrashedTalosFront, CrashedTalosMid] 
+     Radius: 450
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinReds]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [TS_Metal_Waypoint, CrashedShip] 
+     Radius: 400
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinReds]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+   - SpawnAt: [DroneBaseT1, TS_Metal_Waypoint, JunkT3_Engine, CrashedTalosBack, CrashedTalosBack, CrashedTaloMid, CrashedShip, HiddenMonument-60m] 
+     Radius: 350
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "1.0, 1, 0.3, 1.0"
+     Entities:
+       - Names: [AlienAssassinReds]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]
+         
+   - SpawnAt: [HiddenMonument-60m, OreMinerT1Float] 
+     Radius: 1800
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 0.6
+     Color: "0.7, 0.7, 0.7, 1.0"
+     Entities:
+       - Names: [AlienAssassinReds]
+         Amount: 0
+         Period: Always
+         DelayMinMax: [15, 25]  
+     # ====================
+     # ====================
+
+
+CreatureSpawning:
+# (No creatures!)
+

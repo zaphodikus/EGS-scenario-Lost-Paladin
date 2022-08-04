@@ -1,0 +1,3 @@
+This is where you place any .epb blueprint files that are used as POIs or patrol vessels in your scenario.
+Note: only place the .epb file itself, do not place any images or folders in here.
+The game will pull prefabs both from the scenario and the default location if used in a scenario.

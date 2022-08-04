@@ -1,0 +1,203 @@
+---
+GenerationParams:
+  MapScale: 1.0          # how much the sectors are spread out  
+  # float [0..1] solar systems are more like a cookie than a ball. the lower the value, the flatter the system
+  SolarSystemSqueezeMinMax: [0.005, 0.010] 
+  # float [0..1] probability a warp connection will be one-way
+  OneWayWarpProb: 0
+  UniqueStarterPlanet: true
+
+
+# ========= NOTE: This SolarSystemConfig contains all planet entries, but uses not all of them! ========
+
+# GENERAL DESCRIPTION (G-type system)
+#
+# (List the solar system's speciality here. E.g.:  Higher chances of living worlds, some alien...)
+# This Solar System has NO worlds of the Legacy faction defined! (AlienLegacy)
+
+
+
+  # =======================================================================================================================
+
+  PlanetCountProbs:  # Defines the min-max amount of planets. (Amount : Chance) - Each Amount can have an individual probability. Combinations of amounts with and without probabilies is possible. If no individual probability is set, the 'amount number' will get an average of the remaining probability. Example [0:0.1,3]  > 0 has probability 10%. 1,2 and 3 share the other 90% = 1 has 30%, 2 has 30%, 3 has 30%
+                     # ! Number of entries in 'PlanetCountProbs' and 'PlanetLists' have to be exactly the same !
+
+  # PLANET AMOUNTS                                        # List item
+
+
+         # Gas giants - Inner system
+         # Gas giants - Middle system
+     - '0 : 0.1,   1 : 0.5,  2 : 0.3,  3 : 0.1'           # 1   Gas giants
+         # Gas giants - Outer system
+
+            # Molten planets              
+     - '0 : 0.65,   1 : 0.3,  2 : 0.05'                   # 2   Lava & molten planets                      (e.g. primordial Earth)
+
+     # Standard system
+            # Inner system (close to star)
+     - '0 : 0.4,   1 : 0.5,  2 : 0.1'                     # 3   Scorched planets                           (e.g. Mercury)
+                                                          # 4   Hothouses                                  (e.g. Venus)
+            # Habitable zone; possibly life-bearing
+     - '0 : 0.5,   1 : 0.4,  2 : 0.1'                     # 5   Water hot                                  (e.g. Desert planets)
+     - '0 : 0.7,   1 : 0.2,  2 : 0.1'                     # 6   Water temperate                            (e.g. Ocean worlds, Earth stlye)
+     - '0 : 0.6,   1 : 0.4'                               # 7   Water cold                                 (e.g. Snow worlds)
+            # Outer system (cold & dark)
+     - '0 : 0.1,   1 : 0.6,  2 : 0.3'                     # 8   Ice & methane                              (e.g. Saturn moons)
+                                                          # 9   Frozen nitrogen                            (e.g. Uranus moons; Pluto)
+    # Specials 
+     - '0 : 0.8,   1 : 0.2'                               # 10  Alien & exotic planets                     (e.g. The Legacy or bombed planets)
+    # (Always spawning: Starters)                         # X   Starter planets                            (e.g. TemperateStarter)
+
+
+
+
+  PlanetLists:      # Rough categories for planets; defining spawn chances for the PlanetTypes.
+
+  # PLANET CHANCES                                        # List item
+
+         # Gas giants - Inner system
+         # Gas giants - Middle system
+    - 'Jupiter:0.45, Saturn: 0.35, Neptun:0.2'            # 1   Gas giants
+         # Gas giants - Outer system
+
+            # Very hot planets
+    - 'Lava:0.4, LavaNascent:0.6'                         # 2   Lava & molten planets                      (e.g. primordial Earth, collided planet)
+
+     # Standard system  
+            # Inner system (close to star)
+    - 'Scorched:0.5'                                      # 3   Scorched planets                           (e.g. Mercury)
+                                                          # 4   Hothouses                                  (e.g. Venus)
+            # Habitable zone (fluid water)
+    - 'Arid:0.4, Desert:0.6'                              # 5   Water hot                                  (e.g. Desert planets)
+    - 'Temperate:0.5, TemperateSwamp:0.3, Ocean:0.2'      # 6   Water temperate                            (e.g. Ocean worlds, Earth stlye)
+    - 'Snow:0.5'                                          # 7   Water cold                                 (e.g. Snow worlds)
+            # Outer system (cold & dark)
+    - 'Barren:0.5'                                        # 8   Ice & methane                              (e.g. Saturn moons)
+                                                          # 9   Frozen nitrogen                            (e.g. Uranus moons; Pluto)
+    # Specials
+    - 'Alien:0.2'                                         # 10  Alien & exotic planets                     (e.g. The Legacy or bombed planets)
+    # (Always spawning: Starters)                         # X   Starter planets                            # See GalaxyConfig to spawn a Starter.
+
+
+
+  # SPACE FIELD (Space 'POI') AMOUNTS
+  POICountProbs: '0 : 0.05,  1 : 0.1,  2 : 0.1,  3 : 0.2,  4 : 0.2,  5 : 0.2,  6 : 0.1,  7 : 0.05'
+  
+  # SPACE FIELD (Space 'POI') CHANCES:
+  POIs: 'SpaceEmpty: 0.45, AsteroidFieldFew: 0.2, AsteroidField: 0.1, AsteroidFieldRich: 0.075, AsteroidFieldJunkyard: 0.1, AsteroidFieldPirates: 0.05, AsteroidFieldLegacy: 0.025'
+  # (Please do not confuse with 'POI' placed on a planet. - Spawning of such _'Faction POI'_ (=buildings, ships...)on a playfield will be influenced by the faction territories defined in the GalaxyConfig.
+  # Even if e.g. a LegacyFaction 'Space field' appears in the system, it might not have much 'Faction POI' except in the faction's territory.)
+
+
+
+  # ========================================================================================================================
+  #   PLANET TYPES
+  #§ =======================================================================================================================
+
+  PlanetTypes:   # Defines the planets further: Their location in the solar system, their orbits, moons, and playfields...
+
+
+   # ==== STARTER Planets ====================
+
+
+      - Name: TemperateStarter
+        Color: [0.04, 0.8, 0.1]
+        Placement:
+            - HabitableTemperate
+        PlayerStart: true
+        # Neighbor 'Name, Probability [0..1]'    # (Still active? Use the 'SolarSystemConfig.yaml' to define the starting system)
+        # Neighbor: 
+        #  - Snow, 1
+        #  - SpaceTradingStation, 0.3
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Temperate
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - TemperateStarter
+
+
+      - Name: TemperateStarter2
+        Color: [0.04, 0.8, 0.1]
+        Placement:
+            - HabitableTemperate
+        PlayerStart: true
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Temperate
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - TemperateSwampStarter
+
+
+      - Name: AridStarter
+        Color: [0.50, 0.47, 0.04]
+        Placement:
+            - HabitableHot
+        PlayerStart: true
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Arid
+        PlayfieldLevel: [1,1]
+        Playfields:
+            - AridStarter
+
+
+      - Name: SnowStarter
+        Color: [0.16, 0.18, 0.51]
+        Placement:
+            - HabitableCold
+        PlayerStart: true
+        OrbitType: [OrbitStarter]
+        MoonProb: '1:1'
+        MoonType: [MoonStarter]
+        Climate: Snow
+        PlayfieldLevel: [2,3]
+        Playfields:
+            - SnowStarter
+
+
+
+  # ========================================================================================================================
+  #   MOON Types
+  #§ =======================================================================================================================
+
+
+  MoonTypes:
+
+
+  # ========================================================================================================================
+  #   ORBIT Types
+  #§ =======================================================================================================================
+
+
+  OrbitTypes:
+
+  # ========================================================================================================================
+  #   System 'POI's
+  #§ =======================================================================================================================
+  # (System POIs; pease do not confuse with a placed POI (e.g. a Base) on a playfield!)
+
+  POITypes:
+
+
+  # ========================================================================================================================
+  #   STATION Types
+  #§ =======================================================================================================================
+
+  StationTypes:
+      - Name: SpaceTradingStation
+        Color: [0.7, 0.5, 0.0]
+        Icon: Station
+        Distance: [200, 300]
+        Placement: 
+          - InnerSystem
+        HasOrbit: false
+        HasTerrain: false
+        PlayfieldLevel: [2,10]
+        Playfields:
+            - SpaceTradingStation
+

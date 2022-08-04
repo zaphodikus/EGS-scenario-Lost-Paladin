@@ -1,0 +1,413 @@
+# Playfield Characteristics
+Gravity: 0                         
+AtmosphereEnabled: False          
+PvPProb: 0
+UseFixed: True                       
+Radiation: [5,10]                    
+TemperatureDay: [-200,-100]    
+Music: [moonstone, space, DistantWorlds, Migration]          
+ 
+PlayfieldType: Space  
+PlanetType: SpaceOrbitMiningOperations            
+
+### Resource Asteroid
+Resources:                     
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0.4    
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+ 
+    - Name: [ AsteroidVoxel01Copper, AsteroidVoxel02Copper, AsteroidVoxel03Copper]
+      DisplayName: Copper Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.4  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+ 
+    - Name: [ AsteroidVoxel01Silicon, AsteroidVoxel02Silicon, AsteroidVoxel03Silicon]
+      DisplayName: Silicon Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0.4 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Magnesium, AsteroidVoxel02Magnesium, AsteroidVoxel03Magnesium]
+      DisplayName: Magnesium Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.4 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Cobalt, AsteroidVoxel02Cobalt, AsteroidVoxel03Cobalt]
+      DisplayName: Cobalt Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.4  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180             
+
+    - Name: [ AsteroidVoxel01Neodymium, AsteroidVoxel02Neodymium, AsteroidVoxel03Neodymium]
+      DisplayName: Neodymium Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.4 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180          
+
+    - Name: [ AsteroidVoxel01Promethium, AsteroidVoxel02Promethium, AsteroidVoxel03Promethium]
+      DisplayName: Promethium Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.4  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Sathium, AsteroidVoxel02Sathium, AsteroidVoxel03Sathium]
+      DisplayName: Sathium Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.4 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Erestrum, AsteroidVoxel02Erestrum, AsteroidVoxel03Erestrum]
+      DisplayName: Erestrum Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.1  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Zascosium, AsteroidVoxel02Zascosium, AsteroidVoxel03Zascosium]
+      DisplayName: Zascosium Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.1  
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Pentaxid, AsteroidVoxel02Pentaxid, AsteroidVoxel03Pentaxid]
+      DisplayName: Pentaxid Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.3     
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+
+    - Name: [ AsteroidVoxel01Gold, AsteroidVoxel02Gold, AsteroidVoxel03Gold]
+      DisplayName: Gold Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 0.3 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180           
+
+    - Name: [ AsteroidVoxel01Titan, AsteroidVoxel02Titan, AsteroidVoxel03Titan]
+      DisplayName: Titan Asteroid
+      CountMinMax: [ 1, 2 ]
+      Probability: 0.5 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180          
+           
+### POIs
+POIs:
+    - Name: [AsteroidFieldBoxExclude, AsteroidFieldFewBoxExclude, AsteroidRingPlanet] 
+      FieldName: [AsteroidField, AsteroidFieldRectangle2]   # used if playfield is not an orbit
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      BaseField: True 
+      RandomRotation: True
+
+#Mining Operations  STORY
+    - Type: BA_Alien
+      Name: [BAO_MiningOperation]  
+      DisplayName: Mining Operation
+      Faction: Xenu
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      InitPower: True 
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+     # SpaceDefensePriceMinMax: [ 30, 60 ]
+      Properties: 
+        - Key: Music
+          Value: NebularClouds  
+        - Key: Discovery
+          Value: False 
+
+# #Polaris
+    # - Type: BA_Alien
+      # Name: [BAO_PolarisGasRefinery]  
+      # DisplayName: Gas Refinery
+      # Faction: Polaris
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 0.8
+      # InitPower: True
+      # Position:
+         # PosXZMinMax: [0, 100]
+         # PosYMax: 100
+      # Properties: 
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+        # - Key: StationInterface
+          # Value: "Fuel:1,O2:1,Repair:8,Shield:8,IfNeutral:0,IfFriendly:-0.1,IfHonored:-0.20"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_PolarisAsteroidMining]  
+      # DisplayName: Mining Facility
+      # Faction: Polaris
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+        # - Key: StationInterface
+          # Value: "Fuel:4,O2:4,IfNeutral:0,IfFriendly:-0.1,IfHonored:-0.20"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_PolarisAlloySynthesis]  
+      # DisplayName: Alloy Synthesis Factory
+      # Faction: Polaris
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+        # - Key: StationInterface
+          # Value: "Fuel:4,O2:4,IfNeutral:0,IfFriendly:-0.1,IfHonored:-0.20"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_PolSupplyStation]  
+      # DisplayName: Supply Station
+      # Faction: Polaris
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 0.5
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+        # - Key: StationInterface
+          # Value: "Fuel:4,O2:4,Repair:8,Shield:8,IfNeutral:0,IfFriendly:-0.1,IfHonored:-0.20"
+
+# #Kriel
+
+    # - Type: BA_Alien
+      # GroupName: BAOKriel  
+      # # DisplayName: Caenum Platearum
+      # Faction: Kriel
+      # Mode: Survival
+      # CountMinMax: [ 1, 2 ]     
+      # Probability: 0.8
+      # InitPower: True
+      # Properties: 
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+        # - Key: StationInterface
+          # Value: "Fuel:1,O2:1,Repair:8,Shield:8,IfNeutral:0.05,IfFriendly:-0.08,IfHonored:-0.16"
+
+# #Pirates
+    # - Type: BA_Alien   
+      # Name: [BAO_PiratesBlackMarket, BAO_PiratesHideout, BAO_PiratesSlaveMarket]  
+      # DisplayName: Asteroid Station
+      # Faction: Pirates
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: DarkSoundscape3  
+        # - Key: StationInterface
+          # Value: "Fuel:4,O2:4,IfNeutral:0.05,IfFriendly:-0.05,IfHonored:-0.10"
+
+# # Zirax
+
+    # - Type: BA_Alien
+      # Name: [BAO_ZiraxGasRefinery]  
+      # DisplayName: Gas Refinery
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 0.8
+      # InitPower: True
+      # Position:
+         # PosXZMinMax: [0, 100]
+         # PosYMax: 100
+      # Properties: 
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+        # - Key: StationInterface
+          # Value: "Fuel:1.6,O2:1.6,Repair:8,Shield:8,IfNeutral:0.2,IfFriendly:-0.05,IfHonored:-0.10"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_XenuProduction]  
+      # DisplayName: Orbital Production
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 1]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+        # - Key: StationInterface
+          # Value: "Fuel:1.6,O2:1.6,IfNeutral:0.2,IfFriendly:-0.05,IfHonored:-0.10"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_RadosRepairStation, BAO_XenuSupplyStation]  
+      # DisplayName: Resupply Station
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+        # - Key: StationInterface
+          # Value: "Fuel:1.2,O2:1.2,Warp:1.2,Ammo:3,IfNeutral:0.2,IfFriendly:-0.05,IfHonored:-0.10"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_XenuShipyard,BAO_GhystShipyard]  
+      # DisplayName: Shipyard
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+        # - Key: StationInterface
+          # Value: "Fuel:1.6,O2:1.6,Warp:1.6,Ammo:3,Repair:2,Shield:3,IfNeutral:0.2,IfFriendly:-0.05,IfHonored:-0.10"
+
+    # - Type: BA_Alien   
+      # Name: [BAO_GhystDefence1,BAO_GhystDefence2]  
+      # DisplayName: Defence Station
+      # Faction: Zirax
+      # Mode: Survival
+      # CountMinMax: [ 1, 2 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: RegenAfter
+          # Value: 720  
+        # - Key: Music
+          # Value: Vanguard  
+    # #    - Key: MapDistance
+     # #     Value: 2500     
+
+# #Tesch  (Only exist in their territory bubble!)
+
+    # - Type: BA_Alien
+      # Name: [BAO_TeschNodeT1a,BAO_TeschNodeT1b,BAO_TeschNodeT2,BAO_TeschNodeT3]  
+      # # DisplayName: Node
+      # Faction: Tesch
+      # Mode: Survival
+      # CountMinMax: [ 1, 3 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: StationInterface
+          # Value: "Fuel:2,O2:2,Warp:6,Ammo:2,Repair:2,Shield:2,IfNeutral:1,IfFriendly:-0.06,IfHonored:-0.12"
+
+# #Civilian
+
+    # - Type: BA_Alien
+      # GroupName: BAOColonists  
+      # # DisplayName: Waystation
+      # Faction: Colonists
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # InitPower: True
+      # Properties: 
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+        # - Key: PvEArea
+          # Value: 500
+        # - Key: StationInterface
+          # Value: "Fuel:1.1,O2:1.1,Warp:1.1,Ammo:2,Repair:2,Shield:2,IfNeutral:1,IfFriendly:-0.08,IfHonored:-0.16"
+
+#None  - JUNKYARDS
+
+    - Type: BA_Alien
+      GroupName: JunkYardSpaceBAO
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0, 4 ]
+      Probability: 0.3
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# CV single
+    - Type: CV_Alien
+      GroupName: JunkYardSpaceCV
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0,6 ]
+      Probability: 0.3
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+
+# SV single
+    - Type: SV_Player
+      GroupName: JunkYardSpaceSV
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 0, 8 ]
+      Probability: 0.4
+      InitPower: True
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+ 
+DroneBaseSetup:

@@ -1,0 +1,170 @@
+---
+# # ==============================================================
+
+PlanetSize: 
+  SizeRange: [4]
+  SizeProbs: [1]                  
+TemperatureMin: [3, 3]  # 10                         
+TemperatureMax: [41,41]   #  
+PlanetAxis: [15,35]                         
+HumidityMin: [0.0, 0.0]   #                       
+HumidityMax: [0.3, 0.3]   #                    
+Radiation: [0, 2]
+SeaLevel: [25, 50]                         
+TerrainLevel: [50, 75]
+LandWaterRatio: [0.75, 0.75]    # 0.78        # 0.3 = 30% Land, 70% Water. 0.9 = 90% Land, 10% Water
+TemperatureHeightRange: [0, 120]
+TemperatureGradientRange: [0.65, 0.05]
+TemperatureNoiseFac: 0.5
+HumidityHeightFac: [25, 268]
+HumidityNoiseFac: 0.6
+# ==============================================================
+
+# Terrain:                    
+  # - Name: [NewTemperate32x16]
+
+TerrainHeightMapMax: 400
+
+GroundShapes: 
+  - GroundShape_1, 0.2
+  - GroundShape_2, 0.3
+  
+## Splatmaps:
+# Channel: 0 1 2 3
+# Splat 1: R G B A
+# Channel: 4 5 6 7
+# Splat 2: R G B A
+# Channel: 8 9 10 11
+# Splat 3: R G B A
+
+Biomes: 
+  - Name: Water
+    IgnoreForcedBiome: true
+    Texture: [0, 0, 0.25]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria: 
+    - Height < SeaLevel-1
+    Color: [0, 0, 1]
+    Decorations: 
+    Grass: 
+# ==============================================================
+  # - Name: Snow
+    # IgnoreForcedBiome: true
+    # Texture: [5, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    # SelectionCriteria:   
+    # - Temperature < 0
+    # - Humidity > 0 
+    # Color: [1, 1, 1]
+    # Decorations:  
+    # Grass:  
+# ==============================================================
+  - Name: HighMountains
+    IgnoreForcedBiome: true
+    # Change texture 
+    Texture: [3, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope
+    SelectionCriteria:  
+    - Height > 200
+    Color: [0.6, 0.6, 0.6]
+    Decorations:  
+    Grass:  
+# ==============================================================
+  - Name: Mountains
+    # Change texture 
+    Texture: [3, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria: 
+    - Height > 195   # dummy criteria
+    Color: [0.4, 0.4, 0.4]
+    Stamps:
+       - Mountain_6, 0.9
+       - Mountain_7, 0.1
+    Decorations:  
+    Grass:  
+# ==============================================================
+  - Name: Beach
+    Texture: [1, 1, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    - Height < SeaLevel + 5
+    - Temperature > 0
+    Color: [0.8, 0.8, 0]  
+    Decorations:
+    Grass: 
+# ==============================================================
+  - Name: Tundra
+    Texture: [4, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 125
+    - Humidity < 0.13 
+    - Temperature > 0
+    - Temperature < 15
+    Color: [1, 0.8, 0.47]  
+    Stamps:
+       - Cliff_1
+       - Cliff_2
+       - Cliff_3
+       - Cliff_4
+       - Valley_1
+       - Valley_2
+    Decorations:  
+    Grass:  
+# ==============================================================
+  - Name: Desert
+    Texture: [5, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 125
+    - Humidity < 0.13
+    - Temperature > 15
+    # - TempDivHum > 1500
+    Color: [1, 0.54, 0.18]  
+    Stamps:
+       - Cliff_1
+       - Cliff_2
+       - Cliff_3
+       - Cliff_4
+       - Valley_1
+       - Valley_2
+    Decorations:  
+    Grass:  
+# # ==============================================================
+  - Name: Savanna
+    Texture: [7, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 125
+    - Humidity < 0.25
+    - Humidity > 0.13
+    - Temperature > 15
+    # - TempDivHum > 500
+    Color: [0.25, 0.54, 0.25]  
+    Stamps:
+       - Cliff_1
+       - Cliff_2
+       - Cliff_3
+       - Cliff_4
+       - Valley_1
+       - Valley_2
+    Decorations:  
+    Grass:  
+# ==============================================================
+  - Name: RainForest
+    Texture: [2, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 125
+    - Humidity > 0.25
+    - Temperature > 15
+    Color: [0, 0.3, 0]
+    Stamps:
+       - Cliff_1
+       - Cliff_2
+       - Cliff_3
+       - Cliff_4
+       - Valley_1
+       - Valley_2
+    Decorations:
+    Grass: 
+# ==============================================================
+# CATCH ALL
+# ==============================================================
+  - Name: Grassland
+    Texture: [6, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    Color: [0.62, 0.82, 0.3]  
+    Decorations:  
+    Grass:  

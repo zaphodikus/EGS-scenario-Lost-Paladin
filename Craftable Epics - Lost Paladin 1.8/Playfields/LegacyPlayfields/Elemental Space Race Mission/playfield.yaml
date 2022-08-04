@@ -1,0 +1,581 @@
+# Created by EPD v1.35.1.0, Playfield Version: 7.0.0 [1259] (Alpha Experimental 7.0.0)
+TemperatureDay: -70
+Music: NebularClouds
+Radiation: 7
+PlanetType: Space
+Moons: 1
+PvP: True
+UseFixed: True
+UseRandom: True
+AllowCV: True
+Instance:
+  Time: 7
+  MaxPlayers: 5
+  PortalOpen: 120
+  Cooldown: 3600
+  AllowBlueprints: True
+Difficulty: 5
+PlayfieldType: Space
+Description: The one and only space race orbit out there in the universe. Fly for proud and glory!
+SunFlare: EnvironmentalEffects/SunFlareRed
+Stars: SkyboxStarsPurple
+Nebula: PrefabNebulaOrange
+DroneBaseSetup:
+  Fixed:
+  - Name: MainDroneBase
+    Pos: [5000, 200, 5000]
+    DroneOnDuty:
+    - Name: SpaceDronePlasma
+      Pos: [4210, -1, 2611]
+      Radius: 350
+    - Name: SpaceDronePlasma
+      Pos: [-1143, 174, -755]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [-1365, 174, 654]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [-915, 114, 2506]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [1000, 210, -1520]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [1100, 100, -1500]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-817, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-917, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 158, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 58, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [1300, 120, -4000]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [488, 200, -1570]
+      Radius: 350
+    - Name: SpaceDroneLaser
+      Pos: [4770, 63, 2689]
+      Radius: 350
+    - Name: SpaceDroneLaser
+      Pos: [5557, 58, 203]
+      Radius: 150
+    - Name: SpaceDroneLaser
+      Pos: [3539, -61, 5053]
+      Radius: 150
+    - Name: SpaceDroneLaser
+      Pos: [3539, -60, 5050]
+      Radius: 150
+    - Name: SpaceDronePlasma
+      Pos: [278, 147, 6647]
+      Radius: 150
+    - Name: SpaceDroneLaser
+      Pos: [5282, -30, 1182]
+      Radius: 500
+    - Name: SpaceDroneLaser
+      Pos: [4893, 60, 3557]
+      Radius: 500
+    - Name: SpaceDroneLaser
+      Pos: [2005, -167, 4612]
+      Radius: 500
+    - Name: SpaceDroneLaser
+      Pos: [-383, 174, -1243]
+      Radius: 500
+    - Name: SpaceDronePlasma
+      Pos: [-4000, 0, 4000]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [-4000, 0, 0]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [4000, 0, -4000]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [4000, 0, 4000]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [-4000, 0, -4000]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [-4000, 0, 4000]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [0, 4000, 0]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [0, -4000, 0]
+      Radius: 2500
+    - Name: SpaceDronePlasma
+      Pos: [0, -4000, 0]
+      Radius: 2500
+    - Name: SpaceDronePlasma
+      Pos: [4000, 0, -4000]
+      Radius: 2500
+    - Name: SpaceDronePlasma
+      Pos: [4000, 0, 4000]
+      Radius: 2500
+    - Name: SpaceDronePlasma
+      Pos: [-4000, 0, -4000]
+      Radius: 2500
+    - Name: SpaceDroneLaser
+      Pos: [5282, -30, 1182]
+      Radius: 500
+    - Name: SpaceDronePlasma
+      Pos: [4210, -1, 2611]
+      Radius: 350
+    - Name: SpaceDronePlasma
+      Pos: [-1143, 174, -755]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [-1365, 174, 654]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [-915, 114, 2506]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [1000, 210, -1520]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [1100, 100, -1500]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-817, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-917, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 158, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 58, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [-877, 108, 4784]
+      Radius: 2000
+    - Name: SpaceDronePlasma
+      Pos: [1300, 120, -4000]
+      Radius: 1000
+    - Name: SpaceDronePlasma
+      Pos: [488, 200, -1570]
+      Radius: 350
+    - Name: SpaceDroneLaser
+      Pos: [4770, 63, 2689]
+      Radius: 350
+    - Name: SpaceDroneLaser
+      Pos: [5557, 58, 203]
+      Radius: 150
+    - Name: SpaceDroneLaser
+      Pos: [3539, -61, 5053]
+      Radius: 150
+    - Name: SpaceDroneLaser
+      Pos: [3539, -60, 5050]
+      Radius: 150
+    - Name: SpaceDronePlasma
+      Pos: [278, 147, 6647]
+      Radius: 150
+    - Name: SpaceDroneLaser
+      Pos: [5282, -30, 1182]
+      Radius: 500
+    - Name: SpaceDroneLaser
+      Pos: [4893, 60, 3557]
+      Radius: 500
+    - Name: SpaceDroneLaser
+      Pos: [2005, -167, 4612]
+      Radius: 500
+    - Name: SpaceDroneLaser
+      Pos: [-383, 174, -1243]
+      Radius: 500
+    - Name: SpaceDronePlasma
+      Pos: [-4000, 0, 4000]
+      Radius: 2500
+    - Name: SpaceDronePlasma
+      Pos: [5322, 152, 1938]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [5322, 152, 1938]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [5322, 152, 1938]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [5322, 152, 1938]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [5322, 152, 1938]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [5322, 152, 1938]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [4097, 148, 3868]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [4097, 148, 3868]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [4097, 148, 3868]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [4097, 148, 3868]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [4097, 148, 3868]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [4097, 148, 3868]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [2570, 108, 5184]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [2570, 108, 5184]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [2570, 108, 5184]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [2570, 108, 5184]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [2570, 108, 5184]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [2570, 108, 5184]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [1224, 108, 5777]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [1224, 108, 5777]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [1224, 108, 5777]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [1224, 108, 5777]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDronePlasma
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [-35, 108, 6244]
+      Radius: 1500
+    - Name: SpaceDroneLaser
+      Pos: [4186, 155, 2567]
+      Radius: 1000
+    - Name: SpaceDroneLaser
+      Pos: [4186, 155, 2567]
+      Radius: 1000
+    - Name: SpaceDroneLaser
+      Pos: [4186, 155, 2567]
+      Radius: 1000
+    DroneSpaceFreighter: []
+    SpaceVessel:
+    - Name: Freighter
+      FixedMaxSpeed: 120
+      Mission: Freighter
+      RangePatrol:
+        Position3D: [0, 0, 0]
+      Immobile: {}
+      Freighter:
+        DelayBetweenRespawn: 60
+        PathWayPoint:
+        - [-216, 176, 5321]
+        - [-1197, 172, 4545]
+        - [-1161, 174, 2911]
+        - [-1515, 172, 950]
+        - [54, 187, -2415]
+      Stock:
+      - Name: SpaceDronePlasma
+        Amount: 30
+        Extra: 3
+      - Name: SpaceDroneLaser
+        Amount: 30
+        Extra: 3
+    DronePlanetVessel: []
+    DronePlanetBase: []
+POIs:
+  Fixed:
+  - Type: BA_Admin
+    Prefab: ESR-Go-Fin
+    Mode: Survival
+    Name: ESR Go/Fin
+    Pos: [4000, 0, -300]
+    Rot: [0, 37, 0]
+    Properties: []
+    SpawnResource: []
+  - Type: SV_Player
+    Prefab: ESR-Racer-R
+    Mode: Survival
+    Name: ESR Racer Red
+    Pos: [3949, 15.3, -284]
+    Rot: [0, 217, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: SV_Player
+    Prefab: ESR-Racer-O
+    Mode: Survival
+    Name: ESR Racer Orange
+    Pos: [3971, 21.3, -301]
+    Rot: [0, 217, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: SV_Player
+    Prefab: ESR-Racer-G
+    Mode: Survival
+    Name: ESR Racer Green
+    Pos: [4016, 21.3, -335]
+    Rot: [0, 217, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: SV_Player
+    Prefab: ESR-Racer-B
+    Mode: Survival
+    Name: ESR Racer Blue
+    Pos: [4038, 15.3, -352]
+    Rot: [0, 217, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: SV_Player
+    Prefab: ESR-Racer-Y
+    Mode: Survival
+    Name: ESR Racer Yellow
+    Pos: [3993, 15.3, -318]
+    Rot: [0, 217, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Ahax
+    Mode: Survival
+    Name: Checkpoint Ahax (1)
+    Pos: [4607, 15, 20]
+    Rot: [0, 80, 10]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Aloe
+    Mode: Survival
+    Name: Checkpoint Aloe (2)
+    Pos: [5155, 3, 310]
+    Rot: [0, 50, 20]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Corn
+    Mode: Survival
+    Name: Checkpoint Corn (3)
+    Pos: [5477, -73, 777]
+    Rot: [0, 0, 10]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Durian
+    Mode: Survival
+    Name: Checkpoint Durian (4)
+    Pos: [5291, 77, 1801]
+    Rot: [0, -50, 10]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Kavae
+    Mode: Survival
+    Name: Checkpoint Kavae (5)
+    Pos: [4243, 34, 2715]
+    Rot: [10, -30, 1]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Pearthing
+    Mode: Survival
+    Name: Checkpoint Pearthing (6)
+    Pos: [3717, -97, 4332]
+    Rot: [0, -30, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Pumpkin
+    Mode: Survival
+    Name: Checkpoint Pumpkin (7)
+    Pos: [2140, -7, 5100]
+    Rot: [0, 115, 15]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Tomato
+    Mode: Survival
+    Name: Checkpoint Tomato (8)
+    Pos: [815, 7, 5848]
+    Rot: [0, 110, 45]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Wheat
+    Mode: Survival
+    Name: Checkpoint Wheat (9)
+    Pos: [278, 85, 6647]
+    Rot: [0, 40, 50]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-AkuaBerry
+    Mode: Survival
+    Name: Checkpoint Akua Berry (10)
+    Pos: [-880, 65, 4800]
+    Rot: [0, 160, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-SpaceOrange
+    Mode: Survival
+    Name: Checkpoint Space Orange (11)
+    Pos: [-861, 77, 2722]
+    Rot: [10, -195, 10]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Alien-Honey
+    Mode: Survival
+    Name: Checkpoint Alien Honey (12)
+    Pos: [-1261, 138, 1141]
+    Rot: [0, 167, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Protein-Plant
+    Mode: Survival
+    Name: Checkpoint Protein Plant (13)
+    Pos: [-1170, 177, -867]
+    Rot: [7, 130, 90]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: BA_Player
+    Prefab: ESR-Fiber
+    Mode: Survival
+    Name: Checkpoint Fiber (14)
+    Pos: [1116, 187, -1567]
+    Rot: [-7, 77, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: AsteroidFieldRing
+    Name: Asteroid Field
+    Pos: [0, 0, 0]
+    Rot: [0, 0, 0]
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    SpawnResource: []
+  - Type: AsteroidVoxel03Sathium
+    Prefab: AsteroidVoxel03Sathium
+    Name: Too slow!
+    Pos: [318, 51, 6607]
+    Rot: [0, 0, 0]
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    SpawnResource: []
+  - Type: AsteroidVoxel01Gold
+    Prefab: AsteroidVoxel01Gold
+    Name: You better push W
+    Pos: [-3718, -11, 4086]
+    Rot: [0, 0, 0]
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    SpawnResource: []
+  - Type: BA_Admin
+    Prefab: ESR-Checkpoint-Alien
+    Mode: Survival
+    Name: Checkpoint Alien Outpost
+    Pos: [2391, 117, -1167]
+    Rot: [0, 70, 0]
+    InitPower: True
+    Properties: []
+    SpawnResource: []
+  - Type: AsteroidVoxel01Sathium
+    Prefab: AsteroidVoxel02Iron
+    Name: See ya!
+    Pos: [-6302, 73, -2486]
+    Rot: [0, 0, 0]
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    SpawnResource: []
+  - Type: AsteroidVoxel01Sathium
+    Prefab: AsteroidVoxel01Sathium
+    Name: Catch me if you can!
+    Pos: [-6038, -225, 2595]
+    Rot: [0, 0, 0]
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    SpawnResource: []
+  - Type: AsteroidVoxel02Iron
+    Prefab: AsteroidVoxel03Gold
+    Name: Watch behind you
+    Pos: [4270, -1, 2671]
+    Rot: [0, 0, 0]
+    Properties:
+    - Key: RegenAfter
+      Value: 180
+    SpawnResource: []
+  FixedPlayerStart: []

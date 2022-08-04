@@ -1,0 +1,7 @@
+LoadingScreenshots folder:
+You can place custom screenshots and a Notes.txt file to display custom pictures and tips while loading the game.
+See Empyrion's Content/Extras/LoadingScreenshots for an example.
+
+PreviewPics folder:
+You can place custom .jpg images here and when players connect to a server they will display on the starting planet selection screen. Works only on a server.
+Name your preview pictures either after the Planet name, or the Planet type. For example TemperateStarter.jpg will show up when a player has the Temperate starting planet selected.

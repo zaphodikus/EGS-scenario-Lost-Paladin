@@ -1,0 +1,2038 @@
+---
+Seed: 1
+PlanetSize: 2
+PlanetAxis: 10
+TemperatureMinMax: [-30, -10]
+TemperatureNight: 110
+HumidityMinMax: [0.15, 0.35]
+SeaLevel: 0
+TerrainLevel: 184
+BaseLevel: 72
+LandWaterRatio: 0
+TemperatureHeightRange: [0, 195]
+TemperatureGradientRange: [0.75, 0.1]
+TemperatureNoiseFac: 0.5
+HumidityHeightFac: [0, 365]
+HumidityNoiseFac: 0.6
+
+Gravity: -6.005326
+Radiation: 0.221488
+AtmosphereDensity: 0.0700516
+AtmosphereO2: 0
+AtmosphereBreathable: False
+GroundFogIntensity: 0.06630076
+GroundFogHeight: 117.3113
+AtmosphereFog: 0
+PvP: True
+PlayfieldLevel: 0
+
+Water: WaterBlue
+Music: Anomalous
+
+TerrainHeightMapMax: 490
+
+BiomeStampTries: 20
+
+
+
+
+
+
+
+
+
+
+Presets:
+
+   # 12 symbols max for preset names
+   # 7 entries per line
+
+
+   - Name: Empty    # To 'turn off' decoration. Will not get placed.
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0
+       BushPower: 1
+       Noise: 1,0.1,2,0.5
+     scale:
+       Power: 1
+       Noise: 1,0.1,2,0.5
+     Hue: 0,0,0.001
+
+
+   - Name: GrsDnse_04
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 0.4
+     Contrast: 1
+     Saturation: 1
+
+
+
+   - Name: GrsDnse_08
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 0.8
+     Contrast: 1
+     Saturation: 1
+
+
+   - Name: GrsDnse_15
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 1.5
+     Contrast: 1
+     Saturation: 1
+
+
+   - Name: GrsDnse_20
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 2
+     Contrast: 1
+     Saturation: 1
+
+
+
+   - Name: GrassDense
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+
+# # ======================== OLD PRESET STYLES  - This block seems to be good to go as 'replacement'
+   - Name: Tree   # No variance
+     Density: 0.01 
+     Snow: 0
+     spawn:
+       Min: 0.45
+       Max: 0.90
+       BushPower: 0
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0
+       Noise: 1,0,2,0.5
+     Hue: 0,0,0.001
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+   - Name: BigPlant
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0.45   #0.39
+       Max: 0.90
+       BushPower: 0
+       Noise: 3,0.015,3,0.5
+     scale:
+       Power: 0
+       Noise: 1,0.1,2,0.5
+     Hue: 0,0,0.001
+
+   - Name: Plant
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0.4
+       Max: 0.90
+       BushPower: 0
+       Noise: 3,0.015,3,0.5
+     scale:
+       Power: 0
+       Noise: 1,0.1,2,0.5
+     Hue: 0,0,0.001
+
+   - Name: Free
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 0
+       Noise: 1,0.1,2,0.5
+     Hue: 0,0,0.001
+
+
+   - Name: Sunny
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0.0
+       Max: 0.45
+       BushPower: 0
+       Noise: 3,0.015,3,0.5
+     scale:
+       Power: 0
+       Noise: 1,0.1,2,0.5
+     Hue: 0,0,0.001
+
+
+
+
+
+   - Name: GrsDnse_SN
+     Density: 0.5
+     Snow: 0.4 # 0.39 #1.2
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+
+
+   - Name: GrsDns_GrsL
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -24,-8,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1.01999998
+     Saturation: 1.10000002
+
+
+     # ================== Next line
+
+
+   - Name: Tree_V           # Crystallized
+     Density: 0.01 
+     Snow: 0
+     spawn:
+       Min: 0.45
+       Max: 0.9
+       BushPower: 5
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 1
+       Noise: 1,0.1,2,0.5
+     Hue: -10,10,0.015
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+# 
+   - Name: BigPlant_V
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0.39
+       Max: 0.90
+       BushPower: 0.3
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 1
+       Noise: 1,0.3,2,0.5
+     Hue: -10,10,0.015
+
+
+# 
+   - Name: Plant_V 
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.594
+       BushPower: 0.3
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 1
+       Noise: 2,0.02,2,0.5
+     Hue: -10,10,0.015
+
+
+
+   - Name: Free_V
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0.0
+       Noise: 1,0.4,2,0.5
+     scale:
+       Power: 1
+       Noise: 0,0.1,2,0.5
+     Hue: 0,0,0.001
+
+
+   - Name: Sunny_V
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0.0
+       Max: 0.39
+       BushPower: 0.3
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 1
+       Noise: 1,0.3,2,0.5
+     Hue: -10,10,0.015
+
+
+   - Name: GrsDns_Tun
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -8,8,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 0.980000019
+     Saturation: 1
+
+
+   - Name: GrsDns_Swmp  
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -40,-40,0.015
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 0.699999988
+
+
+
+
+     # ================== Next line
+
+
+
+
+   - Name: Tree_V_C
+     Density: 0.01 
+     Snow: 0
+     spawn:
+       Min: 0.45
+       Max: 0.9
+       BushPower: 10
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 1
+       Noise: 1,0.1,2,0.5
+     Hue: -12,140,0.05
+     BendPower: 0.70
+     GrassPower: 1
+     Contrast: 0.92
+     Saturation: 0.3
+
+
+
+
+# 
+   - Name: BigPlant_V_C
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0.39
+       Max: 0.90
+       BushPower: 3
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 3
+       Noise: 1,0.3,2,0.5
+     Hue: -16,-16,0.6
+     BendPower: 0.70
+     GrassPower: 1
+     Contrast: 0.9
+     Saturation: 3
+
+
+
+
+# 
+   - Name: Plant_V_C
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.594
+       BushPower: 0.3
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 1
+       Noise: 2,0.02,2,0.5
+     Hue: -8,-7,0.6
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 0.89
+     Saturation: 0.4
+
+
+   - Name: Free_V_C
+     Density: 0.00999999978
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 6
+       Noise: 1,0.4,2,0.5
+     scale:
+       Power: 1
+       Noise: 0,0.1,2,0.5
+     Hue: -8,-7,0.6
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 0.89
+     Saturation: 0.4
+
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+   - Name: GrsDns_Red
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -20.5,-11.5,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 0.949999988
+     Saturation: 0.699999988
+
+   - Name: GrsDns_Flow
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0.5
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 4
+       Noise: 2,0.35,4,0.5
+     Hue: -68.15981,-59.84019,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1.5
+
+
+     # ================== Next line
+
+
+
+   - Name: Tree_V_D  #
+     Density: 0.01 
+     Snow: 0
+     spawn:
+       Min: 0.45
+       Max: 0.9
+       BushPower: 5
+       Noise: 1,0.4,2,0.5
+     scale:
+       Power: 3
+       Noise: 0,0.1,2,0.5
+     Hue: -36,116,0.05
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1.3
+     Saturation: 1
+
+
+
+# 
+   - Name: BigPlant_V_D
+     Density: 0.1
+     Snow: 0
+     spawn:
+       Min: 0.39
+       Max: 0.90
+       BushPower: 3
+       Noise: 1,0.4,2,0.5
+     scale:
+       Power: 5
+       Noise: 0,0.1,2,0.5
+     Hue: -36,116,0.05
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1.3
+     Saturation: 1
+
+
+
+# 
+   - Name: Plant_V_D
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.594
+       BushPower: 3
+       Noise: 1,0.4,2,0.5
+     scale:
+       Power: 5
+       Noise: 0,0.1,2,0.5
+     Hue: -36,116,0.05
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1.3
+     Saturation: 1
+
+
+
+   - Name: Free_V_D
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 3
+       Noise: 1,0.4,2,0.5
+     scale:
+       Power: 5
+       Noise: 0,0.1,2,0.5
+     Hue: -36,116,0.05
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1.3
+     Saturation: 1
+
+
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+
+   - Name: GrsDnsSavn
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -8,0,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1.02
+     Saturation: 1.1
+
+
+
+
+# ================== New line
+
+
+
+   - Name: GrsOutback   # Large clusters of grass.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.658382058
+       Max: 0.99
+       BushPower: 5
+       Noise: 2,0.09,2,0.1
+     scale:
+       Power: 15
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+     BendPower: 0.2
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+
+
+
+   - Name: GrsSand   #  Clusters more sparsely than Outback, but bigger
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.70
+       Max: 0.99
+       BushPower: 5
+       Noise: 2,0.047,3,0.4
+     scale:
+       Power: 2
+       Noise: 2,0.05,3,0.4
+     Hue: 0,15,0.0051
+
+
+
+
+   - Name: GrsArid
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 5
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 8
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+     BendPower: -1.3
+     GrassPower: 2
+     Contrast: 1
+     Saturation: 1
+
+   - Name: GrsArid_In
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 2
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 7
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+     BendPower: -0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+    # 
+   - Name: GrsDunes # Mid frequency strips of grass. Less than 50% coverage at max density.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.4
+       BushPower: 2
+       Noise: 2,0.1,1.5,10
+     scale:
+       Power: 1
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: -1.2
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+   # 
+   - Name: GrsSteppe # High frequency grass tufts with large inner. Less than 50% coverage at max density.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.45
+       BushPower: 4
+       Noise: 2,0.4,2,0.3
+     scale:
+       Power: 1
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+   - Name: GrsDnsSavn2
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -10.5,-5.5,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1.5
+
+
+# ================== New line
+
+
+    # Placeholders for color variants
+
+
+   - Name: GrsOutb_C   # Large clusters of grass.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.658382058
+       Max: 0.99
+       BushPower: 5
+       Noise: 2,0.09,2,0.1
+     scale:
+       Power: 15
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+     BendPower: 0.2
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+
+
+   # Unused
+   - Name: GrsSnd_C   #  Clusters more sparsely than Outback, but bigger
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.70
+       Max: 0.99
+       BushPower: 5
+       Noise: 2,0.047,3,0.4
+     scale:
+       Power: 2
+       Noise: 2,0.05,3,0.4
+     Hue: 0,15,0.0051
+
+
+
+   - Name: GrsArid_C             # Used
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 5
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 8
+       Noise: 2,0.99,4,0.5
+     Hue: -24.9375,-23.0625,0.0051
+     BendPower: -0.899999976
+     GrassPower: 2
+     Contrast: 1
+     Saturation: 5
+
+
+   - Name: GrsAr_In_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 2
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 7
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+     BendPower: -0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+    # 
+   - Name: GrsDune_C # Mid frequency strips of grass. Less than 50% coverage at max density.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.4
+       BushPower: 2
+       Noise: 2,0.1,1.5,10
+     scale:
+       Power: 1
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: -1.2
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+   # 
+   - Name: GrsStep_C # High frequency grass tufts with large inner. Less than 50% coverage at max density.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.45
+       BushPower: 4
+       Noise: 2,0.4,2,0.3
+     scale:
+       Power: 1
+       Noise: 2,0.35,4,0.5
+     Hue: -9,9,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+   - Name: GrsDnsSavn3
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 0,0.4,1,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.35,4,0.5
+     Hue: -10.5,-5.5,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 1.04999995
+     Saturation: 0.699999988
+
+
+# ================== New line
+
+
+
+     # ======= GRASS MATS ========  # Low frequency regions of different grasses. Each 'part' will leave the other mostly free.
+
+     # 
+   - Name: GrsMatIn
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.45
+       Max: 0.9
+       BushPower: 2
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.1
+       Noise: 1,0.01,2,0.5
+     Hue: 0,0,0.001
+
+     # 
+   - Name: GrsMatMid
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.2
+       Max: 0.55
+       BushPower: 1.5
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.1
+       Noise: 1,0.01,2,0.5
+     Hue: 0,0,0.001
+
+     # 
+   - Name: GrsMatOut
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.3
+       BushPower: 2
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.1
+       Noise: 1,0.01,2,0.5
+     Hue: 0,0,0.001
+
+
+
+   - Name: GrsDns1In
+     Density: 0.05
+     Snow: 0
+     spawn:
+       Min: 0.5
+       Max: 1
+       BushPower: 1
+       Noise: 3,0.1,5,0.5
+     scale:
+       Power: 2
+       Noise: 2,0.01,3,0.3
+     Hue: 0,0,0.001
+
+
+   - Name: GrsDns1Out
+     Density: 0.05
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.479999989
+       BushPower: 3
+       Noise: 3,0.1,5,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.1,3,0.3
+     Hue: 0,0,0.001
+
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+# ================== New line
+
+
+
+
+     # 
+   - Name: GrsMatIn_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.45
+       Max: 0.9
+       BushPower: 2
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.1
+       Noise: 1,0.01,2,0.5
+     Hue: -34,-30,0.001
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+     # 
+   - Name: GrsMatMid_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.2
+       Max: 0.55
+       BushPower: 1.5
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.1
+       Noise: 1,0.01,2,0.5
+     Hue: -48,-48,0.001
+
+     # 
+   - Name: GrsMatOut_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.3
+       BushPower: 2
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.1
+       Noise: 1,0.01,2,0.5
+     Hue: -16,-16,0.001
+
+
+   - Name: GrsMatOut_C2
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 0.300000012
+       BushPower: 2
+       Noise: 3,0.015,3,0.45
+     scale:
+       Power: 0.100000001
+       Noise: 1,0.01,2,0.5
+     Hue: -16,-16,0.001
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 0.949999988
+     Saturation: 1
+
+
+   - Name: =
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.755847931
+       Max: 1
+       BushPower: 10
+       Noise: 2,0.4,1,0.7
+     scale:
+       Power: 5
+       Noise: 2,0.99,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+# 
+   - Name: HighGrass
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.3
+       Max: 0.8
+       BushPower: 2
+       Noise: 2,0.5,2,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.15,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+
+   - Name: HighGrass2
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.3
+       Max: 0.8
+       BushPower: 2
+       Noise: 2,0.5,2,0.5
+     scale:
+       Power: 7
+       Noise: 2,0.15,4,0.5
+     Hue: 0,15,0.0051
+
+
+
+
+     # ==== Sand bush clusters =====
+
+     # Unused
+   - Name: SandBu_Tree            # Variant of SandBushIn. Centermost.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.8
+       Max: 1
+       BushPower: 1
+       Noise: 2,0.02,1,0.7
+     scale:
+       Power: 3
+       Noise: 2,0.15,4,0.5
+     Hue: 0,15,0.0051
+
+
+   - Name: SandBushIn            # Uncommon bushes & stones in the deserts
+     Density: 0.05
+     Snow: 0
+     spawn:
+       Min: 0.72
+       Max: 1
+       BushPower: 2
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 1.8
+       Noise: 3,0.02,2,0.45
+     Hue: 0,0,0.001
+
+   - Name: SandBush             # Uncommon bushes in the deserts. Close to stones. Only minimal size differences.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.68
+       Max: 1
+       BushPower: 0.3
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 1
+       Noise: 3,0.02,2,0.45
+     Hue: 0,0,0.001
+
+   - Name: SandBush_V            # Uncommon bushes in the deserts. Outer ring. High size difference
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.68
+       Max: 1
+       BushPower: 6
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 3
+       Noise: 3,0.02,2,0.45
+     Hue: 0,0,0.001
+
+
+   - Name: SandBushOut             # Uncommon bushes in the deserts. Outmost ring.
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.64
+       Max: 0.77
+       BushPower: 10
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 3
+       Noise: 3,0.02,2,0.45
+     Hue: 0,0,0.001
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+
+   - Name: HghGrs_C             # A high grass variant, about 3-4m. (Minimal bushpower height variation)
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.300000012
+       Max: 0.800000012
+       BushPower: 2
+       Noise: 2,0.5,2,0.5
+     scale:
+       Power: 5
+       Noise: 2,0.15,4,0.5
+     Hue: -7.5,7.5,0.0051
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 0.800000012
+
+
+   - Name: HghGrs2_C               #  A high grass variant, about 3-4m, but less coverage (allows for more dense 'tufts')
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.3
+       Max: 0.8
+       BushPower: 2
+       Noise: 2,0.5,2,0.5
+     scale:
+       Power: 7
+       Noise: 2,0.15,4,0.5
+     Hue: 0,15,0.0051
+
+
+# ================================
+
+
+
+
+
+     # ==== Sand bush clusters =====
+
+
+
+   - Name: SandBu_Tr_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.800000012
+       Max: 1
+       BushPower: 1
+       Noise: 2,0.02,1,0.7
+     scale:
+       Power: 3
+       Noise: 2,0.15,4,0.5
+     Hue: -32,-17,0.0051
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 0.920000017
+     Saturation: 0.800000012
+
+   - Name: SandBuIn_C
+     Density: 0.0500000007
+     Snow: 0
+     spawn:
+       Min: 0.720000029
+       Max: 1
+       BushPower: 2
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 1.79999995
+       Noise: 3,0.02,2,0.45
+     Hue: 8,8,0.001
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 0.99000001
+     Saturation: 0.5
+
+
+
+   - Name: SandBu_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.680000007
+       Max: 1
+       BushPower: 0.300000012
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 1
+       Noise: 3,0.02,2,0.45
+     Hue: 0,0,0.001
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+
+
+   - Name: SandBu_V_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.68
+       Max: 1
+       BushPower: 6
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 3
+       Noise: 3,0.02,2,0.45
+     Hue: -36,116,0.05
+     BendPower: 0.7
+     GrassPower: 1
+     Contrast: 1.02
+     Saturation: 0.3
+
+
+
+
+   - Name: SandBuOut_C
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.64
+       Max: 0.77
+       BushPower: 2
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 3
+       Noise: 3,0.02,2,0.45
+     Hue: -8,-8,0.001
+     BendPower: 1
+     GrassPower: 1
+     Contrast: 1
+     Saturation: 1
+
+
+   - Name: SandBu_VC2
+     Density: 0.5
+     Snow: 0
+     spawn:
+       Min: 0.68
+       Max: 1
+       BushPower: 6
+       Noise: 3,0.02,3,0.45
+     scale:
+       Power: 3
+       Noise: 3,0.02,2,0.45
+     Hue: -170.5,-165.5,0.015
+     BendPower: 0.5
+     GrassPower: 1
+     Contrast: 0.7
+     Saturation: 0.3
+
+
+   - Name: Bush
+     Density: 0.01
+     Snow: 0
+     spawn:
+       Min: 0
+       Max: 1
+       BushPower: 0
+       Noise: 2,0.4,2,0.5
+     scale:
+       Power: 0
+       Noise: 1,0.1,2,0.5
+     Hue: 0,0,0.001
+
+
+
+
+
+
+
+
+
+
+Biome:
+   - BiomeClusterData:
+         - Name: Pole
+           IgnoreForcedBiome: True
+           Weather: PoleFog
+           Texture: [10, 6, 0.02]
+           SelectionCriteria:
+               - "+Lat > 0.975"
+           Color: [0.6, 0.6, 0.6]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+           Grass:
+
+         - Name: Unknown
+           IgnoreForcedBiome: True
+           Texture: [11, 11, 0.2]
+           SelectionCriteria:
+               - "Height < 11"
+           Color: [0, 1, 0]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+               - [ GlowTube01, 0.06, Free_V, 2.00 ]
+               - [ ScalyPods, 0.20, Plant_V, 3.00 ]
+               - [ CrystalStraight, 0.08, Free_V, 3.00 ]
+
+           Grass:
+
+         - Name: Mountains
+           IgnoreForcedBiome: True
+           Texture: [1, 1, 0.5, 2, 7, 0.5, 0.05]
+           UndergroundLayers:
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 170"
+           Color: [0.7, 0.7, 0.7]
+           StampProb: 1
+           StampForcesBiome: True
+           StampForcesBiomeType: OverlapAll
+           StampTries: 7
+           Stamps:
+               - Mountain_4a, 0.1
+               - Mountain_4b, 0.1
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 0.30, Free, 2.00 ]
+               - [ RockGrey02Large, 0.04, Free_V, 1.50 ]
+               - [ RockResourceCopper, 0.001, Free_V, 2.00 ]
+               - [ RockResourceSilicon, 0.003, Free, 2.00 ]
+
+           Grass:
+
+         - Name: Regolith
+           IgnoreForcedBiome: True
+           Texture: [1, 6, 0.5, 6, 6, 1, 0.25]
+           UndergroundLayers:
+               - [12, 2]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 150"
+               - "Height < 280"
+           Color: [0.5, 0.5, 1]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+           Grass:
+
+         - Name: PlainsEdge
+           IgnoreForcedBiome: True
+           Texture: [0, 0, 0.5, 2, 7, 0.8, 0.5]
+           UndergroundLayers:
+               - [0, 1]
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height < 102"
+               - "Height > 99"
+           Color: [0.1, 0.1, 0.3]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 0.05, Free, 1.00 ]
+               - [ RockGrey02Large, 0.05, Free, 1.00 ]
+               - [ CrystalsPyramidBlue, 0.0005, Free, 1.00 ]
+
+           Grass:
+
+         - Name: Plains
+           IgnoreForcedBiome: True
+           Texture: [4, 6, -0.25]
+           UndergroundLayers:
+               - [11, 2]
+               - [10, 2]
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height < 102"
+               - "Height > 10"
+           Color: [0.3, 0.3, 0.3]
+           StampProb: 0.9
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+               - CraterMoon_1, 1
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 0.05, Free, 1.00 ]
+               - [ RockGrey02Large, 0.05, Free, 1.00 ]
+               - [ CrystalsPyramidBlue, 0.02, Free, 1.00 ]
+               - [ RockResourceCarbon, 0.02, BigPlant_V, 0.75 ]
+               - [ P_Pebble_3, 0.05, BigPlant_V_C, 2.00 ]
+               - [ P_Pebble_4, 0.10, BigPlant_V_C, 1.00 ]
+               - [ P_Stone_4, 0.01, BigPlant_V_C, 0.70 ]
+               - [ P_Stone_2, 0.10, BigPlant_V_C, 0.40 ]
+
+
+
+
+
+           Grass:
+
+         - Name: Rifts
+           IgnoreForcedBiome: True
+           Texture: [11, 11, 0.5]
+           UndergroundLayers:
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 600"
+           Color: [0.7, 0.2, 0.2]
+           StampProb: 1
+           StampForcesBiome: True
+           StampForcesBiomeType: OverlapAll
+           StampTries: 25
+           Stamps:
+               - RiftIce_01, 0.3
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 0.05, Free, 1.00 ]
+               - [ RockGrey02Large, 0.05, Free, 1.00 ]
+               - [ CrystalsPyramidBlue, 0.04, Free, 1.00 ]
+           Grass:
+
+         - Name: SmallCrater
+           Texture: [8, 9, 0.5, 3, 3, 0.5, -0.1]
+           UndergroundLayers:
+               - [10, 2]
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 600"
+           Color: [0.9, 0.3, 0.3]
+           StampProb: 1
+           StampForcesBiome: True
+           StampForcesBiomeType: OverlapAll
+           StampTries: 1350
+           Stamps:
+               - CraterMoon_1, 1
+               - CraterMoon_2, 0.20
+               - CraterMoon_3, 0.30
+               - CraterMoon_4, 0.04
+               - CraterMoon_5, 0.7
+               - CraterMoon_6, 0.04
+               - CraterMoon_7, 0.02
+               - CraterMoon_8, 0.01
+               - CraterMoon_9, 0.004
+           Temperature: -10
+           Decorations:
+               - [ RockGrey01Large, 0.05, Free, 2.00 ]
+               - [ RockGrey02Large, 0.03, Free_V, 1.50 ]
+               - [ CrystalsPyramidBlue, 0.03, Free, 2.00 ]
+               - [ RockResourceCopper, 0.0005, GrsDns_Red, 1.50 ]
+               - [ RockResourceSilicon, 0.02, Free, 3.00 ]
+               - [ RockGrey02Large, 1.00, Empty, 1.00 ]
+               - [ RockResourceCarbon, 0.10, Free_V, 1.00 ]
+
+
+
+
+
+           Grass:
+
+         - Name: RayCrater
+           Texture: [8, 9, 0.5, 3, 3, 0.5, 0.15]
+           UndergroundLayers:
+               - [10, 2]
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 600"
+           Color: [0.9, 0.8, 0.3]
+           StampProb: 1
+           StampForcesBiome: True
+           StampForcesBiomeType: OverlapOther
+           StampTries: 10
+           Stamps:
+               - CraterMoon_14, 0.05
+               - CraterMoon_14b, 0.03
+           Temperature: -20
+           Decorations:
+               - [ RockGrey01Large, 0.05, Free, 2.00 ]
+               - [ RockGrey02Large, 0.03, Free_V, 1.50 ]
+               - [ CrystalsPyramidBlue, 0.03, Free, 2.00 ]
+               - [ RockResourceCopper, 0.005, Free, 2.00 ]
+               - [ RockResourceSilicon, 0.005, Free, 2.00 ]
+           Grass:
+
+         - Name: LayeredIce
+           Texture: [0, 5, 0.9, 6, 6, 1, 0]
+           UndergroundLayers:
+               - [0, 3]
+               - [12, 2]
+               - [10, 1]
+               - [12, 2]
+               - [10, 2]
+               - [11, 2]
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 140"
+           Color: [0.4, 0.4, 0.4]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 1.10, Free_V_D, 0.30 ]
+               - [ RockGrey02Large, 0.08, Free_V_D, 0.00 ]
+
+
+
+
+           Grass:
+
+         - Name: IceSheet
+           Texture: [0, 6, -0.45]
+           UndergroundLayers:
+               - [12, 20]
+               - [10, 2]
+               - [12, 5]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 130"
+           Color: [0.5, 0.5, 0.5]
+           StampProb: 1
+           StampForcesBiome: True
+           StampForcesBiomeType: OverlapAll
+           StampTries: 2
+           Stamps:
+               - CraterMoon_15, 0.7
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 0.10, Free_V, 1.50 ]
+               - [ RockGrey02Large, 0.08, Free_V, 1.20 ]
+
+           Grass:
+
+         - Name: CrustedIce
+           Texture: [10, 6, -0.5]
+           UndergroundLayersDefault: True
+           UndergroundLayers:
+               - [10, 5]
+               - [12, 2]
+               - [10, 2]
+               - [12, 15]
+               - [15, -1]
+               - [11, 1]
+           SelectionCriteria:
+               - "Height > 90"
+           Color: [0.6, 0.6, 0.6]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+               - [ RockGrey01Large, 0.10, Free_V_D, 0.50 ]
+               - [ RockGrey02Large, 0.01, Free_V_D, 0.50 ]
+               - [ RockGreySmall02, 1.50, Free_V_D, 0.20 ]
+
+
+
+           Grass:
+
+         - Name: Flats
+           Texture: [11, 11, 0.2]
+           Color: [0, 1, 0]
+           StampProb: 1
+           StampForcesBiome: False
+           StampForcesBiomeType: OverlapAll
+           StampTries: 0
+           Stamps:
+           Temperature: 0
+           Decorations:
+           Grass:
+
+
+
+
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "An icy companion, with an ocean deep between its crust and rocky core. Faint organic substances leave colourful streaks on the surface. - A memory of a moon back in the Sol system..."
+
+PlanetType: Snow
+PlayfieldType: Moon
+Difficulty: 2
+
+LandClaimZone: Device
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.30, 0.40, 0.4"
+
+SkyColor: "0, 0, 0" 
+SkyHorizonColor: "0, 0.1, 0"
+AtmosphereParams: [1, 2]     
+
+# Light
+DayLightIntensity: 0.6
+NightLightIntensity: 0.4
+
+LightZenithColor: "0.98, 0.90, 1"
+LightHorizonColor: "1, 0.6, 0.15"
+NightLightColor: "0.78, 0.78, 1"
+
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareWhite3 
+
+# Fog
+# AtmosphereFog: 0.00
+FogCloudIntensity: 0.0
+FogColor: "1, 1, 1"
+# GroundFogIntensity: 0.07
+# GroundFogHeight: 130
+
+# Clouds and Wind
+CloudsDensity: 0.0
+CloudsSharpness: 1
+CloudsBrightness: 0.0
+CloudsOpacity: 0.0
+CloudsZenithColor: "0.1, 0.1, 0.1"
+CloudsHorizonColor: "1, 0.3, 0.1"
+
+WindSpeed: 0
+
+
+SpecialEffectsGlobal:
+  - Name: Clear    # To remove the 'space view clouds'
+    Type: Weather
+    InitialDelay: 0
+    Delay: 0
+    Lifetime: 3000
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: SiliconResource   # Shallow
+      Biome: [ Mountains, PlainsEdge, Plains, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 5 ]
+      SizeMinMax: [ 7, 8 ]
+      DepthMinMax: [ 3, 8 ]
+      DroneProb: 0.4
+      # DistTypeCylinder:
+        # MaxRadius: 10
+        # YVariance: 3
+      
+    - Name: CobaltResource    # Mountains, shallow
+      Biome: [ Mountains, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 2, 3 ]
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 4, 9 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1      
+      
+    - Name: MagnesiumResource  # Mountains, shallow, very poor
+      Biome: [ Mountains, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 1, 2 ]
+      SizeMinMax: [ 2, 3 ]
+      DepthMinMax: [ 5, 10 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1 
+      
+    - Name: MagnesiumResource  # Below ice, rich -> Needs HV excavator or autominer
+      Biome: [ LayeredIce, IceSheet, CrustedIce ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 4 ]  #2,2
+      SizeMinMax: [ 6, 7 ]
+      DepthMinMax: [ 35, 45 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1       
+     
+    - Name: CobaltResource     # Deep below ice, rich -> Needs HV excavator or autominer
+      Biome: [ LayeredIce, IceSheet, CrustedIce ]
+      IsScalingCount: True 
+      CountMinMax: [ 3, 3 ]
+      SizeMinMax: [ 8, 9 ]
+      DepthMinMax: [ 45, 55 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+
+    - Name: IronResource    # Very shallow, meteorite impact anywhere
+      # Biome: [ Mountains, SmallCrater, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 5, 7 ] 
+      SizeMinMax: [ 4, 7 ] 
+      DepthMinMax: [ 2, 5 ]
+      DroneProb: 0.3      
+      MaxDroneCount: 1
+      
+    - Name: PromethiumResource # Shallow, meteorite impact
+      Biome: [ SmallCrater, Rifts, Regolith ]
+      IsScalingCount: True 
+      CountMinMax: [ 2, 4 ]
+      SizeMinMax: [ 3, 6 ]
+      DroneProb: 0.7
+      MaxDroneCount: 1
+      DepthMinMax: [ 0, 1 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+      
+    - Name: PentaxidResource   # Shallow, meteorite impact
+      Biome: [ SmallCrater ]
+      IsScalingCount: True 
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 2, 3 ]
+      DroneProb: 0.6
+      MaxDroneCount: 2
+      DepthMinMax: [ 0, 5 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: CobaltResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: MagnesiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+     - Name: PentaxidResource
+       Threshold: 0.2
+       Amount: 0.2
+
+### POIs
+POIs:
+    Random:
+        - GroupName: DroneBaseT1  #CommandCenter
+          Faction: Zirax  
+          NoShieldReload: True
+          IsCommandCenter: True
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 0, 1 ]
+          DroneProb: 1.0
+          DronesMinMax: [ 4, 5 ]
+          ReserveCount: 5
+          Properties: 
+            - Key: RegenAfter
+              Value: 720
+
+# ProgenitorArtifacts
+        - GroupName: ProgenitorArtifacts      
+          Faction: None     
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: CrashedShipLargeSnow      
+          Faction: None     
+          CountMinMax: [ 1, 1 ]
+          IsScalingCount: True 
+          DroneProb: 1.0
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 4
+          TroopTransport: False
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 720
+
+        - GroupName: RadosAuxT1Snow
+          Faction: Rados   
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          IsScalingCount: True 
+          DroneProb: 0.7
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: False
+          SpawnResource: ["PentaxidResource:1-2"]
+          ResourceDistance: 400
+          Properties:
+            - Key: RegenAfter
+              Value: 720
+# Civilians
+
+        - GroupName: CivilSettlement 
+          Territory: False
+          Faction: Colonists                    #primarily for outside the territories
+          NoShieldReload: True
+          CountMinMax: [ 3, 4 ]
+          Properties:  
+            - Key: RegenAfter
+              Value: 720 
+
+        # - GroupName: CivilSettlement 
+        # # Territory: False
+          # Faction: Main                    #fill up territories when CIV faction is not placed
+          # NoShieldReload: True
+          # CountMinMax: [ 3, 4 ]
+          # Properties:  
+            # - Key: RegenAfter
+              # Value: 720 
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [ -596, 104, -1063 ]
+          RotY: 125
+
+        - Mode: Survival
+          Spawn: EscapePod
+          Armor: ArmorMedium
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          Difficulty: 0
+          PresetStyle: 0
+          Stock:
+              - Name: DroneSmallFast01Rocket
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneLargeSlow01Minigun
+                Amount: 100
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallAttackBase
+                Amount: 300
+                Extra: 1
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: RipperDog
+                Amount: 400
+                Extra: 3
+
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: -2500
+          Radius: 1500
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+          Radius: 1500
+
+Build: 3258

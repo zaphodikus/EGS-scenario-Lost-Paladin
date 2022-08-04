@@ -1,0 +1,119 @@
+---
+# # ==============================================================
+
+PlanetSize: 
+  SizeRange: [5]
+  SizeProbs: [1]  
+TemperatureMin: [-10, -10]  #                         
+TemperatureMax: [10,10]   #
+PlanetAxis: [15,35]                           
+HumidityMin: [0.1, 0.1]   #                       
+HumidityMax: [0.3, 0.3]   #                    
+Radiation: [0, 2]
+SeaLevel: [67, 78]     
+TerrainLevel: [55, 65]                 
+LandWaterRatio: [0.75, 0.75]    # 0.78        # 0.3 = 30% Land, 70% Water. 0.9 = 90% Land, 10% Water
+TemperatureHeightRange: [0, 120]
+TemperatureGradientRange: [0.65, 0.05]
+TemperatureNoiseFac: 0.5
+HumidityHeightFac: [25, 268]
+HumidityNoiseFac: 0.6
+# ==============================================================
+
+# Terrain:                    
+  # - Name: [NewTemperate32x16]
+
+TerrainHeightMapMax: 400
+
+## Splatmaps:
+# Channel: 0 1 2 3
+# Splat 1: R G B A
+# Channel: 4 5 6 7
+# Splat 2: R G B A
+# Channel: 8 9 10 11
+# Splat 3: R G B A
+
+Biomes: 
+  - Name: Water
+    Texture: [0, 0, 0.25]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria: 
+    - Height < SeaLevel
+    Color: [0, 0, 1]
+    Decorations: 
+    Grass: 
+# ==============================================================
+  - Name: HighMountains
+    Texture: [7, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope
+    SelectionCriteria:  
+    - Height > 280
+    Color: [0.8, 0.8, 0.8]
+    Decorations:  
+    Grass:  
+# ==============================================================
+  - Name: Mountains
+    Texture: [8, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria: 
+    - Height > 250
+    Color: [0.6, 0.6, 0.6]
+    Decorations:  
+    Grass:  
+# ==============================================================
+  - Name: Beach
+    Texture: [1, 1, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    - Height < SeaLevel + 2
+    # - Temperature > 0
+    Color: [0.8, 0.8, 0]  
+    Decorations:
+    Grass: 
+# ==============================================================
+  - Name: BorealForest
+    Texture: [2, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    # - Height < SeaLevel + 20
+    - Humidity > 0.3
+    - Temperature > 0
+    Color: [0, 0.4, 0]    
+    Decorations:
+    Grass:
+# ==============================================================
+  - Name: Grassland
+    Texture: [4, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:
+    # - Height < SeaLevel + 20
+    - Humidity > 0.1
+    - Temperature > 0
+    Color: [0, 0.7, 0]    
+    Decorations:
+    Grass:
+# ==============================================================
+  - Name: Taiga
+    Texture: [5, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:  
+    - Height < 250
+    - Humidity > 0.1 
+    - Temperature > -5
+    # - Temperature < 15
+    # Color: [1, 0.8, 0.47]  
+    Color: [0.8, 1, 0.5]
+    Decorations:  
+    Grass:  
+# ==============================================================
+  # - Name: Snow
+    # Texture: [5, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    # SelectionCriteria:   
+    # - Temperature < 0
+    # - Humidity > 0.2 
+    # Color: [1, 1, 1]
+    # Decorations:  
+    # Grass:  
+# ==============================================================
+# CATCH ALL
+# ==============================================================
+  - Name: Tundra
+    Texture: [6, 3, 0.2]   # ID Top Texture, ID Side Texture, Slope Side: low value, early 
+    SelectionCriteria:   
+    # Color: [0.8, 1, 0.8]  
+    Color: [0.9, 1, 0.9]   
+    Decorations:  
+    Grass:  

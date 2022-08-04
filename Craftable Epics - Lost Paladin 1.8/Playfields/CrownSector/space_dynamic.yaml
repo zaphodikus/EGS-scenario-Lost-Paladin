@@ -1,0 +1,250 @@
+# Playfield Characteristics
+# Playfield Characteristics
+Gravity: 0
+AtmosphereEnabled: False
+PvPProb: 0
+UseFixed: True
+
+Radiation: [2,3]             # [2,4] Using only very narrow rads, for better starting out
+TemperatureDay: [-130,-100]
+Music: [ space]    # Using only ONE song, for better experience. (Starting and returning) [moonstone, space] # Space has the horns, as if 'start of adventure'.
+ 
+PlayfieldType: Space  
+PlanetType: OrbitStarter 
+
+### Resource Asteroid
+Resources:            
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 1               
+      Pos: [ -1480, -4808, 1170 ] 
+      Properties:     
+        - Key: RegenAfter
+          Value: 180         
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      Pos: [ -570, -4808, 1970 ]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1               
+      Properties:     
+        - Key: RegenAfter
+          Value: 180    
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      Pos: [ 530, -4808, 1176 ]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1         
+      Properties:     
+        - Key: RegenAfter
+          Value: 180                
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      Pos: [ 183, -4808, -466 ]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1         
+      Properties:     
+        - Key: RegenAfter
+          Value: 180              
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      CountMinMax: [ 1, 1 ]
+      Probability: 1        
+      Pos: [ 1107, -4658, -1497 ]
+      Properties:     
+        - Key: RegenAfter
+          Value: 180          
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      Pos: [ 537, -4660, -452 ]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1          # randomized (i.e. may or may not be present)       
+      Properties:     
+        - Key: RegenAfter
+          Value: 180       
+          
+    - Name: [ AsteroidVoxel01Ice, AsteroidVoxel02Ice, AsteroidVoxel03Ice]
+      DisplayName: Ice Asteroid
+      Pos: [ 132, -5040, 651 ]
+      CountMinMax: [ 1, 1 ]
+      Probability: 1          # randomized (i.e. may or may not be present)       
+      Properties:     
+        - Key: RegenAfter
+          Value: 180       
+           
+### POIs
+POIs:
+
+# Available Asteroid Fields: 
+#   AsteroidField = small, compact asteroid field (ellipsoid) with nebuale; no center gap.
+#   AsteroidFieldRing = large asteroid ring (torus) with dense asteroid population + nebulae; very large center gap (free of nebulae and asteroids).
+#   AsteroidRingPlanet = do not use/does not work in orbits.
+#   AsteroidFieldRectangle2 = compact asteroid field (ellipsoid) + nebulae; small center gap (with nebulae but without asteroids); Note: gab is NOT exactly in its center! (~300m off x/z)
+#   AsteroidFieldBoxExclude = many asteroids filling the area  
+#   AsteroidFieldFewBoxExclude = few asteroids filling the area  
+
+    - Name: [AsteroidFieldRectangle2] 
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, -5000, -0]
+      #RandomRotation: True
+      # BaseField: True
+      
+    - Name: [AsteroidFieldBoxExclude] 
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, -5000, -0]
+      RandomRotation: True
+      # BaseField: True
+            
+    - Name: [AsteroidFieldFewBoxExclude] 
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, 2500, 0]
+      RandomRotation: True
+      # BaseField: True
+            
+    - Name: [AsteroidFieldFewBoxExclude] 
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+      Pos: [0, -10000, 0]
+      RandomRotation: True
+      # BaseField: True
+
+# Story POI
+
+    - Type: BA_Alien   
+      GroupName: StoryDMGTSO            #Has teleporter to Omicron for story + info about teleporter etc
+      Faction: Alien 
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+     # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      #InitPower: True
+      # Pos: [ 65, -2000, -6800 ]    # Original was turned off
+      Pos: [ 894, -5290, 46 ]   # new position
+      Rot: [ 0, 75, 0 ]            # Original was turned off      
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        - Key: Music
+          Value: ExtraktTechno
+        - Key: StationInterface
+          Value: "Fuel:1.5,O2:1.2,Warp:1,Ammo:0.7,Repair:8,Shield:1,IfNeutral:0.2,IfHonored:-0.20"   
+
+# SV single
+    - Type: SV_Player
+      GroupName: TOTwarpSV              #Medium sized SV the player can fit a warpdrive in
+      Faction: None
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]
+      Probability: 1
+    #  InitPower: True
+      Pos: [ 608, -5016, -834 ]    
+      Rot: [ 0, 75, 0 ]             
+      Properties:
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 720
+          
+    - Type: BA_Alien
+      GroupName: VOIDArtifacts
+      DisplayName: Unknown
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      Faction: None
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      Pos: [ -52, -5290, 525 ]
+      Rot: [ 0, 0, 0 ]
+      Properties: 
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 180          
+          
+    - Type: BA_Alien
+      GroupName: BAOBeacons
+      DisplayName: Asteroid Field
+      Mode: Survival
+      CountMinMax: [ 1, 1 ]     
+      Probability: 1
+      Faction: None
+      SpaceDefenseOverrideDefaults: True
+      SpaceDefenseProbability: 0
+      Pos: [ -100, -5290, 525 ]
+      Rot: [ 0, 0, 0 ]
+      Properties: 
+        - Key: MapMarker
+          Value: Neutral
+        - Key: RegenAfter
+          Value: 180          
+          
+    # - Type: BA_Alien
+      # Name: [ BAO_ProgenitorDestab ]    # Could be a Progenitor teleporter further in the story?
+      # DisplayName: Unknown
+      # Mode: Survival
+      # CountMinMax: [ 1, 1 ]     
+      # Probability: 1
+      # Faction: Alien
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # Pos: [ 290, -5000, -410 ]
+      # Rot: [ 0, 0, 0 ]
+      # Properties: 
+        # - Key: MapMarker
+          # Value: Neutral
+        # - Key: RegenAfter
+          # Value: 180          
+
+#None  - JUNKYARDS
+
+    # - Type: BA_Alien
+      # GroupName: JunkYardSpaceBAO
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 0, 4 ]
+      # Probability: 0.15
+      # InitPower: True
+      # Properties:
+        # - Key: MapMarker
+          # Value: Neutral
+        # - Key: RegenAfter
+          # Value: 720
+
+# # CV single
+    # - Type: CV_Alien
+      # GroupName: JunkYardSpaceCV
+      # Faction: None
+      # Mode: Survival
+      # CountMinMax: [ 0,6 ]
+      # Probability: 0.1
+      # InitPower: True
+      # Properties:
+        # - Key: MapMarker
+          # Value: Neutral
+        # - Key: RegenAfter
+          # Value: 720
+
+
+  
+
+DroneBaseSetup:                                                # Note: not ALL possible settings are used in that config. Check +ExampleSpace folder > space_dynamic.yaml
+      - FreeDrones:                                             #FreeDrones = only relevant for NPC Factions that have a galactic territory: Zirax, Polaris, Trader, Kriel, Pirates, Legacy. Will not spawn in non-territory!
+          - Name: [SpaceDroneBattered01,SpaceDroneBattered02]
+            Faction: Alien                               
+            CanNotBeControlledByMasterAI: False          
+            POINameAsPositionRef: [BAOBeacons,VOIDArtifacts]
+            Count: [1, 2]                       
+            Radius: [200, 1000]
+            Properties:
+              - Key: AIManPatrolGroups #which POI groups can the drones patrol? Asteroids will be ignored
+                Value: "BAOBeacons, VOIDArtifacts"
+             # - Key: AIManPatrolFactions                                              #Drones shall only partrol RESOURCES; OPV shall patrol POIs  
+             #   Value: "Zirax, Xenu, Ghyst, Epsilon, Abyssal, Serdu, Rados"
+              - Key: AIManMaxPursuitRange 
+                Value: 2500

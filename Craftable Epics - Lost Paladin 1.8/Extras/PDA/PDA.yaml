@@ -1,0 +1,18 @@
+# -------
+# Created with eWPDA 2.44.0
+# Website: https://empyrion-homeworld.net/tools/ewpda
+# -------
+Chapters:
+  - ChapterTitle: pda_eOaqmmO
+    Category: Tutorial
+    NoSkip: true
+    Activatable: Always
+    Visibility: Always
+    PlayerLevel: 1
+    Tasks:
+      - TaskTitle: pda_mK4GWea
+        Actions:
+          - ActionTitle: pda_S8mSiuO
+            Description: pda_0Gm8qGC
+        Headline: pda_a8e6i88
+Creator: zaphodikus

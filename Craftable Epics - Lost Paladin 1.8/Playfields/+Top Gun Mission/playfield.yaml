@@ -1,0 +1,152 @@
+# Created by EPD v1.32.4.0, Playfield Version: 6.0.15 [1056] (Alpha Experimental 6.0 - Release Candidate 4)
+TemperatureDay: -100
+Music: DarkSoundscape3
+Radiation: 12.699999999999999
+PlanetType: Space
+PvP: True
+UseFixed: True
+Instance:
+  Time: 5
+  MaxPlayers: 4
+  PortalOpen: 120
+  Cooldown: 10800
+  DropInventory: True
+  LockOnFaction: True
+Difficulty: 5
+PlayfieldType: Space
+SunFlare: EnvironmentalEffects/SunFlareWhite
+Stars: SkyboxStarsPurple
+Nebula: PrefabNebulaBluePinkPurple
+DroneBaseSetup:
+  Fixed:
+  - Name: MainDroneBase
+    Pos: [5000, 200, 5000]
+    DroneOnDuty:
+    - Name: SpaceDroneLaser
+      Pos: [-650, -300, 400]
+      Radius: 250
+    - Name: SpaceDroneLaser
+      Pos: [-500, -200, 400]
+      Radius: 250
+    - Name: SpaceDroneLaser
+      Pos: [-690, -300, 350]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [1000, -120, 400]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [850, -320, 400]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [900, -360, 350]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [850, 200, 300]
+      Radius: 350
+    - Name: SpaceDronePlasma
+      Pos: [900, -180, 250]
+      Radius: 350
+    - Name: SpaceDroneLaser
+      Pos: [800, -300, 400]
+      Radius: 300
+    - Name: SpaceDroneLaser
+      Pos: [750, -200, 400]
+      Radius: 300
+    - Name: SpaceDroneLaser
+      Pos: [700, -300, 350]
+      Radius: 300
+    - Name: SpaceDroneLaser
+      Pos: [-650, -300, 400]
+      Radius: 250
+    - Name: SpaceDroneLaser
+      Pos: [-500, -200, 400]
+      Radius: 250
+    - Name: SpaceDroneLaser
+      Pos: [-690, -300, 350]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [1000, -120, 400]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [850, -320, 400]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [900, -360, 350]
+      Radius: 250
+    - Name: SpaceDronePlasma
+      Pos: [850, 200, 300]
+      Radius: 350
+    - Name: SpaceDronePlasma
+      Pos: [900, -180, 250]
+      Radius: 350
+    - Name: SpaceDroneLaser
+      Pos: [800, -300, 400]
+      Radius: 300
+    - Name: SpaceDroneLaser
+      Pos: [750, -200, 400]
+      Radius: 300
+    - Name: SpaceDroneLaser
+      Pos: [700, -300, 350]
+      Radius: 300
+    DroneSpaceFreighter: []
+    SpaceVessel: []
+    DronePlanetVessel: []
+    DronePlanetBase: []
+POIs:
+  Fixed:
+  - Type: BA_Alien
+    Prefab: Top-Gun-Enemy-Base
+    Mode: Survival
+    Name: Enemy Base
+    Pos: [1000, -320, 400]
+    Rot: [0, 75, 0]
+    InitPower: True
+    Properties: []
+  - Type: SV_Player
+    Prefab: Top-Gun-SV_Trainer
+    Mode: Survival
+    Name: Fighter 1
+    Pos: [-666.6, -313.3, 408.3]
+    Rot: [0, 75, 0]
+    InitPower: True
+    Properties: []
+  - Type: SV_Player
+    Prefab: Top-Gun-SV_Trainer
+    Mode: Survival
+    Name: Fighter 2
+    Pos: [-664, -313.3, 396.5]
+    Rot: [0, 75, 0]
+    InitPower: True
+    Properties: []
+  - Type: SV_Player
+    Prefab: Top-Gun-SV_Trainer
+    Mode: Survival
+    Name: Fighter 3
+    Pos: [-671.6, -313.3, 393.9]
+    Rot: [0, 255, 0]
+    InitPower: True
+    Properties: []
+  - Type: SV_Player
+    Prefab: Top-Gun-SV_Trainer
+    Mode: Survival
+    Name: Fighter 4
+    Pos: [-674.7, -313.3, 405.7]
+    Rot: [0, 255, 0]
+    InitPower: True
+    Properties: []
+  - Type: CV_Alien
+    Prefab: Top-Gun-Alien-Patrol-Vessel
+    Mode: Survival
+    Name: Alien Patrol Vessel
+    Pos: [-370, -320, 600]
+    Rot: [0, 165, 0]
+    Properties: []
+  - Type: BA_Admin
+    Prefab: Top-Gun-Damocles
+    Mode: Survival
+    Name: Damocles CV
+    Pos: [-670, -320, 400]
+    Rot: [0, 75, 0]
+    InitPower: True
+    Properties: []
+  FixedPlayerStart: []

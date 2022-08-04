@@ -1,0 +1,197 @@
+# Playfield Characteristics
+Gravity: 0                         
+AtmosphereEnabled: False          
+PvPProb: 0
+UseFixed: True                       
+Radiation: [5,10]                    
+TemperatureDay: [-200,-100]    
+Music: [moonstone, space, DistantWorlds, Migration]          
+ 
+PlayfieldType: Space  
+PlanetType: SunOrbit            
+
+### Resource Asteroid
+Resources:                     
+    - Name: [ AsteroidVoxel01Iron, AsteroidVoxel02Iron, AsteroidVoxel03Iron]
+      DisplayName: Iron Asteroid
+      CountMinMax: [ 0, 1 ]
+      Probability: 0.4     
+      Properties:     
+        - Key: RegenAfter
+          Value: 180       
+           
+### POIs
+POIs:
+# Zirax
+    - Type: BA_Alien
+      GroupName: BAOZiraxSatellites
+      Faction: Zirax
+      Mode: Survival
+      CountMinMax: [ 0, 3 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Polaris
+    - Type: BA_Alien
+      GroupName: BAOPolarisSatellites
+      Faction: Polaris
+      Mode: Survival
+      CountMinMax: [ 1, 2 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Trader
+    - Type: BA_Alien
+      GroupName: BAOTraderSatellites
+      Faction: Trader
+      Mode: Survival
+      CountMinMax: [ 1, 2 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Kriel
+    - Type: BA_Alien
+      GroupName: BAOKrielSatellites
+      Faction: Kriel
+      Mode: Survival
+      CountMinMax: [ 0, 2 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Pirates
+    - Type: BA_Alien
+      GroupName: BAOPiratesSatellites
+      Faction: Pirates
+      Mode: Survival
+      CountMinMax: [ 0, 1 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Colonists
+    - Type: BA_Alien
+      GroupName: BAOColonistsSatellites
+      Faction: Colonists
+      Mode: Survival
+      CountMinMax: [ 0, 1 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Brotherhood of Farr
+    - Type: BA_Alien
+      GroupName: BAOFarrSatellites
+      Faction: Farr
+      Mode: Survival
+      CountMinMax: [ 0, 1 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# ARC
+    - Type: BA_Alien
+      GroupName: BAOARCSatellites
+      Faction: ARC
+      Mode: Survival
+      CountMinMax: [ 0, 1 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+# Wastelanders
+    - Type: BA_Alien
+      GroupName: BAOWastelandersSatellites
+      Faction: Wastelanders
+      Mode: Survival
+      CountMinMax: [ 0, 1 ]     
+      Probability: 1
+      # SpaceDefenseOverrideDefaults: True
+      # SpaceDefenseProbability: 0
+      # SpaceDefensePriceMinMax: [ 30, 60 ] 
+      InitPower: True
+      Properties: 
+        - Key: RegenAfter
+          Value: 720  
+        # - Key: Music
+          # Value: NebularClouds  
+        # - Key: Discovery
+          # Value: False
+
+
+DroneBaseSetup:

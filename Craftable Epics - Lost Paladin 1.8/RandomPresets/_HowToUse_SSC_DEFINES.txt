@@ -1,0 +1,18 @@
+The SolarSystemConfig_Defines allows to define default playfields in one place INSTEAD of having to add them to each and every SolarSystem config individually.
+
+Example: 
+The SolarSystemConfig_Defines contains how a Temperate, Arid, Lava..etc playfield type is set up.
+The SolarSystemConfigG, which is the configuration for a G-sun type solar system, now does not need to have all these playfield type configs added. They will be loaded from the _Defines file!
+
+As a result, you only need to add the playfield definitions that are SPECIFIC or SPECIAL for a sun type SolarSystemConfig (for example Starter Planets). All the defaults are loaded from the _Defines config file. The sun-type SolarSystemConfigs are then creating the 'composition' of the sun type solar system, which are: amount of playfields and WHICH playfield types are used in general. 
+
+Advantages: 
+- Only one place to maintain all the default playfields (_Defines) for a whole galaxy and all sun types
+- SolarsystemConfig files are much more readable as they only have the entries that shall be specific for a sun-type (e.g. have a specific type of Lava Planet, Starter Planets, specific orbits)
+
+Disadvantage:
+- The entry for the SpaceTradingStation is required to remain in each and every SolarSystemConfig. I cannot be handled through the _Defines setup.
+
+Related example files:
+_example_SolarSystemConfig_Defines.yaml  > example setup of the _Defines file
+_example_SolarSystemConfigG.yaml > example file using the _Defines setup plus adding custom playfields (starter planets)

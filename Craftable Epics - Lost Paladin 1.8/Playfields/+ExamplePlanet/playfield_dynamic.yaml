@@ -1,0 +1,261 @@
+---
+# # ============================================================== 
+PlanetSize: 
+  SizeRange: [2,3,4,5]               # size classes of planet
+  SizeProbs: [0.05,0.40,0.50,0.05]   # probability for the different size classes. Range [0, 1] - SizeProbs must sum up to 1
+PlanetAxis: [-25,25]                 # inclination of the planet axis (positive values = longer days on northern hemisphere, negative values = longer days on southern hemisphere). Range [-45, 45]
+# PlayfieldLevelOverride: [3,4]      # Allows to override the playfield level given in solarsystemconfig.yaml 
+ 
+TemperatureMin: [-3,-1]              # minimal temperature on the planet. Range [-200, 500]              
+TemperatureMax: [35,40]              # maximal temperature on the planet. Range [-200, 500]     
+TemperatureNight: [10,15]            # temperature reduction during night. Range [-200, 200]. Positive values = temperature reduction, Negative values = temperature increase      
+           
+HumidityMin: [0.10, 0.15]            # minimal humidity on the planet. Range [0, 1]                    
+HumidityMax: [0.28, 0.35 ]           # maximal humidity on the planet. Range [0, 1]         
+            
+Radiation: [0, 0]                    # overall radiation level on the planet. Range [0, 20] 
+
+# Important: BaseLevel < SeaLevel < TerrainLevel
+BaseLevel: [0, 0]                    # height of the base terrain. water level and the "normal" terrain will be placed above. Range [0, 400]
+SeaLevel: [35, 40]                   # on random terrain: the average depth of lakes and oceans, on fixed terrain: the y-position of the water plane. Range [0, 400]                            
+TerrainLevel: [130, 140]             # height of the normal terrain without stamps (the higher the bumpier the terrain). Range [0, 400]          
+TerrainHeightMapMax: 490             # max height of the overall terrain: low values will squeeze the terrain. Range [0, 490] 
+LandWaterRatio: [0.20, 0.25]         # ratio between water and land. 0.2 = 20% water, 80% land. Range [0, 1] 
+
+# Temperature decreases when vertically moving upwards and when moving towards poles
+TemperatureHeightRange: [30, 350]    # first value = up to this height, the temperature does not decrease. second value = lower number implies higher temperature on mountain tops 
+TemperatureNoiseFac: 0.5             # noise factor for global temperature distribution
+TemperatureGradientRange: [0.55, 0]
+
+# Humidity is maximal at sea level and decreases when vertically moving upwards 
+HumidityHeightFac: [28, 270]         # first value = up to this height, the humidity does not decrease. second value = lower number implies higher humidity on mountain tops 
+HumidityNoiseFac: 0.6                # noise factor for global humidity distribution
+
+GravityMinMax: [-10, -8]             # Influences jump height and flying behavior of vessels
+AtmosphereDensityMinMax: [0.9, 1.2]  # Influences aerodynamic drag of vessels, range of weapons and visibility of stars during day (if <1.2 stars are visible during day, the lower the value the better the visibility)
+AtmosphereO2MinMax: [0.15, 0.25]     # Oxygen level of atmosphere, influences speed of survival o2 generator
+AtmoBreathableProb: 0.8              # Probability that planet has a breathable atmosphere
+WaterProb: 0.7                       # Probability that planet has water
+GroundFogIntensityRange: [0.01, 0.1] # Float [0, 1] - Ground Layer Fog: larger values = stronger
+GroundFogHeightRange: [0, 800]       # Float [0, 800] - Ground Layer Fog Height
+AtmosphereFogRange: [0.4, 0.5]       # Float [0, 1] - Distant fog: larger values = stronger
+PvPProb: 0                         # Probability that planet is a PvP playfield, otherwise it will be PvE
+
+Water: [WaterGreen, WaterBlue]       # Choose from pre-selection [WaterGreen, WaterBlue, WaterBrown, WaterRed]
+Music: [temperate]                   # Background music playing on this playfield. Choose from pre-selection:                                     
+                                     # 2473, Adrift, alien, alien2, AlteredPhase, Anomalous, Apogee, Artefact, barren, BarrenMoon, Blight, ColdDivide, DarkSoundscape, DarkSoundscape2, DarkSoundscape3, desert, desert2, DistantWorlds, Dusk, Eden, Encryptor, EnergyMatrix, EvilWhispering, ExtraktTechno, FirstHours, Fragments, Ghost, Helios, Hyperion, JungleDepths, lava, lava2, Magnitude, Migration, moonstone, NebularClouds, Obelisk, Orbiting, Praxis, Reaver, Resurgence, Sanctuary, snow, space, StellarGrasp, SunnySkies, temperate, temperate2, temperate3, Tempest, Transit, Vanguard
+# ==============================================================
+
+GroundShapes:               # Shape defined in '.GroundShapeDatabase.txt'. Very large stamps, with a set number of placements tied to a planet's size class. Will be placed first in the stamp stack. The number behind the stamp is the individual spawning chance, in relation to all stamps of this kind.
+  - GroundShape_1, 1         
+  - GroundShape_2, 0.5
+
+HumidityMasks:              # Mask defined in '.GlobalMaskDatabase.txt'. Changes the global humidity distribution of a planet.
+  - Global_3 
+  - Global_4 
+
+TemperatureMasks:           # Mask defined in '.GlobalMaskDatabase.txt'. Changes the global temperature distribution of a planet.
+  - Global_1, 0.125 
+  - Global_1a, 0.125 
+  - Global_2, 0.125 
+
+BiomeStampTries: 20         # Number of tries to place biome stamps for a class 2 planet with 100% land, more tries the more water and the bigger the planet (class 3 = x3, class 4 = x6, class 5 = x15)
+
+# ==============================================================
+Biomes: 
+  - Name: Water             # Biome names: No spaces, has to be unique 
+    AmbientSound: Water     # Ambient sound that is played in this biome. Choose from pre-selection: AlienForest, AlienSavanna, ArticForest, ArticHighPlains, ArcticIntermediatePlains, ArticLowPlains, BarrenFog, BarrenOpenPlains, DesertHighPlains, DesertLowPlains, DesertSmallLake, Islands, Lava, LavaFog, LavaPlains, Mountains, Oasis, Ocean, OpenPlains, SmallLake, Swamp, Swamp2, TropicalForest, TropicalIsland, Water
+    IgnoreForcedBiome: true # This biome will be placed, regardless of any global stamps on that position.
+    Texture: [0, 0, 0.01]   # [TexSlotNr top texture, TexSlotNr side texture, Slope Side]. Low value for Slope Side = show side texture earlier 
+                            # Numbers are tex channels as seen in the in-game texture editor.                 
+    SelectionCriteria:      # Defines where the biome may appear on a planet
+    - Height < SeaLevel - 5
+    Color: [0.2, 0.2, 1]    # The color of the Biome displayed in the Solar System Generator. No in-game effect.
+    Decorations:            # Decoration name, spawning chance, spawning distribution pattern (choose from: Free, Plant, BigPlant, Tree)
+               - [FingerSponge03-01, 0.01, Free]     
+               - [RealRock5Water, 0.001, Free]
+               - [RockGrey01Large, 0.001, Free]
+               - [RockGrey02Large, 0.001, Free]
+               - [SeaWeed02-04, 0.04, Plant]
+               - [CrystalStraight, 0.002, Free]
+    
+    Grass:                  # Grass name, density, y scale, spawning distribution pattern (choose from: GrassDense) 
+               - Name: Seaweed02
+                 Density: 0.8
+                 YScale: 0.8             # if not used, YScale=1
+                 Preset: GrassDense
+               - Name: Seaweed03
+                 Density: 0.05
+                 YScale: 1.2
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Pole
+    Weather: PoleFog                    # Custom weather that will be displayed when the player enters the biome
+    AmbientSound: ArcticLowPlains 
+    IgnoreForcedBiome: true
+    Texture: [5, 11, 0.2]  
+    UndergroundLayers:                  # [TexSlotNr, AmountOfLayers]. You can define as many underground layers as you like
+                                        # If AmountOfLayers = 0, topmost texture will be immediately replaced when destroyed. If AmountOfLayers = -1, this texture serves as "fill" texture for a dynamic number of layers.
+               - [9, 0]                 # Slot9 tex will be immediately displayed when topmost texture is destroyed 
+               - [9, 2]                 # Slot9 tex is placed for 2 layers
+               - [10, 3]                # Slot10 tex is placed for 3 layers
+               - [12, -1]               # Slot12 tex is placed to the bottom (except for the bottom 2 layers)
+               - [15, 2]                # Slot15 tex is placed at the bottom 2 layers 
+    UndergroundLayersDefault: True      # the above underground layers will be used as default for other biomes if UndergroundLayers is not given
+    SelectionCriteria:  
+    - +Lat > 0.975                      # May only spawn on from a certain latitude. Will be taken to fill up the 'pole discs'
+    # - +Long > 0.9                     # May only spawn on from a certain longitude. 
+    Color: [1, 1, 1]
+                 
+# # ==============================================================
+  - Name: Mountains 
+    AmbientSound: Mountains 
+    IgnoreForcedBiome: true    
+    Texture: [11,6,0.5, 3,3,1, 0.2]      # You can mix 2 top textures and 2 side textures: 
+                                         # [TexSlotNr1,TexSlotNr2,Occurrence TexSlotNr1 top texture, TexSlotNr1,TexSlotNr2,Occurrence TexSlotNr1 side texture, Slope Side]
+    SelectionCriteria: 
+    - Height > 150
+    Color: [0.6, 0.6, 0.6]
+    StampForcesBiome: true               # Trigger for all stamps of this biome to become 'global' stamps: Placed randomly anywhere on land, ignoring all possible biomes, replacing them with their own biome.
+    StampTries: 50                       # Controls maximum number of spawning attempts for the following stamps; Number of tries to place the stamps on a class 2 planet with 100% land, more tries will be automatically used the more water and the bigger the planet (class 3 = x2, class 4 = x3, class 5 = x6)
+    StampForcesBiomeType: OverlapOwn     # stamp can only overlap same type of stamps (eg Mountain stamps)
+    # StampForcesBiomeType: OverlapAll   # stamp can overlap itself and all other stamps (old behavior) 
+    # StampForcesBiomeType: OverlapOther # stamp can only overlap other types of stamps but now own type(eg Peak biome on temperate planet) 
+    # StampForcesBiomeType: OverlapOff   # stamp cannot overlap any other stamp (20% tolerance)
+    Stamps:                              # Stamp name as in '.StampDatabase.txt'.  Number after the stamp name is the individual spawn chance, in relation to the stamps of this biome. 
+    - Mountain_3b, 0.5                   # Class 2,3,4,5 
+    - Mountain_10b, 0.3                  # Class 4,5   - stamp will only be placed on size class 4 + 5 planets. It is defined in .StampDatabase.txt
+    - Mountain_14, 0.3                   # Class 3, 4,5 
+    Decorations:  
+               - [RockGrey01Large, 0.005]
+               - [RockGrey02Large, 0.005]
+               # Harvestables:
+               - [Snakeweed, 0.003]
+    Grass:
+               - Name: GrassBrown06
+                 Density: 0.5
+                 Preset: GrassDense
+               - Name: GrassBrown04
+                 Density: 0.9
+                 Preset: GrassDense
+               - Name: Plant01Brown
+                 Density: 0.001
+                 Preset: GrassDense
+# ==============================================================
+  - Name: Savanna
+    AmbientSound: OpenPlains 
+    Texture: [7,8,0.5, 3,3,1, 0.35]   
+    SelectionCriteria:  
+    - Humidity < 0.22
+    - Temperature > 15
+    Color: [0.65, 0.58, 0.05] 
+    Temperature: 5                  # Custom temperature: Always 5°C higher than the ambient temperature 
+    Radiation: 1                    # Custom radiation: Always +1 to the base radiation of the planet 
+    StampProb: 0.5                  # All biome stamps share the same pool of maximum spawning tries. StampProb: Chance of these stamps to be taken for a spawning attempt. 
+    Stamps:                         # Biome stamp. Tries to spawn in the 'Savanna' biome and will only alter the terrain shape. 
+               - Valley_1, 0.8      # Stamp name as in '.StampDatabase.txt'.  Number after the stamp name is the individual spawn chance, in relation to the stamps of this biome. 
+               - Valley_2, 0.6
+               - Valley_3, 0.6
+    Decorations:  
+               - [AmericanElm, 0.0002, Free]
+               - [BushGreen02, 0.0003, Free]
+               - [BushGreen01, 0.0002, Free]
+               # Harvestables:
+               - [DesertPlant20, 0.003, Plant]
+               - [Snakeweed, 0.003, Plant]
+               - [EggPlant, 0.003, Plant]
+               - [OpuntiaCactus, 0.002, Free]
+    Grass:
+               - Name: GrassBrown04
+                 Density: 0.9
+                 Preset: GrassDense
+               - Name: GrassBrown02c
+                 Density: 0.9
+                 Preset: GrassDense
+# ==============================================================
+# CATCH ALL
+# ==============================================================
+  - Name: Grassland
+    AmbientSound: OpenPlains 
+    Texture: [6,11,0.6, 3,3,1, 0.35]  
+    SelectionCriteria:  
+       - true                           # Fallback biome
+    Color: [0, 0.6, 0] 
+    Decorations:  
+               - [AmericanElm, 0.001, Tree]
+               - [ElderberryBushGreen, 0.001, BigPlant]
+               - [BushGreen01, 0.0004, BigPlant]
+               - [BushGreen02, 0.0004, BigPlant]
+    Grass:
+               - Name: GrassGreen02
+                 Density: 1
+                 Preset: GrassDense
+               - Name: Flower04
+                 Density: 0.01
+                 Preset: GrassDense
+# ==============================================================
+# Fixed positioned biomes need to be behind catch all biome!
+# ==============================================================
+  - Name: StarterBiome
+    SpecialBiome:                        # Special biomes will overwrite all other biomes - even those placed with 'StampForcesBiome'.
+        IsStarterBiome: true             # Trigger to differentiate from other special biomes.  The starter biome is used as 'zero point' for the other special biomes' distribution.
+        FixedPosition: [ -350, 350 ]     # x/z middle of stamp
+    Texture: [6,11,0.6, 3,3,1, 0.35]    
+    Color: [.7, 0.2, 0.2]
+    Stamps:         
+     - Starter_2             
+    Temperature: 5                      # Biome has custom temperature: Positive values are added to the base temperature
+    AmbientSound: OpenPlains
+    Decorations:
+               - [AmericanElm, 0.001, Tree]
+               - [BushGreen01, 0.0004, BigPlant]
+               - [BushGreen02, 0.0004, BigPlant]
+               - [RealRock4, 0.00008, Free]
+               - [RealRock8, 0.00006, Free]
+               # Harvestables:
+               - [ElderberryBush, 0.0005, BigPlant]
+               - [Snakeweed, 0.001, Plant]
+               - [CornDogBush, 0.002, Plant]
+    Grass:
+               - Name: GrassGreen02
+                 Density: 1
+                 Preset: GrassDense
+               - Name: Flower04
+                 Density: 0.01
+                 Preset: GrassDense
+
+# ==============================================================
+  - Name: RadiatedFog
+    Weather: BmFogRadiationPurple
+    AmbientSound: BarrenFog 
+    SpecialBiome:
+        CountMinMax: [1,2]            # min-max amount of RadiatedFog biomes to spawn
+        Avoid: StarterBiome           # avoid other special biomes, here: StarterBiome
+        AvoidDistance: [ 0.5, 0.8 ]   # x-z distances given as percentage of map. 0 = center of map, 1 = border of the map 
+    Texture: [2,9, 0.8, 11,11,1, 0.2]    
+    UndergroundLayers:
+               - [0, 2]
+               - [12, 4]
+               - [11, -1]
+               - [10, 1]
+    Color: [1, 0, 1]            
+    Temperature: 30                   # Biome has custom temperature: Positive values are added to the base temperature
+    Radiation: 4                      # Biome has custom radiation: Positive values are added to base radiation
+    Stamps:
+               - DunesSea_01b
+    Decorations:
+               - [AkuaPlant2, 0.08]
+               - [BallFlower01, 0.04]
+               - [BallFlower02, 0.015]
+               - [BallFlower03, 0.02]
+               - [Mushroom02, 0.003]
+               - [AridRock01, 0.001]
+               - [AridRock02, 0.01]
+               - [AridRock03, 0.02]
+    Grass:
+               - Name: GrassBrown04a
+                 Density: 1
+                 Preset: GrassDense
+               - Name: GrassBrown02d
+                 Density: 0.25
+                 Preset: GrassDense

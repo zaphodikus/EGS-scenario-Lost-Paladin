@@ -1,0 +1,1 @@
+This folder is where you place custom unity asset bundles for custom block models and item models and crosshairs, etc.

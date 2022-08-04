@@ -1,0 +1,147 @@
+---
+# Space Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html 
+
+# Playfield Characteristics
+Gravity: 0.00
+AtmosphereEnabled: False
+PvP: True
+UseFixed: True
+Radiation: 3.39
+TemperatureDay: -130
+Music: moonstone
+
+# Playfield difficulty (has impact on experience gains)
+Difficulty: 2
+
+PlayfieldType: Space
+
+PlanetType: Space
+
+Description: "The space around  features an asteroid belt"
+
+SunFlare: EnvironmentalEffects/SunFlareWhiteSpace
+Stars: SkyboxStarsBlack
+Nebula: PrefabNebulaBlue
+
+### POIs
+POIs:
+    Fixed:
+        - Type: AsteroidField
+          Name: Asteroid Field
+          Pos: [0, 0, 0]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel01Silicon
+          Prefab: AsteroidVoxel01Silicon
+          Name: Silicon Asteroid
+          Pos: [-4139, 397, 2428]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel03Copper
+          Prefab: AsteroidVoxel03Copper
+          Name: Copper Asteroid
+          Pos: [3799, 164, -1376]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel03Copper
+          Prefab: AsteroidVoxel03Copper
+          Name: Copper Asteroid
+          Pos: [-3239, -213, -3742]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel03Cobalt
+          Prefab: AsteroidVoxel03Cobalt
+          Name: Cobalt Asteroid
+          Pos: [3271, -276, 4233]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Promethium
+          Prefab: AsteroidVoxel02Promethium
+          Name: Promethium Asteroid
+          Pos: [-1982, 559, -3762]
+          Rot: [0, 0, 0]
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [5000, 0, -5000]
+          RotY: 0
+
+# Drones
+DroneBaseSetup:
+    Fixed:
+        - Name: MainDroneBase
+          Pos: [-6816, -1450, 1087]
+          DroneOnDuty:
+            - Name: SpaceDroneLaser
+              Pos: [1487, 1934, 4457]
+              Radius: 363
+            - Name: SpaceDroneLaser
+              Pos: [-7469, -482, -753]
+              Radius: 336
+            - Name: SpaceDroneLaser
+              Pos: [-190, 88, -194]
+              Radius: 704
+            - Name: SpaceDronePlasma
+              Pos: [-2259, -77, -640]
+              Radius: 729
+          SpaceVessel:
+            - Name: Freighter
+              FixedMaxSpeed: 24
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 500
+                PathWayPoint:
+                - [3862, -1773, 5338]
+                - [2401, -2431, -305]
+                - [-2506, 632, -1577]
+                - [12, -2493, -6272]
+                - [-6, -484, 2]
+                - [1040, -1749, 619]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 4
+                  Extra: 2
+            - Name: Freighter
+              FixedMaxSpeed: 24
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 530
+                PathWayPoint:
+                - [101, -499, -131]
+                - [-6103, -1385, -2064]
+                - [-3680, 240, 5397]
+                - [-1861, -369, -2260]
+                - [-662, -2192, 655]
+                - [-5320, 1759, -4155]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 4
+                  Extra: 2
+            - Name: Freighter
+              FixedMaxSpeed: 24
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 342
+                PathWayPoint:
+                - [7248, 721, 293]
+                - [2643, -374, 7157]
+                - [-1027, -777, -975]
+                - [-487, -2155, 135]
+                - [1092, 1259, -4894]
+                - [2754, 1810, 2329]
+                - [905, 544, 963]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 3
+                  Extra: 0
+            - Name: BAO_XenuSupplyStation
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [-380, -37, -190]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 15
+                  Extra: 0

@@ -1,0 +1,3 @@
+Custom .jpg or .png images, .wav or .ogg audio, or .mp4 video files go here for use in the decal system.
+You can also place unity asset bundles here for use in decals.
+You can also place a decalsdef.txt file here for use with the decal gun.

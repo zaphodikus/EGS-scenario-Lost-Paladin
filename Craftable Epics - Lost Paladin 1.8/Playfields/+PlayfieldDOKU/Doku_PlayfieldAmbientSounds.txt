@@ -1,0 +1,36 @@
+AMBIENT sound effects, to be used with:
+- 'AmbientSound:' (playfield_dynamic.yaml)
+
+AlienForest
+AlienSavanna
+ArcticForest
+ArcticForest_Night
+ArcticHighPlains
+ArcticIntermediatePlains
+ArcticLowPlains
+BarrenFog
+BarrenOpenPlains
+BreathingUnderwater
+DesertCricket
+DesertHighPlains
+DesertHighPlains_Night
+DesertLowPlains
+DesertLowPlains_Night
+Islands
+Lava
+LavaFog
+LavaPlains
+Mountains
+Oasis
+Oasis_Night
+Ocean
+OpenPlains
+OpenPlains_Night
+SmallLake
+Swamp
+Swamp2
+TropicalForest
+TropicalForest_Night
+TropicalIsland
+TropicalIsland_Night
+Water

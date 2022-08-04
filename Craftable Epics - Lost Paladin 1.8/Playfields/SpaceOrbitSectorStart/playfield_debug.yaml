@@ -1,0 +1,159 @@
+---
+# Space Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html 
+
+# Playfield Characteristics
+Gravity: 0.00
+AtmosphereEnabled: False
+PvP: True
+UseFixed: True
+Radiation: 5.81
+TemperatureDay: -113
+Music: DistantWorlds
+
+# Playfield difficulty (has impact on experience gains)
+Difficulty: 2
+
+PlayfieldType: Space
+
+PlanetType: Space
+
+Description: "The space around  features an asteroid belt"
+
+SunFlare: EnvironmentalEffects/SunFlareRedSpace
+Stars: SkyboxStarsRed
+Nebula: PrefabNebulaBluePinkRed
+
+### POIs
+POIs:
+    Fixed:
+        - Type: BA_Admin
+          Prefab: TSO_OscutuneOrbit
+          Mode: Survival
+          Name: TSO Trading Outpost
+          Pos: [3517, -637, 1077]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Silicon
+          Prefab: AsteroidVoxel02Silicon
+          Name: Silicon Asteroid
+          Pos: [2852, 197, 4662]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel01Silicon
+          Prefab: AsteroidVoxel01Silicon
+          Name: Silicon Asteroid
+          Pos: [-3468, 548, 2444]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Silicon
+          Prefab: AsteroidVoxel02Silicon
+          Name: Silicon Asteroid
+          Pos: [-191, -128, -4555]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Magnesium
+          Prefab: AsteroidVoxel02Magnesium
+          Name: Magnesium Asteroid
+          Pos: [322, 337, 4218]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Erestrum
+          Prefab: AsteroidVoxel02Erestrum
+          Name: Erestrum Asteroid
+          Pos: [-4367, -414, 2754]
+          Rot: [0, 0, 0]
+
+        - Type: AsteroidVoxel02Erestrum
+          Prefab: AsteroidVoxel02Erestrum
+          Name: Erestrum Asteroid
+          Pos: [4459, 305, -1527]
+          Rot: [0, 0, 0]
+
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Pos: [5000, 0, -5000]
+          RotY: 0
+
+# Drones
+DroneBaseSetup:
+    Fixed:
+        - Name: MainDroneBase
+          Pos: [1083, 660, -39]
+          DroneOnDuty:
+            - Name: SpaceDroneLaser
+              Pos: [5735, 611, -700]
+              Radius: 400
+            - Name: SpaceDroneLaser
+              Pos: [3009, 1716, 2177]
+              Radius: 348
+          SpaceVessel:
+            - Name: Freighter
+              FixedMaxSpeed: 23
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 523
+                PathWayPoint:
+                - [-1649, -68, -5087]
+                - [-2569, -745, -7424]
+                - [-3261, 229, -2825]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 3
+                  Extra: 2
+            - Name: Freighter
+              FixedMaxSpeed: 24
+              Mission: Freighter
+              Freighter:
+                DelayBetweenRespawn: 503
+                PathWayPoint:
+                - [2555, 548, 3145]
+                - [-3731, 227, 4161]
+                - [3038, 227, 1670]
+                - [174, -1181, -7226]
+                - [-1523, -1784, -3891]
+                - [-1406, 1726, 1738]
+                - [1324, -1462, -2394]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 3
+                  Extra: 1
+            - Name: Carrier
+              FixedMaxSpeed: 24
+              Mission: SpacePatrol
+              RangePatrol:
+                Position3D: [406, -2065, 477]
+                Radius: 1270
+                DistToGround: 0
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 3
+                  Extra: 1
+            - Name: BAO_Thermica-Station
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [-3341, -456, 2394]
+              Stock:
+                - Name: SpaceDronePlasma
+                  Amount: 18
+                  Extra: 1
+            - Name: BAO_GhostRiderShipyard
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [5423, -1078, -5241]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 24
+                  Extra: 2
+            - Name: BAO_XenuShipyard
+              FixedMaxSpeed: 20
+              Mission: Immobile
+              Immobile:
+                Position3D: [149, -2255, -3927]
+              Stock:
+                - Name: SpaceDroneLaser
+                  Amount: 17
+                  Extra: 2

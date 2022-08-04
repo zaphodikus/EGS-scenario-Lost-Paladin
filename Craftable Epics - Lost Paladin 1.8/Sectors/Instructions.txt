@@ -1,0 +1,2 @@
+Here you place the Sectors.yaml file, if your scenario uses fixed sectors.
+You can use fixed sectors in a randomized galaxy.

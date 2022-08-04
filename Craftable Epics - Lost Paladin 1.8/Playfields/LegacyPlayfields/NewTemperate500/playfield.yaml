@@ -1,0 +1,890 @@
+---
+# Akua Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+# For more detailed explanations of the different parameters, see examples in Empyrion\Content\Playfields\ExamplePlanet and ExampleSpace
+# Please do not use long comments here because in a multiplayer game the yaml file has to be sent from server to client 
+
+# Playfield Characteristics
+RealRadius: 1303.797294
+ScaledRadius: 1300
+Gravity: -8.25
+AtmosphereDensity: 1.05
+AtmosphereO2: 0.2
+AtmosphereBreathable: True
+TemperatureDay: 35
+TemperatureNight: 10
+# Music: temperate
+Music: Hyperion
+Radiation: 0
+DayLength: 24
+PlanetType: Temperate
+Moons: 1
+Water: WaterGreen
+SeaLevel: 50
+PvP: True
+#Seed: 123456 
+#UseFixed: False 
+
+# Playfield difficulty
+Difficulty: 2 
+
+# Planet or Space
+PlayfieldType: Planet 
+Description: "Difficulty:[c][FFFFFF] Easy[-][/c]    Origin:[c][FFFFFF] %Origin%[-][/c]
+
+
+  Akua is a temperate planet with vast oceans, volcanic islands and large continents with mountain ranges. It has a breathable atmosphere. The average temperature is 23°C and gravity amounts to 0.84g.
+
+
+  Start: [c][FFFFFF]Escape Pod[-][/c]"
+
+# Sun 
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Atmosphere and Sky
+AtmosphereEnabled: True  
+AtmosphereColor: "0.19, 0.26, 0.35" 
+SkyColor: "1, 1, 1" 
+SkyHorizonColor: "1, 0.5, 0"  
+
+# Light
+DayLightIntensity: 1.4   
+NightLightIntensity: 0.65  
+DayShadowStrength: 0.95  
+NightLightColor: "0.78, 0.78, 1"   
+
+# Fog
+AtmosphereFog: 0.5  
+FogCloudIntensity: 1.0 
+FogIntensity: 0.1    
+FogStartDistance: 400        
+GroundFogIntensity: 0         
+GroundFogHeight: 0        
+
+# Clouds
+CloudsDensity: 0.5   
+CloudsSharpness: 0.35  
+CloudsBrightness: 0.7  
+CloudsOpacity: 0.95  
+CloudsZenithColor: "0.87, 0.92, 1" 
+CloudsHorizonColor: "1, 0.3, 0"  
+
+# Wind Speed
+WindSpeed: 3 
+
+# Special Effects 
+SpecialEffectsLocal:
+  - Name: FireFliesOrange
+    Biome: [ Water ]
+    Time: Always
+    MaxHeight: 35
+  - Name: DandelionsFew
+    Biome: [ OpenPlains, Water ]
+    Time: Day
+    MaxHeight: 180
+  - Name: Butterflies
+    Biome: [ TropicalForest ]
+    Time: Day
+    MaxHeight: 180
+    FollowPlayerY: True
+  - Name: FireFliesOrange
+    Biome: [ TropicalForest ]
+    Time: Night
+    MaxHeight: 180
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsLight
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 2
+    Lifetime: 1200
+  - Name: CloudsMedium
+    Type: Weather
+    InitialDelay: 0   
+    Delay: 2
+    Lifetime: 1200
+  - Name: Clouds
+    Type: Weather
+    InitialDelay: 10   
+    Delay: 5
+    Lifetime: 1000
+  - Name: Fog
+    Type: Weather
+    InitialDelay: 24 
+    Delay: 12   
+    Lifetime: 1000  
+  - Name: Wind
+    Type: Weather
+    InitialDelay: 24   
+    Delay: 12
+    Lifetime: 600
+  - Name: RainMedium
+    Type: Weather
+    InitialDelay: 24   
+    Delay: 12          
+    Lifetime: 600      
+  - Name: RainHeavy
+    Type: Weather
+    InitialDelay: 48  
+    Delay: 24          
+    Lifetime: 600      
+  - Name: Storm
+    Type: Weather
+    InitialDelay: 48   
+    Delay: 24          
+    Lifetime: 600   
+# Global Effect
+  - Name: BirdFlocksCrows
+    Biome: [ OpenPlains, Water, TropicalForest ]
+    Time: Day
+    InitialDelay: 1 
+    Delay: 4 
+    Lifetime: 600 
+    PlyDist: 100
+    SpawnY: 30
+    Struct: True
+
+### Terrain and Decorations
+# Terrain and Local Decoration
+Terrain:
+    Name: NewTemperate500
+    PoleLevel: 30   
+    PerlinCol: 1.5
+    NoiseStrength: 0.2
+    ColorChange:
+        YFadeCenter: 80
+        YFadeRange: 40
+        YFadeMin: 0
+        YFadeMax: 0
+
+MainBiome:
+    Textures:
+        - [ GrassCliff, 5 ]
+        - [ GrassCliff, 0 ]
+        - [ Cliff2, 2 ]
+
+# Biome Definition and Main Decoration
+Biome:
+# Non-splatmap deco distribution
+# Water Area
+   - Altitude: [ 1, 36 ]
+     Slope: [ 0, 10 ]
+     BiomeClusterData:
+         - Name: "Water"
+           Id: 1
+           Splat1: [0, 0, 1, 0]
+           Splat2: [0, 0, 1, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ CoralBig01, 5]
+               - [ CoralBig08, 5]
+               - [ FingerSponge03-01, 5]
+               - [ CoralStone03-05, 5]
+               - [ Hydrilla2, 12]
+               - [ SeaWeed02-04, 12]
+               - [ RealRock8Water, 8]
+               - [ RealRock9Water, 8]
+               - [ CrystalStraight, 4]
+               - [ PromethiumStone, 4]
+           Grass:
+               - Name: "GrassGreen01"
+                 Density: 2000
+                 YScale: 1
+                 Preset: "GrassDense"
+   - Altitude: [ 36, 39 ]
+     Slope: [ 0, 10 ]
+     BiomeClusterData:
+         - Name: "Water"
+           Id: 1
+           Splat1: [0, 0, 1, 0]
+           Splat2: [0, 0, 1, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ RealRock1Water, 0.3]
+               - [ RealRock5Water, 0.2]
+           Grass:
+               - Name: "GrassGreen01a"
+                 Density: 800
+                 YScale: 0.8
+                 Preset: "GrassDense"
+   - Altitude: [ 39, 43 ]
+     Slope: [ 0, 10 ]
+     BiomeClusterData:
+         - Name: "Water"
+           Id: 1
+           Splat1: [0, 0, 1, 0]
+           Splat2: [0, 0, 1, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ RealRock1Water, 0.5]
+               - [ RealRock5Water, 0.2]
+           Grass:
+               - Name: "GrassGreen01"
+                 Density: 500
+                 YScale: 0.8
+                 Preset: "GrassDense"
+   - Altitude: [ 1, 45 ]
+     Slope: [ 0, 180 ]
+     BiomeClusterData:
+         - Name: "Water"
+           Id: 1
+           Splat1: [0, 0, 1, 0]
+           Splat2: [0, 0, 1, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations: 
+               - [ RealRock1Water, 0]
+# =====================================================
+# Lake Shore
+   - Altitude: [ 45, 65 ]
+     Slope: [ 0, 15 ]
+     BiomeClusterData:
+         - Name: "OpenPlains"
+           Id: 2
+           Splat1: [1, 0, 1, 0]
+           Splat2: [0, 0, 1, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ BushGreen01, 0.05]
+               - [ BushGreen02, 0.05]
+               - [ RockGrey01Large, 0.5]
+               - [ RockGrey02Large, 0.2]
+               - [ RealRock4, 0.05]
+               - [ RealRock5, 0.03] 
+           Grass:
+               - Name: "GrassBrown02"
+                 Density: 400
+                 YScale: 0.8
+                 Preset: "GrassDense3a" 
+# =====================================================
+# Forest
+   - Altitude: [ 65, 150 ]
+     Slope: [ 0, 10 ]
+     BiomeClusterData:
+         - Name: "TropicalForest"
+           Id: 3
+           Splat1: [1, 0, 0, 0]
+           Splat2: [0, 0, 0, 0]
+           ClusterSize: 250
+           NbOfClusters: 2
+           Decorations:
+               - [ AmericanElm, 3]
+               - [ Rainforest, 0.4]
+               - [ AkuaPlant2, 0.8]
+               - [ BigFlower, 0.5]
+               - [ ElderberryBush, 1.3]
+               - [ MushroomBellBrown01, 0.6]
+               - [ CattailWinter, 0.8]
+               - [ PixieStalks, 0.4]
+               - [ InsanityPepper, 0.4]
+               - [ AkuaBushGreen, 1]
+               - [ AlienPlant07, 0.4]
+               - [ AlienPlant14, 0.4]
+               - [ DeadTree01, 0.4]
+               - [ DeadTree02b, 0.4]
+               - [ RealRock2, 0.2]
+               - [ RealRock1, 0.2]
+               - [ CobraLeavesPlant, 0.5]
+               - [ DimpleDome, 0.3]
+               - [ AlienPlantWorm1, 0.4]
+               - [ AlienPlant11, 0.7]
+               - [ SkeletonWhaleFull, 0.2]
+           Grass:
+               - Name: "GrassGreen03" 
+                 Density: 1400
+                 YScale: 0.8
+                 Preset: "GrassDense3"
+               - Name: "Plant01"
+                 Density: 300
+                 YScale: 1.15
+                 Preset: "GrassPatches2a"
+# Open Plains
+         - Name: "OpenPlains"
+           Id: 2
+           Splat1: [1, 0, 0, 0]
+           Splat2: [0, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ BushGreen01, 0.3]
+               - [ BushGreen02, 0.3]
+               - [ RiverBirch, 0.3]
+               - [ CornDogBush, 0.25]
+               - [ Snakeweed, 0.5]
+               - [ DesertPlant20, 0.25]
+               - [ CattailWinter, 0.5]
+               - [ RealRock10, 0.02]
+               - [ RealRock3, 0.015]
+               - [ RealRock4, 0.015]
+               - [ RealRock5, 0.015]
+               - [ RealRock8, 0.025]    # large rock
+               - [ RealRock9, 0.025]    # large rock
+               - [ BulbShroom, 0.15]
+           Grass:
+               - Name: "GrassGreen04" 
+                 Density: 2000
+                 YScale: 0.8
+                 Preset: "GrassDense3"
+               - Name: "Flower01"
+                 Density: 100
+                 YScale: 0.9
+                 Preset: "GrassPatches2a"
+               - Name: "Flower04"
+                 Density: 80
+                 YScale: 0.8
+                 Preset: "GrassPatches2"
+   - Altitude: [ 150, 200 ]
+     Slope: [ 0, 15 ]
+     BiomeClusterData:
+         - Name: "OpenPlains"
+           Id: 2
+           Splat1: [1, 0, 0, 0]
+           Splat2: [0, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ HollywoodJuniperDesktop, 0.5]
+               - [ Snakeweed, 0.5]
+               - [ RealRock10, 0.1]
+               - [ RealRock3, 0.1]
+               - [ RealRock4, 0.03]
+               - [ RealRock5, 0.03]
+               - [ RealRock8, 0.05]    # large rock
+               - [ RealRock9, 0.03]    # large rock
+           Grass:
+               - Name: "GrassGreen04" 
+                 Density: 2000
+                 YScale: 0.8
+                 Preset: "GrassDense3"
+               - Name: "Flower02"
+                 Density: 100
+                 YScale: 0.9
+                 Preset: "GrassPatches2a"
+   - Altitude: [ 70, 200 ]
+     Slope: [ 0, 15 ]
+     BiomeClusterData:
+         - Name: "OpenPlains"
+           Id: 2
+           Splat1: [0, 0, 0, 1]
+           Splat2: [0, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations: 
+               - [ RealRock1Water, 0]
+           Grass:
+               - Name: "GrassGreen02"
+                 Density: 800
+                 YScale: 1
+                 Preset: "GrassPatches3" 
+# =====================================================
+   - Altitude: [ 70, 200 ]
+     Slope: [ 0, 180 ]
+     BiomeClusterData:
+         - Name: "OpenPlains"
+           Id: 2
+           Splat1: [1, 1, 1, 1]
+           Splat2: [0, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations: 
+               - [ RealRock1Water, 0]
+# =====================================================
+# Mountains 
+   - Altitude: [ 200, 350 ]
+     Slope: [ 0, 10 ]
+     BiomeClusterData:
+         - Name: "Mountains"
+           Id: 4
+           Splat1: [1, 0, 0, 1]
+           Splat2: [0, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ RealRock10, 0.3]
+               - [ RealRock3, 0.2]
+               - [ RealRock4, 0.3]
+               - [ RealRock5, 0.3]
+               - [ RealRock8, 0.2]
+               - [ RealRock9, 0.2]
+               - [ DesertPlant20, 0.5]
+               - [ CornDogBush, 0.8]
+               - [ PixieStalks, 0.5]
+               - [ Snakeweed, 0.4]
+               - [ AkuaBush1, 0.25]
+           Grass:
+               - Name: "GrassGreen04" 
+                 Density: 1000
+                 YScale: 0.8
+                 Preset: "GrassDense3"
+               - Name: "Flower04"
+                 Density: 50
+                 YScale: 1.15
+                 Preset: "GrassPatches3"
+# =====================================================
+# Snow Mountains 
+   - Altitude: [ 350, 550  ]
+     Slope: [ 0, 10 ]
+     BiomeClusterData:
+         - Name: "Mountains"
+           Id: 4
+           Splat1: [0, 0, 0, 0]
+           Splat2: [1, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations:
+               - [ RealRock1Snow, 0.1]
+               - [ RealRock10Snow, 0.1]
+               - [ "RealRock8Snow", 0.1] 
+               - [ "RealRock6Snow", 0.1]
+               - [ "BushWinter01", 0.1] 
+               - [ "BushWinter02", 0.1] 
+               - [ "BushWinter03", 0.1]  
+           Grass:
+               - Name: "GrassGreen04aSnow"
+                 Density: 150
+                 YScale: 2
+                 Preset: "GrassPatches3"    
+   - Altitude: [ 270, 550 ]
+     Slope: [ 0, 180 ]
+     BiomeClusterData:
+         - Name: "Mountains"
+           Id: 4
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations: 
+               - [ RealRock1Water, 0]
+# =====================================================
+   - Altitude: [ 200, 500 ]
+     Slope: [ 0, 180 ]
+     BiomeClusterData:
+         - Name: "Mountains"
+           Id: 4
+           Splat1: [1, 1, 1, 1]
+           Splat2: [1, 0, 0, 0]
+           ClusterSize: 0
+           NbOfClusters: 0
+           Decorations: 
+               - [ RealRock1Water, 0]
+# =====================================================
+
+### Resource Deposits
+RandomResources:
+    - Name: IronResource
+      CountMinMax: [ 5, 7 ]  
+      SizeMinMax: [ 8, 10 ] 
+      DepthMinMax: [ 0, 5 ] 
+      DroneProb: 0.2 
+      MaxDroneCount: 1
+      DistTypeCylinder:
+        MaxRadius: 10
+        YVariance: 12
+
+    - Name: CopperResource
+      CountMinMax: [ 4, 5 ]
+      SizeMinMax: [ 7, 10 ]
+      DepthMinMax: [ 0, 5 ]
+      DroneProb: 0.3
+      DistTypeCylinder:
+        MaxRadius: 15
+        YVariance: 8
+
+    - Name: SiliconResource
+      CountMinMax: [ 4, 6 ]
+      SizeMinMax: [ 8, 9 ]
+      DepthMinMax: [ 0, 10 ]
+      DroneProb: 0.3
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: PromethiumResource
+      CountMinMax: [ 4, 8 ]
+      SizeMinMax: [ 7, 10 ]
+      DepthMinMax: [ 0, 5 ]
+      DroneProb: 0.4
+      DistTypeCylinder:
+        MaxRadius: 12
+        YVariance: 10
+
+### Resource Asteroids
+AsteroidResources:
+     - Name: IronResource
+       Threshold: 0.2
+       Amount: 0.2
+
+    # - Name: IronResource 
+      # Amount: 5000       
+      # InitialDelay: 1    
+      # Delay: 24          
+
+    #- Name: CobaltResource
+    #  Threshold: 0.4
+    #  Amount: 0.4
+
+     - Name: CopperResource
+       Threshold: 0.2
+       Amount: 0.2
+
+     - Name: SiliconResource
+       Threshold: 0.2
+       Amount: 0.2
+
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+
+    # - Name: MagnesiumResource
+      # Threshold: 0.2
+      # Amount: 0.3
+
+### POIs
+POIs:
+    Random:
+        - GroupName: Wreckage
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False    
+          PlayerStart: True   
+          SpawnResource: ["IronResource:1","CopperResource:1","PromethiumResource:1","SiliconResource:1"]
+          ResourceDistance: 300
+          Properties: 
+            - Key: PersonalContainer
+              Value: "AutoMinerCore:5, Core, WaterBottle:2, TomatoStage1, WheatStage1, CornStage1, SnakeweedStage1, PumpkinStage1, PearthingStage1, DurianRoot, RadiationPills, EVABoost"  
+            - Key: MapDistance
+              Value: 700         
+        
+        # Spawn DroneBase far away from wreckage      
+        - GroupName: DroneBaseT1
+          DroneBaseSetup: DroneBaseSetup
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 1  
+          DronesMinMax: [ 2, 3 ]  
+          ReserveCount: 3    
+          SpawnPOIAvoid: [Wreckage]  
+          POIDistance: 1300   
+          Properties: 
+            - Key: Music
+              Value: DarkSoundscape  
+
+        # Spawn TS Akua and close to it some weakly defended civil settlements
+        - GroupName: TS_Akua
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False      
+          SpawnPOIAvoid: [DroneBaseAkua, Wreckage]  
+          POIDistance: 1000   
+          SpawnResource: ["PromethiumResource:0-2"]
+          ResourceDistance: 300  
+          Properties: 
+            - Key: Music
+              Value: SunnySkies
+
+        # Spawn mine with some weakly defended tribal villages
+        - GroupName: AbandonedPOI
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.1
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 1
+          TroopTransport: False  
+          SpawnPOIAvoid: [TS_Akua]
+          POIDistance: 1300 
+          SpawnResource: ["IronResource:0-2","PromethiumResource:0-2","CopperResource:0-1"]
+          ResourceDistance: 300 
+          Properties: 
+            - Key: Music
+              Value: DarkSoundscape    
+
+        # Weakly defended Civil Settlements close to TS Akua
+        - GroupName: CivilSettlementO2
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.5 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True    
+          SpawnPOINear: [TS_Akua]
+          POIDistance: 500
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral   
+              
+        # Spawn strong defended civil settlements randomly
+        - GroupName: CivilSettlement
+          CountMinMax: [ 2, 3 ]
+          DroneProb: 0.9 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 2
+          TroopTransport: True  
+          SpawnPOIAvoid: [Wreckage]  
+          POIDistance: 1000   
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral                
+
+        # Tribal villages close to AbandonedPOI
+        - GroupName: TribalVillage
+          CountMinMax: [ 1, 2 ]
+          DroneProb: 0.8 
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 0
+          TroopTransport: False 
+          SpawnPOINear: [AbandonedPOI]
+          POIDistance: 500 
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral                 
+
+        # Spawn crashed Talos 
+        - GroupName: CrashedTalosMid      # Do not use regeneration with burried POIs
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.8
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          SpawnPOINear: [Wreckage]
+          POIDistance: 1500
+          TroopTransport: True
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral        
+
+        - GroupName: CrashedTalosFront      # Do not use regeneration with burried POIs
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.6
+          DronesMinMax: [ 1, 1 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [CrashedTalosMid]
+          POIDistance: 1000
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral       
+
+        - GroupName: CrashedTalosBack      # Do not use regeneration with burried POIs
+          CountMinMax: [ 1, 1 ]
+          DroneProb: 0.9
+          DronesMinMax: [ 1, 2 ]
+          ReserveCount: 3
+          TroopTransport: False
+          SpawnPOINear: [CrashedTalosFront]
+          POIDistance: 1000 
+          Properties: 
+            - Key: MapMarker 
+              Value: Neutral       
+
+        # Spawn military POIs close to Drone Base 
+        - GroupName: EpsilonT1
+          CountMinMax: [ 1, 2 ]         
+          DroneProb: 1.0                
+          DronesMinMax: [ 1, 2 ]        
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOINear: [DroneBaseAkua]
+          SpawnPOIAvoid: [TS_Akua, Wreckage]
+          POIDistance: 800 
+          SpawnResource: ["PromethiumResource:0-1"]
+          ResourceDistance: 300
+
+        # Spawn military POIs randomly
+        - GroupName: EpsilonT1
+          CountMinMax: [ 2, 3 ]         
+          DroneProb: 1.0                
+          DronesMinMax: [ 1, 2 ]        
+          ReserveCount: 3
+          TroopTransport: True 
+          SpawnPOIAvoid: [TS_Akua, Wreckage]
+          POIDistance: 1000 
+
+    Fixed:
+        - Type: BA_Player
+          Prefab: BA_Outpost-AkuaV2    
+          Mode: Creative              
+          SubMode: Normal             
+          Name: Outpost Akua          
+          Pos: [ 426, 32, 410 ] 
+          Rot: [ 0, -143, 0 ]          
+          InitPower: True
+
+        - Type: SV_Player
+          Prefab: SV_Talon
+          Mode: Creative
+          SubMode: Normal
+          Name: Talon MKI
+          Pos: [ 399, 47.3, 402.8]
+          Rot: [ 0, -10, 0 ]
+
+        # - Type: BA_Player
+          # Prefab: BA_OutpostAkua
+          # Mode: Debug
+          # Name: Outpost Akua
+          # Pos: [ -472, 11.2, -266.7  ]
+          # Rot: [ 0, -33, 0 ]
+          # InitPower: True
+
+    FixedPlayerStart:
+        - Mode: Creative             
+          SubMode: Empty             
+          Armor: ArmorLight
+          Pos: [ -565, 95, -147 ]  
+          RotY: -22                 
+
+        - Mode: Creative             
+          SubMode: Normal            
+          Armor: ArmorLight
+          Pos: [ 397, 48, 411 ]  
+          RotY: 150                
+
+        - Mode: Debug
+          Pos: [ -1465, 180, -387 ]  
+          RotY: 150              
+
+        - Mode: Survival
+          Spawn: EscapePod
+          # Spawn: Structure
+          # Structure: "Wreckage"
+          Armor: ArmorLight
+          Items: [ "Pistol, 50Caliber:250, Medikit02:3, AntidotePills:3, EmergencyRations:4, Drill, Chainsaw, BioFuel:15, ConstructorSurvival, EnergyCell:5, OreScanner", "Pistol, 50Caliber:150, Medikit02:2, AntidotePills:2, EmergencyRations:2, Drill, Chainsaw, BioFuel:10, ConstructorSurvival, EnergyCell:4, OreScanner", "Pistol, 50Caliber:100, Medikit02:1, AntidotePills:1, EmergencyRations:1, Drill, Chainsaw, BioFuel:5, ConstructorSurvival, EnergyCell:3", "#FreshStart: Pistol, 50Caliber:250, Drill, Chainsaw, BioFuel:15, ConstructorSurvival, OreScanner" ]
+
+### Drones
+DroneBaseSetup:
+    Random:
+        - GroupName: DroneBaseSetup
+          DronesMinMax: [ 2, 3 ]        
+          ReserveCount: 3               
+          DroneProb: 1.0                
+          Difficulty: 5                 
+          PresetStyle: 2                
+          # BaseAttack: DroneSmallAttackBase
+          Stock:
+              - Name: DroneSmallFast01Rocket  
+                Amount: 100                   
+                Extra: 0                      
+
+              - Name: DroneSmallFast01Minigun
+                Amount: 300
+                Extra: 0
+
+              - Name: DroneSmallSlow01Cannon
+                Amount: 200
+                Extra: 0
+
+              - Name: DroneSmallFast01Minigun    # Base attack drones  
+                Amount: Infinite
+                Extra: 1         
+
+              - Name: DroneSmallAttackBase       # Base attack drones  
+                Amount: Infinite
+                Extra: 1                 
+
+              - Name: DroneTroopsTransport
+                Amount: Infinite
+                Extra: 2
+
+              - Name: ZiraxMinigun
+                Amount: 500
+                Extra: 3
+
+              - Name: ZiraxRocket
+                Amount: 500
+                Extra: 3
+
+              - Name: Crawler
+                Amount: 150
+                Extra: 3
+
+              - Name: AlienAssassinGrey
+                Amount: 300
+                Extra: 3
+
+# Patrol drones on whole planet 
+# Type determined by stock of drone base
+DroneSpawning:
+    Random:
+        - DronesMinMax: [ 5, 10 ]    
+          CenterX: -2500             
+
+        - DronesMinMax: [ 5, 10 ]
+          CenterX: 2500
+
+### Creatures
+CreatureSpawning:
+    - Biome: Water
+      Entities:
+        - Name: Slimes
+          Period: Day             
+          Amount: 1
+          Delay: 0
+        - Name: PlantMonsters
+          Period: Night
+          Amount: 3
+          Delay: 0
+          # RestrictYMinMax: [ 0, 40 ]
+
+    - Biome: TropicalForest
+      Entities:
+        - Name: Hexapods
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: Spiders01
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: Triceratopses
+          Period: Day
+          Amount: 2
+          Delay: 0
+        - Name: TalonGuardianHerd
+          Period: Always
+          Amount: 2
+          Delay: 0
+
+    - Biome: OpenPlains
+      Entities:
+        - Name: LizardMuleHerd
+          Period: Day
+          Amount: 2
+          Delay: 0
+        - Name: RaptorHerd
+          Period: Day
+          Amount: 2
+          Delay: 0
+        - Name: RaptorsNight
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: TalonGuardianHerd
+          Period: Night
+          Amount: 2
+          Delay: 0
+        - Name: PlantMonsters
+          Period: Night
+          Amount: 1
+          Delay: 0
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 1
+          Delay: 0
+
+    - Biome: Mountains
+      Entities:
+        - Name: Spiders01
+          Period: Always
+          Amount: 3
+          Delay: 0
+        - Name: AlienBugs01
+          Period: Always
+          Amount: 1
+          Delay: 0

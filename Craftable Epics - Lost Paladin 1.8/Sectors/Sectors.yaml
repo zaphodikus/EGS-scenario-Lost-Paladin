@@ -1,0 +1,81 @@
+GalaxyMode: true
+Sectors: []
+SolarSystems:
+  - Name: Ellyon
+    Coordinates: [134, 25, 126]
+    StarClass: G2
+    Sectors:
+      - Coordinates: [0, 0, 0]
+        SectorMapType: None
+        Playfields:
+          - ['0,0,0', Ellyon, SunRandom, '']
+      - Coordinates: [2,0,0]
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Ellyon [Sun Right]', SpaceWarpTarget, '']
+      - Coordinates: [-2,0,0]
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Ellyon [Sun Left]', SpaceWarpTarget, '']
+      - Coordinates: [0,2,0]
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Ellyon [Sun Top]', SpaceWarpTarget, '']
+      - Coordinates: [0,-2,0]
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Ellyon [Sun Bottom]', SpaceWarpTarget, '']
+      - Coordinates: [0,0,2]
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Ellyon [Sun Front]', SpaceWarpTarget, '']
+      - Coordinates: [0,0,-2]
+        SectorMapType: WarpTarget
+        Playfields:
+          - ['0,0,0', 'Ellyon [Sun Back]', SpaceWarpTarget, '']
+      - Coordinates: [6,0,-19]
+        Color: '0.04,0.8,0.1 : 0,0,0'
+        Playfields:
+          - ['0,0,0', Omicron, StoryPrairie,'', '', '', '']
+       #   - ['3456,1621,-14506', Omicron Moon, MoonStarter]
+          - ['0,0,0', Omicron Sector, SpaceOrbitStarter, '']
+      - Coordinates: [-10,0,-49]
+        Color: '0.45,0.2,0.09'
+        SectorMapType: GasGiant
+        Playfields:
+          - ['0,0,0', Uabion, GasGiant,'', '', 'JupiterBrown2', '9']
+      - Coordinates: [-10,0,-48]
+        Color: '0,0,0'
+        Playfields:
+          - ['0,0,0', Uabion Moon, Moon,'', '', '', '']
+          - ['0,0,0', Uabion Moon Sector, SpaceOrbitSectorStart, '']
+      - Coordinates: [53, 1, -2]
+        Color: '0.22,0.54,0.69'
+        SectorMapType: GasGiant
+        Playfields:
+          - ['0, 0, 0', Crown, GasGiant,'', '', 'SaturnBlue', '11']
+      - Coordinates: [55, 0, 0]
+        Color: '0.5,0.5,0.5'
+        Playfields:
+       #   - ['0, 0, 0', Exile, MoonTemperateStarter2,'Human:1', '', '', '']       
+          - ['-5600, -5000, 12600', Akua, MoonTemperateStarter,'Human:1', '', '', '']
+          - ['12600, -5000, 6000', Ningues, MoonSnowStarter,'Human:1', '', '', '']          
+          - ['-12600, -5000, -6000', Skillon, MoonBarrenStarter,'Human:1', '', '', '']
+          - ['5600, -5000, -12600', Masperon, MoonAlienStarter,'Human:1', '', '', '']
+          - ['0,0,0', Crown Sector, CrownSector, '']
+      - Coordinates: [25,0,15]
+        Color: '0.16,0.18,0.51'
+        Playfields:
+          - ['0,0,0', Sienna, StorySnow,'', '', '', '']
+          - ['0,0,0', Sienna Sector, SpaceOrbitSectorStart, '']
+      - Coordinates: [-49,0,-51]
+        Color: '0.49,0.49,0.49 : 0.16,0.18,0.51'
+        Playfields:
+          - ['0,0,0', Symos, BarrenMetal,'', '', '', '']
+          - ['329,11992,-9004', Symos Moon, MoonIce]
+          - ['0,0,0', Symos Sector, SpaceOrbitIlmarinen, '']
+      - Coordinates: [69,0,3]
+        Color: '0.49,0.49,0.49'
+        SectorMapType: AsteroidFieldAttention
+        Playfields:
+          - ['0,0,0', Obipl Rho, SpaceAsteroidFieldStarter,'', '', '', '']
